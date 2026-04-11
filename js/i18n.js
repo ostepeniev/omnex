@@ -36,114 +36,99 @@ const translations = {
   "node.ceo": { uk: "Звіти CEO", en: "CEO Reports", cs: "Reporty CEO" },
   "node.marketing": { uk: "Маркетинг", en: "Marketing", cs: "Marketing" },
 
-  // ── TICKER ──
-  "ticker.agents": { uk: "AI-агенти для бізнесу", en: "AI agents for business", cs: "AI agenti pro byznys" },
-  "ticker.roi": { uk: "Гарантований ROI", en: "Guaranteed ROI", cs: "Garantovaný ROI" },
-  "ticker.14days": { uk: "Результат за 14 днів", en: "Results in 14 days", cs: "Výsledky za 14 dní" },
-  "ticker.leader": { uk: "Central Europe AI Leader", en: "Central Europe AI Leader", cs: "Central Europe AI Leader" },
-  "ticker.entry": { uk: "€390 Entry Point", en: "€390 Entry Point", cs: "€390 vstupní bod" },
-  "ticker.gdpr": { uk: "GDPR Compliant", en: "GDPR Compliant", cs: "GDPR Compliant" },
-  "ticker.8agents": { uk: "8 AI Agents", en: "8 AI Agents", cs: "8 AI agentů" },
-  "ticker.nocode": { uk: "Zero Code Required", en: "Zero Code Required", cs: "Bez kódu" },
-
   // ── PROBLEM ──
   "problem.label": { uk: "Чому це важливо зараз", en: "Why this matters now", cs: "Proč je to důležité teď" },
-  "problem.title": {
-    uk: "Кожен місяць зволікання — це гроші які ваш бізнес віддає рутині",
-    en: "Every month of delay is money your business gives to routine",
-    cs: "Každý měsíc prodlení jsou peníze, které váš byznys dává rutině"
-  },
-  "problem.1.title": { uk: "Команда працює — бізнес стоїть", en: "Team works — business stalls", cs: "Tým pracuje — byznys stojí" },
-  "problem.1.body": {
-    uk: "Співробітники зайняті ручною працею: обробкою заявок, складанням звітів, відповідями на типові питання. Це коштує вам €800–1,800 на місяць на кожного такого співробітника.",
-    en: "Employees are busy with manual work: processing requests, compiling reports, answering typical questions. This costs you €800–1,800 per month per such employee.",
-    cs: "Zaměstnanci jsou zaneprázdněni ruční prací: zpracováním žádostí, sestavováním reportů, odpovídáním na typické otázky. To vás stojí €800–1 800 měsíčně na každého takového zaměstnance."
-  },
-  "problem.1.cost": { uk: "↓ Втрати: до €18,000/рік на 10 осіб.", en: "↓ Loss: up to €18,000/year per 10 people", cs: "↓ Ztráty: až €18 000/rok na 10 lidí" },
-  "problem.2.title": { uk: "Ліди зникають в тиші", en: "Leads disappear in silence", cs: "Leady mizí v tichu" },
-  "problem.2.body": {
-    uk: "Середня відповідь на заявку займає 4 години. Конверсія при відповіді за 5 хвилин — у 21 разів вища. Кожен день зволікання — це угоди які дістались конкуренту.",
-    en: "Average response to a lead takes 4 hours. Conversion when responding within 5 minutes is 21× higher. Every day of delay means deals going to competitors.",
-    cs: "Průměrná odpověď na žádost trvá 4 hodiny. Konverze při odpovědi do 5 minut je 21× vyšší. Každý den prodlení znamená obchody, které jdou ke konkurenci."
-  },
-  "problem.2.cost": { uk: "↓ Втрати: 20–40% лідів щомісяця", en: "↓ Loss: 20–40% of leads monthly", cs: "↓ Ztráty: 20–40 % leadů měsíčně" },
-  "problem.3.title": { uk: "Рішення приймаються наосліп", en: "Decisions are made blindly", cs: "Rozhodnutí se dělají naslepo" },
-  "problem.3.body": {
-    uk: "Дані живуть в Excel, CRM, месенджерах. CEO не знає реальну картину без дзвінків менеджерам. Проблеми виявляються коли вже пізно.",
-    en: "Data lives in Excel, CRM, messengers. CEO doesn't know the real picture without calling managers. Problems are discovered when it's too late.",
-    cs: "Data žijí v Excelu, CRM, messengerech. CEO nezná reálný obraz bez volání manažerům. Problémy se objeví, když už je pozdě."
-  },
-  "problem.3.cost": { uk: "↓ Втрати: пізні рішення = втрата позицій", en: "↓ Loss: late decisions = lost positions", cs: "↓ Ztráty: pozdní rozhodnutí = ztráta pozic" },
-  "problem.4.title": { uk: "Конкуренти йдуть вперед", en: "Competitors move ahead", cs: "Konkurenti jdou dopředu" },
-  "problem.4.body": {
-    uk: "AI-автоматизація в SMB зросла на 63% за рік. Компанії які впровадили — знизили собівартість на 20–35%. Кожен місяць розрив збільшується.",
-    en: "AI automation in SMB grew 63% in one year. Companies that adopted it reduced costs by 20–35%. The gap widens every month.",
-    cs: "AI automatizace v SMB vzrostla o 63 % za rok. Firmy, které ji zavedly, snížily náklady o 20–35 %. Mezera se každý měsíc zvětšuje."
-  },
-  "problem.4.cost": { uk: "↓ Ринкова позиція: втрачається щоквартально", en: "↓ Market position: lost quarterly", cs: "↓ Tržní pozice: ztrácí se čtvrtletně" },
+  "problem.title": { uk: "Кожен місяць зволікання — це гроші які ваш бізнес віддає рутині", en: "Every month of delay is money your business gives to routine", cs: "Každý měsíc prodlení jsou peníze, které váš byznys dává rutině" },
+  "problem.p1.title": { uk: "Команда працює — бізнес стоїть", en: "Team works — business stalls", cs: "Tým pracuje — byznys stojí" },
+  "problem.p1.body": { uk: "Співробітники зайняті ручною працею: обробкою заявок, складанням звітів, відповідями на типові питання. Це коштує вам €800–1,800 на місяць на кожного такого співробітника.", en: "Employees are busy with manual work: processing requests, compiling reports, answering typical questions. This costs you €800–1,800 per month per employee.", cs: "Zaměstnanci jsou zaneprázdněni ruční prací: zpracováním žádostí, sestavováním reportů, odpovídáním na typické otázky. To vás stojí €800–1 800 měsíčně na zaměstnance." },
+  "problem.p1.cost": { uk: "↓ Втрати: до €18,000/рік на 10 осіб", en: "↓ Loss: up to €18,000/year per 10 people", cs: "↓ Ztráty: až €18 000/rok na 10 lidí" },
+  "problem.p2.title": { uk: "Ліди зникають у тиші", en: "Leads disappear in silence", cs: "Leady mizí v tichu" },
+  "problem.p2.body": { uk: "Середня відповідь на заявку займає 4 години. Конверсія при відповіді за 5 хвилин — в 21 раз вища. Кожен день зволікання — це угоди які дісталися конкуренту.", en: "Average response takes 4 hours. Conversion when responding within 5 minutes is 21× higher. Every day of delay means deals going to competitors.", cs: "Průměrná odpověď trvá 4 hodiny. Konverze při odpovědi do 5 minut je 21× vyšší. Každý den prodlení znamená obchody ke konkurenci." },
+  "problem.p2.cost": { uk: "↓ Втрати: 20–40% лідів щомісяця", en: "↓ Loss: 20–40% of leads monthly", cs: "↓ Ztráty: 20–40 % leadů měsíčně" },
+  "problem.p3.title": { uk: "Рішення приймаються наосліп", en: "Decisions are made blindly", cs: "Rozhodnutí se dělají naslepo" },
+  "problem.p3.body": { uk: "Дані живуть в Excel, CRM, месенджерах. CEO не знає реальну картину без дзвінків менеджерам. Проблеми виявляються коли вже пізно.", en: "Data lives in Excel, CRM, messengers. CEO doesn't know the real picture without calling managers. Problems are discovered when it's too late.", cs: "Data žijí v Excelu, CRM, messengerech. CEO nezná reálný obraz bez volání manažerům. Problémy se objeví, když je pozdě." },
+  "problem.p3.cost": { uk: "↓ Втрати: пізні рішення = втрата позицій", en: "↓ Loss: late decisions = lost positions", cs: "↓ Ztráty: pozdní rozhodnutí = ztráta pozic" },
+  "problem.p4.title": { uk: "Конкуренти йдуть вперед", en: "Competitors move ahead", cs: "Konkurenti jdou dopředu" },
+  "problem.p4.body": { uk: "AI-автоматизація в SMB зросла на 63% за рік. Компанії які впровадили — знизили собівартість на 20–35%. Кожен місяць розрив збільшується.", en: "AI automation in SMB grew 63% in one year. Companies that adopted it reduced costs by 20–35%. The gap widens every month.", cs: "AI automatizace v SMB vzrostla o 63 % za rok. Firmy, které ji zavedly, snížily náklady o 20–35 %. Mezera se každý měsíc zvětšuje." },
+  "problem.p4.cost": { uk: "↓ Ринкова позиція: втрачається щоквартально", en: "↓ Market position: lost quarterly", cs: "↓ Tržní pozice: ztrácí se čtvrtletně" },
+
+  // ── STATS ──
+  "stats.s1": { uk: "зростання AI-автоматизації в SMB за 2024–2025", en: "AI automation growth in SMB 2024–2025", cs: "růst AI automatizace v SMB za 2024–2025" },
+  "stats.s2": { uk: "середньомісячні втрати компанії 20–50 осіб", en: "average monthly losses, company 20–50 people", cs: "průměrné měsíční ztráty firmy 20–50 lidí" },
+  "stats.s3": { uk: "вища конверсія при відповіді за 5 хвилин", en: "higher conversion when responding within 5 min", cs: "vyšší konverze při odpovědi do 5 minut" },
+  "stats.s4": { uk: "середній ROI тільки від діагностики AI X-Ray", en: "average ROI from AI X-Ray diagnostics alone", cs: "průměrný ROI jen z diagnostiky AI X-Ray" },
 
   // ── APPROACH ──
   "approach.label": { uk: "Як ми працюємо", en: "How we work", cs: "Jak pracujeme" },
   "approach.title": { uk: "Чотири кроки від діагностики до результату", en: "Four steps from diagnostics to results", cs: "Čtyři kroky od diagnostiky k výsledkům" },
-  "approach.sub": { uk: "Без затяжних проєктів і туманних обіцянок. Кожен крок — конкретний результат.", en: "No lengthy projects and vague promises. Each step — concrete results.", cs: "Žádné zdlouhavé projekty a mlhavé sliby. Každý krok — konkrétní výsledek." },
-  "approach.1.title": { uk: "AI X-Ray — діагностика бізнесу", en: "AI X-Ray — business diagnostics", cs: "AI X-Ray — diagnostika byznysu" },
-  "approach.1.body": {
-    uk: "Аналізуємо ваші процеси, рахуємо втрати в €, визначаємо топ-3 можливості для автоматизації. 20-сторінковий персональний звіт + 30-хв дзвінок.",
-    en: "We analyze your processes, calculate losses in €, identify top-3 automation opportunities. 20-page personal report + 30-min call.",
-    cs: "Analyzujeme vaše procesy, počítáme ztráty v €, identifikujeme top 3 příležitosti k automatizaci. 20stránková osobní zpráva + 30min hovor."
-  },
-  "approach.1.duration": { uk: "€390 · 72 години", en: "€390 · 72 hours", cs: "€390 · 72 hodin" },
-  "approach.2.title": { uk: "Pilot — запуск першого агента", en: "Pilot — launch first agent", cs: "Pilot — spuštění prvního agenta" },
-  "approach.2.body": {
-    uk: "Беремо найпріоритетнішу точку з X-Ray і запускаємо робочого AI-агента на ваших даних. Ви бачите результат на своєму бізнесі, а не демо.",
-    en: "We take the highest priority point from X-Ray and launch a working AI agent on your data. You see results on your business, not a demo.",
-    cs: "Vezmeme nejprioritnější bod z X-Ray a spustíme funkčního AI agenta na vašich datech. Vidíte výsledky na svém byznysu, ne demo."
-  },
-  "approach.2.duration": { uk: "€2,490 · 14 днів", en: "€2,490 · 14 days", cs: "€2 490 · 14 dní" },
-  "approach.3.title": { uk: "Core — розгортаємо AI-операційку", en: "Core — deploy AI operations", cs: "Core — nasazujeme AI operace" },
-  "approach.3.body": {
-    uk: "Підключаємо повний набір агентів під ваші процеси. Налаштовуємо OMNEX Control Panel — єдиний командний центр. Інтеграція з вашими системами.",
-    en: "Connect full set of agents for your processes. Set up OMNEX Control Panel — single command center. Integration with your systems.",
-    cs: "Připojíme úplnou sadu agentů pro vaše procesy. Nastavíme OMNEX Control Panel — jediné řídicí centrum. Integrace s vašimi systémy."
-  },
-  "approach.3.duration": { uk: "від €990/міс", en: "from €990/mo", cs: "od €990/měs" },
-  "approach.4.title": { uk: "Scale — зростання без найму нових людей", en: "Scale — grow without hiring new people", cs: "Scale — růst bez náboru nových lidí" },
-  "approach.4.body": {
-    uk: "Додаємо агентів по мірі зростання задач. Щотижневі ROI-звіти. Агенти навчаються на даних вашого бізнесу і стають розумнішими щомісяця.",
-    en: "Add agents as tasks grow. Weekly ROI reports. Agents learn from your business data and get smarter every month.",
-    cs: "Přidáváme agenty s růstem úkolů. Týdenní ROI reporty. Agenti se učí z dat vašeho byznysu a každý měsíc jsou chytřejší."
-  },
-  "approach.4.duration": { uk: "Нескінченно", en: "Infinite", cs: "Nekonečně" },
-
-  // ── PRODUCTS ──
-  "products.label": { uk: "Продуктова лінійка", en: "Product line", cs: "Produktová řada" },
-  "products.title": { uk: "Чотири продукти. Один шлях до AI-операційки.", en: "Four products. One path to AI operations.", cs: "Čtyři produkty. Jedna cesta k AI operacím." },
+  "approach.sub": { uk: "Без затяжних проєктів та туманних обіцянок. Кожен крок — конкретний результат.", en: "No lengthy projects and vague promises. Each step — concrete results.", cs: "Žádné zdlouhavé projekty a mlhavé sliby. Každý krok — konkrétní výsledek." },
+  "approach.s1.title": { uk: "AI X-Ray — діагностика бізнесу", en: "AI X-Ray — business diagnostics", cs: "AI X-Ray — diagnostika byznysu" },
+  "approach.s1.desc": { uk: "Аналізуємо ваші процеси, рахуємо втрати в €, визначаємо топ-3 можливості для автоматизації. 20-сторінковий персональний звіт + 30-хв дзвінок.", en: "We analyze your processes, calculate losses in €, identify top-3 automation opportunities. 20-page personal report + 30-min call.", cs: "Analyzujeme vaše procesy, počítáme ztráty v €, identifikujeme top 3 příležitosti k automatizaci. 20stránková osobní zpráva + 30min hovor." },
+  "approach.s1.dur": { uk: "€390 · 72 години", en: "€390 · 72 hours", cs: "€390 · 72 hodin" },
+  "approach.s2.title": { uk: "Pilot — запуск першого агента", en: "Pilot — launch first agent", cs: "Pilot — spuštění prvního agenta" },
+  "approach.s2.desc": { uk: "Беремо найпріоритетнішу точку з X-Ray і запускаємо робочого AI-агента на ваших даних. Ви бачите результат на своєму бізнесі, а не демо.", en: "We take the highest priority point from X-Ray and launch a working AI agent on your data. You see results on your business, not a demo.", cs: "Vezmeme nejprioritnější bod z X-Ray a spustíme funkčního AI agenta na vašich datech. Vidíte výsledky na svém byznysu, ne demo." },
+  "approach.s2.dur": { uk: "€2,490 · 14 днів", en: "€2,490 · 14 days", cs: "€2 490 · 14 dní" },
+  "approach.s3.title": { uk: "Core — розгортаємо AI-операційку", en: "Core — deploy AI operations", cs: "Core — nasazujeme AI operace" },
+  "approach.s3.desc": { uk: "Підключаємо повний набір агентів під ваші процеси. Налаштовуємо OMNEX Control Panel — єдиний командний центр. Інтеграція з вашими системами.", en: "Connect full set of agents for your processes. Set up OMNEX Control Panel — single command center. Integration with your systems.", cs: "Připojíme úplnou sadu agentů pro vaše procesy. Nastavíme OMNEX Control Panel — jediné řídicí centrum. Integrace s vašimi systémy." },
+  "approach.s3.dur": { uk: "від €990/міс", en: "from €990/mo", cs: "od €990/měs" },
+  "approach.s4.title": { uk: "Scale — зростання без найму нових людей", en: "Scale — grow without hiring new people", cs: "Scale — růst bez náboru nových lidí" },
+  "approach.s4.desc": { uk: "Додаємо агентів за мірою зростання завдань. Щотижневі ROI-звіти. Агенти навчаються на даних вашого бізнесу і стають розумнішими кожен місяць.", en: "Add agents as tasks grow. Weekly ROI reports. Agents learn from your business data and get smarter every month.", cs: "Přidáváme agenty s růstem úkolů. Týdenní ROI reporty. Agenti se učí z dat vašeho byznysu a každý měsíc jsou chytřejší." },
+  "approach.s4.dur": { uk: "Нескінченно", en: "Infinite", cs: "Nekonečně" },
 
   // ── CASES ──
   "cases.label": { uk: "Результати клієнтів", en: "Client results", cs: "Výsledky klientů" },
-  "cases.title": { uk: "Реальні цифри. Реальні компанії.", en: "Real numbers. Real companies.", cs: "Skutečná čísla. Skutečné firmy." },
+  "cases.title": { uk: "Реальні цифри.<br>Реальні компанії.", en: "Real numbers.<br>Real companies.", cs: "Skutečná čísla.<br>Skutečné firmy." },
+  "cases.c1.tag": { uk: "Гостинність", en: "Hospitality", cs: "Pohostinství" },
+  "cases.c1.company": { uk: "Мережа апартаментів, Карлові Вари · 28 об'єктів", en: "Apartment network, Karlovy Vary · 28 units", cs: "Síť apartmánů, Karlovy Vary · 28 objektů" },
+  "cases.c1.desc": { uk: "Обробка бронювань, відповіді гостям та управління цінами велися вручну 4 операторами. Після AI X-Ray і 2 агентів — 3 оператори звільнилися для розвитку.", en: "Booking processing, guest responses and pricing were done manually by 4 operators. After AI X-Ray and 2 agents — 3 operators freed up for growth.", cs: "Zpracování rezervací, odpovědi hostům a správa cen probíhaly ručně 4 operátory. Po AI X-Ray a 2 agentech — 3 operátoři se uvolnili pro rozvoj." },
+  "cases.c1.m1": { uk: "економія на місяць", en: "savings per month", cs: "úspora za měsíc" },
+  "cases.c1.m2": { uk: "заявок автоматично", en: "requests automated", cs: "žádostí automaticky" },
+  "cases.c1.m3": { uk: "час відповіді гостям", en: "guest response time", cs: "doba odpovědi hostům" },
+  "cases.c1.quote": { uk: "\"Я думав що потрібен новий співробітник. Виявилось потрібен агент. Окупилося за 3 тижні.\"<div class=\"case-author\">— CEO · побажав залишитися анонімним</div>", en: "\"I thought I needed a new employee. Turns out I needed an agent. Paid for itself in 3 weeks.\"<div class=\"case-author\">— CEO · preferred to stay anonymous</div>", cs: "\"Myslel jsem, že potřebuji nového zaměstnance. Ukázalo se, že potřebuji agenta. Zaplatilo se to za 3 týdny.\"<div class=\"case-author\">— CEO · přál si zůstat anonymní</div>" },
+  "cases.c2.tag": { uk: "B2B Агентство", en: "B2B Agency", cs: "B2B Agentura" },
+  "cases.c2.company": { uk: "IT-агентство, Прага · 23 людини", en: "IT agency, Prague · 23 people", cs: "IT agentura, Praha · 23 lidí" },
+  "cases.c2.desc": { uk: "Менеджери витрачали 22 год/тижд на обробку заявок, складання КП та follow-up. Три AI-агенти скоротили рутину до 3 годин. Команда зайнялася реальною роботою.", en: "Managers spent 22 hrs/week processing requests, creating proposals and follow-ups. Three AI agents cut routine to 3 hours. Team focused on real work.", cs: "Manažeři trávili 22 hod/týden zpracováním žádostí, tvorbou nabídek a follow-upy. Tři AI agenti zkrátili rutinu na 3 hodiny. Tým se zaměřil na skutečnou práci." },
+  "cases.c2.m1": { uk: "ефект на місяць", en: "monthly effect", cs: "efekt za měsíc" },
+  "cases.c2.m2": { uk: "зекономлено", en: "saved", cs: "uspořeno" },
+  "cases.c2.m3": { uk: "конверсія лідів", en: "lead conversion", cs: "konverze leadů" },
+  "cases.c2.quote": { uk: "\"OMNEX зробив те що ми намагалися зробити 2 роки. За 14 днів.\"<div class=\"case-author\">— CEO, IT-агентство, Прага</div>", en: "\"OMNEX did what we tried to do for 2 years. In 14 days.\"<div class=\"case-author\">— CEO, IT agency, Prague</div>", cs: "\"OMNEX udělal to, o co jsme se snažili 2 roky. Za 14 dní.\"<div class=\"case-author\">— CEO, IT agentura, Praha</div>" },
+  "cases.c3.tag": { uk: "Нерухомість", en: "Real Estate", cs: "Nemovitosti" },
+  "cases.c3.company": { uk: "Агентство нерухомості, Пльзень · 12 агентів", en: "Real estate agency, Plzeň · 12 agents", cs: "Realitní kancelář, Plzeň · 12 agentů" },
+  "cases.c3.desc": { uk: "CRM велася вручну, ліди кваліфікувалися по телефону, follow-up забувався. AI X-Ray знайшов €2,600/міс втрат. Агент кваліфікації запущений за 10 днів.", en: "CRM was manual, leads qualified by phone, follow-ups forgotten. AI X-Ray found €2,600/mo in losses. Qualification agent launched in 10 days.", cs: "CRM bylo ruční, leady se kvalifikovaly telefonicky, follow-upy se zapomínaly. AI X-Ray našel €2 600/měs ztrát. Agent kvalifikace spuštěn za 10 dní." },
+  "cases.c3.m1": { uk: "втрат знайдено", en: "losses found", cs: "nalezených ztrát" },
+  "cases.c3.m2": { uk: "втрачених лідів", en: "lost leads", cs: "ztracených leadů" },
+  "cases.c3.m3": { uk: "до першого результату", en: "to first results", cs: "do prvních výsledků" },
+  "cases.c3.quote": { uk: "\"За €390 отримав аналіз який консультант продав би мені за €3,000.\"<div class=\"case-author\">— Founder, агентство нерухомості</div>", en: "\"For €390 I got analysis that a consultant would sell me for €3,000.\"<div class=\"case-author\">— Founder, real estate agency</div>", cs: "\"Za €390 jsem dostal analýzu, kterou by mi konzultant prodal za €3 000.\"<div class=\"case-author\">— Zakladatel, realitní kancelář</div>" },
+  "cases.c4.company": { uk: "Інтернет-магазин, Братислава · 35 SKU, 800 замовлень/міс", en: "Online store, Bratislava · 35 SKUs, 800 orders/mo", cs: "E-shop, Bratislava · 35 SKU, 800 objednávek/měs" },
+  "cases.c4.desc": { uk: "Підтримка клієнтів — 80% однотипних питань. Відповіді займали 2 менеджерів full-time. Агент підтримки + агент повернень скоротили FTE на 1.5 ставки.", en: "Customer support — 80% repetitive questions. Responses took 2 managers full-time. Support + returns agents cut 1.5 FTEs.", cs: "Zákaznická podpora — 80 % opakujících se otázek. Odpovědi zabraly 2 manažery na plný úvazek. Agent podpory + agent vratek snížily FTE o 1,5 úvazku." },
+  "cases.c4.m1": { uk: "економія ФОП/міс", en: "payroll savings/mo", cs: "úspora mzdových/měs" },
+  "cases.c4.m2": { uk: "питань вирішує AI", en: "questions resolved by AI", cs: "otázek řeší AI" },
+  "cases.c4.m3": { uk: "оцінка підтримки", en: "support rating", cs: "hodnocení podpory" },
+  "cases.c4.quote": { uk: "\"Клієнти стали задоволенішими, а команда займається розвитком магазину.\"<div class=\"case-author\">— Co-founder, e-commerce, Братислава</div>", en: "\"Customers became happier and the team focuses on growing the store.\"<div class=\"case-author\">— Co-founder, e-commerce, Bratislava</div>", cs: "\"Zákazníci jsou spokojenější a tým se věnuje rozvoji obchodu.\"<div class=\"case-author\">— Co-founder, e-commerce, Bratislava</div>" },
 
   // ── CTA ──
   "cta.label": { uk: "Почніть сьогодні", en: "Start today", cs: "Začněte dnes" },
-  "cta.title.line1": { uk: "Дізнайтеся де ваш бізнес", en: "Find out where your business", cs: "Zjistěte, kde váš byznys" },
-  "cta.title.line2": { uk: "втрачає гроші.", en: "loses money.", cs: "ztrácí peníze." },
-  "cta.title.price": { uk: "За €390.", en: "For €390.", cs: "Za €390." },
-  "cta.sub": {
-    uk: "AI X-Ray — 20-сторінковий персональний аналіз. 72 години. Гарантія повернення. Або запишіться на безкоштовну 30-хвилинну розмову з нашим експертом.",
-    en: "AI X-Ray — 20-page personal analysis. 72 hours. Money-back guarantee. Or sign up for a free 30-minute call with our expert.",
-    cs: "AI X-Ray — 20stránková osobní analýza. 72 hodin. Garance vrácení peněz. Nebo se zapište na bezplatný 30minutový hovor s naším expertem."
-  },
-  "cta.btn.xray": { uk: "Замовити AI X-Ray — €390 →", en: "Order AI X-Ray — €390 →", cs: "Objednat AI X-Ray — €390 →" },
-  "cta.btn.consult": { uk: "Безкоштовна консультація", en: "Free consultation", cs: "Bezplatná konzultace" },
-  "cta.guarantee": {
-    uk: "Гарантія повернення 7 днів · Без підписки · GDPR Compliant · Відповімо за 4 години",
-    en: "7-day money-back guarantee · No subscription · GDPR Compliant · We respond within 4 hours",
-    cs: "7denní garance vrácení peněz · Bez předplatného · GDPR Compliant · Odpovíme do 4 hodin"
-  },
+  "cta.title": { uk: "Дізнайтеся де ваш бізнес<br>втрачає гроші.<br><span class=\"text-accent\">За €390.</span>", en: "Find out where your business<br>loses money.<br><span class=\"text-accent\">For €390.</span>", cs: "Zjistěte, kde váš byznys<br>ztrácí peníze.<br><span class=\"text-accent\">Za €390.</span>" },
+  "cta.sub": { uk: "AI X-Ray — 20-сторінковий персональний аналіз. 72 години. Гарантія повернення. Або запишіться на безкоштовну 30-хвилинну розмову з нашим експертом.", en: "AI X-Ray — 20-page personal analysis. 72 hours. Money-back guarantee. Or sign up for a free 30-minute call with our expert.", cs: "AI X-Ray — 20stránková osobní analýza. 72 hodin. Garance vrácení peněz. Nebo se zapište na bezplatný 30minutový hovor s naším expertem." },
+  "cta.btn1": { uk: "Замовити AI X-Ray — €390 →", en: "Order AI X-Ray — €390 →", cs: "Objednat AI X-Ray — €390 →" },
+  "cta.btn2": { uk: "Безкоштовна консультація", en: "Free consultation", cs: "Bezplatná konzultace" },
+  "cta.note": { uk: "Гарантія повернення 7 днів · Без підписки · GDPR Compliant · Відповімо за 4 години", en: "7-day money-back guarantee · No subscription · GDPR Compliant · We respond within 4 hours", cs: "7denní garance vrácení peněz · Bez předplatného · GDPR Compliant · Odpovíme do 4 hodin" },
 
   // ── FAQ ──
   "faq.label": { uk: "Питання та відповіді", en: "Questions & Answers", cs: "Otázky a odpovědi" },
-  "faq.title": { uk: "Все що ви хотіли запитати", en: "Everything you wanted to ask", cs: "Vše, co jste chtěli vědět" },
+  "faq.title": { uk: "Все що ви хотіли<br>запитати", en: "Everything you<br>wanted to ask", cs: "Vše, co jste chtěli<br>vědět" },
+  "faq.q1.q": { uk: "Що саме я отримаю за €390? <span class=\"faq-icon\">+</span>", en: "What exactly will I get for €390? <span class=\"faq-icon\">+</span>", cs: "Co přesně dostanu za €390? <span class=\"faq-icon\">+</span>" },
+  "faq.q1.a": { uk: "Персоналізований 20-сторінковий звіт: карта операційних втрат в €, топ-3 AI-можливості з ROI-розрахунком, 90-денний план дій, бенчмарк по галузі. Плюс 30-хвилинний дзвінок-розбір з нашим експертом. Готово за 72 години від моменту оплати.", en: "A personalized 20-page report: operational loss map in €, top-3 AI opportunities with ROI calculation, 90-day action plan, industry benchmark. Plus a 30-minute call with our expert. Ready within 72 hours from payment.", cs: "Personalizovaná 20stránková zpráva: mapa operačních ztrát v €, top 3 AI příležitosti s ROI výpočtem, 90denní akční plán, benchmark oboru. Plus 30minutový hovor s naším expertem. Hotovo do 72 hodin od platby." },
+  "faq.q2.q": { uk: "Чи потрібні нам IT-спеціалісти для роботи з OMNEX? <span class=\"faq-icon\">+</span>", en: "Do we need IT specialists to work with OMNEX? <span class=\"faq-icon\">+</span>", cs: "Potřebujeme IT specialisty pro práci s OMNEX? <span class=\"faq-icon\">+</span>" },
+  "faq.q2.a": { uk: "Ні. Ви керуєте результатами через Control Panel — без коду і без технічних знань. Все налаштування, інтеграцію і підтримку робить наша команда. Ваша роль: заповнити анкету, прочитати звіт, прийняти рішення.", en: "No. You manage results via Control Panel — no code, no technical knowledge needed. Our team handles all setup, integration and support. Your role: fill the questionnaire, read the report, make decisions.", cs: "Ne. Výsledky spravujete přes Control Panel — bez kódu a bez technických znalostí. Veškeré nastavení, integraci i podporu zajišťuje náš tým. Vaše role: vyplnit dotazník, přečíst zprávu, rozhodnout se." },
+  "faq.q3.q": { uk: "Як швидко з'являться перші результати? <span class=\"faq-icon\">+</span>", en: "How quickly will first results appear? <span class=\"faq-icon\">+</span>", cs: "Jak rychle se objeví první výsledky? <span class=\"faq-icon\">+</span>" },
+  "faq.q3.a": { uk: "AI X-Ray — результат через 72 години. Перший агент в рамках Pilot — працює через 14 днів. Повна система Core — 3–4 тижні від старту. Це значно швидше ніж у будь-якого конкурента.", en: "AI X-Ray — results in 72 hours. First agent in Pilot — working in 14 days. Full Core system — 3–4 weeks from start. Significantly faster than any competitor.", cs: "AI X-Ray — výsledky za 72 hodin. První agent v Pilotu — funguje za 14 dní. Plný systém Core — 3–4 týdny od startu. Výrazně rychlejší než jakýkoliv konkurent." },
+  "faq.q4.q": { uk: "Що якщо ми вже пробували AI і це не спрацювало? <span class=\"faq-icon\">+</span>", en: "What if we already tried AI and it didn't work? <span class=\"faq-icon\">+</span>", cs: "Co když jsme už AI zkoušeli a nefungovalo to? <span class=\"faq-icon\">+</span>" },
+  "faq.q4.a": { uk: "Це найчастіший випадок. 90% невдач трапляються тому що починають з інструменту, а не з проблеми. AI X-Ray починає з проблеми: де саме біль, скільки вона коштує, який інструмент закриє саме її. Цей порядок кардинально змінює результат.", en: "This is the most common case. 90% of failures happen because people start with a tool, not a problem. AI X-Ray starts with the problem: where exactly it hurts, how much it costs, which tool will fix it. This order changes everything.", cs: "To je nejčastější případ. 90 % neúspěchů se děje, protože se začíná nástrojem, ne problémem. AI X-Ray začíná problémem: kde přesně bolí, kolik to stojí, jaký nástroj to vyřeší. Tento pořádek vše zásadně mění." },
+  "faq.q5.q": { uk: "Наскільки безпечні наші дані? <span class=\"faq-icon\">+</span>", en: "How safe is our data? <span class=\"faq-icon\">+</span>", cs: "Jak bezpečná jsou naše data? <span class=\"faq-icon\">+</span>" },
+  "faq.q5.a": { uk: "Всі дані обробляються в ЄС, відповідають вимогам GDPR. Ми підписуємо DPA (Data Processing Agreement). Дані анкети використовуються виключно для підготовки звіту і видаляються за запитом через 90 днів. Для Enterprise доступний on-premise варіант.", en: "All data processed in the EU, GDPR compliant. We sign DPA (Data Processing Agreement). Survey data is used exclusively for report preparation and deleted upon request after 90 days. On-premise option available for Enterprise.", cs: "Všechna data se zpracovávají v EU, v souladu s GDPR. Podepisujeme DPA (Data Processing Agreement). Data z dotazníku se používají výhradně pro přípravu zprávy a na požádání se mažou po 90 dnech. Pro Enterprise je k dispozici on-premise varianta." },
+  "faq.q6.q": { uk: "Що означає назва OMNEX? <span class=\"faq-icon\">+</span>", en: "What does the name OMNEX mean? <span class=\"faq-icon\">+</span>", cs: "Co znamená název OMNEX? <span class=\"faq-icon\">+</span>" },
+  "faq.q6.a": { uk: "OMNEX — від Omni (все, всюди) + Nexus (мережа, зв'язок). Це відображає суть платформи: багаторукий інтелект який працює паралельно в усіх напрямках вашого бізнесу. Зареєстровано як товарний знак в ЄС.", en: "OMNEX — from Omni (everything, everywhere) + Nexus (network, connection). This reflects the platform's essence: a multi-armed intelligence working in parallel across all directions of your business. Registered as a trademark in the EU.", cs: "OMNEX — z Omni (vše, všude) + Nexus (síť, spojení). To odráží podstatu platformy: mnohostranná inteligence pracující paralelně ve všech směrech vašeho byznysu. Registrováno jako ochranná známka v EU." },
 
   // ── FOOTER ──
   "footer.products": { uk: "Продукти", en: "Products", cs: "Produkty" },
