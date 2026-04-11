@@ -1,0 +1,406 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px;padding-bottom:14px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.nav-btn{padding:6px 14px;font-size:12px;border:0.5px solid var(--color-border-secondary);border-radius:20px;cursor:pointer;background:transparent;color:var(--color-text-secondary);transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:var(--color-background-secondary)}
+.nav-btn.active{background:var(--color-text-primary);color:var(--color-background-primary);border-color:var(--color-text-primary)}
+.section{display:none}.section.active{display:block}
+.hero{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:24px;margin-bottom:16px;text-align:center}
+.hero-badge{display:inline-block;font-size:11px;font-weight:500;padding:3px 10px;border-radius:10px;background:var(--color-background-info);color:var(--color-text-info);margin-bottom:12px}
+.hero-title{font-size:22px;font-weight:500;margin-bottom:8px;line-height:1.3}
+.hero-sub{font-size:14px;color:var(--color-text-secondary);line-height:1.6;max-width:480px;margin:0 auto}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:16px 20px;margin-bottom:12px}
+.card-title{font-size:14px;font-weight:500;margin-bottom:8px}
+.card-body{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+.featured{border:2px solid var(--color-border-info);background:var(--color-background-info)}
+.featured .card-title{color:var(--color-text-info)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;margin:2px;font-weight:500}
+.badge-g{background:var(--color-background-success);color:var(--color-text-success)}
+.badge-b{background:var(--color-background-info);color:var(--color-text-info)}
+.badge-r{background:var(--color-background-danger);color:var(--color-text-danger)}
+.badge-w{background:var(--color-background-warning);color:var(--color-text-warning)}
+.stat{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px;text-align:center}
+.stat-n{font-size:22px;font-weight:500;margin:4px 0}
+.stat-l{font-size:12px;color:var(--color-text-secondary)}
+.step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.step-num{min-width:28px;height:28px;border-radius:50%;background:var(--color-text-primary);color:var(--color-background-primary);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0}
+.step-t{font-size:13px;font-weight:500;margin-bottom:3px}
+.step-b{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.row-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:13px}
+.row-item:last-child{border:none}
+.muted{color:var(--color-text-secondary);font-size:12px}
+.vs{display:flex;gap:8px;margin-bottom:8px;align-items:stretch;font-size:12px}
+.vs-l{flex:1;background:var(--color-background-danger);border-radius:6px;padding:8px 10px;color:var(--color-text-danger)}
+.vs-r{flex:1;background:var(--color-background-success);border-radius:6px;padding:8px 10px;color:var(--color-text-success)}
+.vs-m{display:flex;align-items:center;color:var(--color-text-secondary);padding:0 4px;font-size:14px}
+.highlight{background:var(--color-background-warning);border-radius:var(--border-radius-md);padding:14px 16px;margin-bottom:12px;font-size:13px;color:var(--color-text-warning);line-height:1.6}
+.big-price{font-size:38px;font-weight:500;color:var(--color-text-primary)}
+.strike{text-decoration:line-through;color:var(--color-text-tertiary);font-size:20px;margin-left:8px}
+.report-block{background:var(--color-background-secondary);border-radius:8px;padding:12px 14px;margin-bottom:8px}
+.report-title{font-size:13px;font-weight:500;margin-bottom:4px}
+.report-body{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.tag{font-size:11px;border:0.5px solid var(--color-border-tertiary);border-radius:4px;padding:2px 7px;color:var(--color-text-secondary);display:inline-block;margin:2px}
+.action-btn{display:inline-block;margin-top:14px;padding:8px 18px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);font-size:13px;cursor:pointer;background:transparent;color:var(--color-text-primary);transition:all .2s}
+.action-btn:hover{background:var(--color-background-secondary)}
+.funnel{display:flex;flex-direction:column;gap:6px;margin:12px 0}
+.f-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-radius:6px;font-size:13px;background:var(--color-background-secondary)}
+.f-row.active{background:var(--color-background-success)}
+.timeline-row{display:flex;margin-bottom:12px;gap:12px;align-items:flex-start}
+.t-label{min-width:72px;font-size:11px;color:var(--color-text-secondary);font-weight:500;padding-top:2px}
+.t-bar{flex:1;background:var(--color-background-secondary);border-radius:6px;padding:10px 14px;font-size:12px;line-height:1.5}
+</style>
+<h2 class="sr-only">Продукт AI X-Ray: полное описание от идеи до запуска</h2>
+
+<div class="nav">
+  <button class="nav-btn active" onclick="show('concept')">Концепция</button>
+  <button class="nav-btn" onclick="show('product')">Продукт</button>
+  <button class="nav-btn" onclick="show('delivery')">Доставка</button>
+  <button class="nav-btn" onclick="show('value')">Ценность</button>
+  <button class="nav-btn" onclick="show('pitch')">Питч</button>
+  <button class="nav-btn" onclick="show('sales')">Продажи</button>
+  <button class="nav-btn" onclick="show('upsell')">Апсейл</button>
+  <button class="nav-btn" onclick="show('ops')">Операции</button>
+</div>
+
+<!-- CONCEPT -->
+<div id="concept" class="section active">
+  <div class="hero">
+    <div class="hero-badge">Входной продукт · €390</div>
+    <div class="hero-title">AI X-Ray — рентген вашего бизнеса</div>
+    <div class="hero-sub">Персонализированный AI-анализ компании: где теряются деньги, время и клиенты — и точный план как это исправить за 90 дней.</div>
+  </div>
+
+  <div class="highlight">
+    Инсайт из исследования: 67% владельцев SMB <strong style="font-weight:500">знают что есть проблемы</strong>, но не знают где именно и сколько они стоят. Они не покупают "AI" — они покупают <strong style="font-weight:500">ответ на вопрос "где я теряю деньги?"</strong>
+  </div>
+
+  <div class="grid3">
+    <div class="stat"><div class="stat-l">Цена продукта</div><div class="stat-n">€390</div><div class="stat-l">разовый платёж</div></div>
+    <div class="stat"><div class="stat-l">Воспринимаемая ценность</div><div class="stat-n">€2,500+</div><div class="stat-l">консалтинг по рынку</div></div>
+    <div class="stat"><div class="stat-l">Наши затраты (время)</div><div class="stat-n">2–3 ч</div><div class="stat-l">на один отчёт</div></div>
+  </div>
+
+  <div class="card featured">
+    <div class="card-title">Почему именно этот продукт — 5 причин попадания в критерии</div>
+    <div class="card-body">
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+        <div><span class="badge badge-g">✓</span> <strong style="font-weight:500">Полезен с первой секунды</strong> — клиент получает 20-30 стр. конкретного анализа именно своего бизнеса. Не общие советы.</div>
+        <div><span class="badge badge-g">✓</span> <strong style="font-weight:500">Ценность ×6</strong> — консультант за такой анализ берёт €150–200/час × 12–15 ч = €2,000–3,000. Мы берём €390.</div>
+        <div><span class="badge badge-g">✓</span> <strong style="font-weight:500">AI делает 90% работы</strong> — клиент заполняет анкету, AI генерирует отчёт, мы финализируем за 1–2 ч.</div>
+        <div><span class="badge badge-g">✓</span> <strong style="font-weight:500">Объяснение в 10 секунд</strong> — "Мы делаем рентген вашего бизнеса и показываем где вы теряете деньги."</div>
+        <div><span class="badge badge-g">✓</span> <strong style="font-weight:500">Нет вопроса купить/не купить</strong> — любой CEO хочет знать, где дыры. За €390 это очевидное решение.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Почему НЕ AI-чатбот / НЕ автоматизация как первый продукт</div>
+    <div class="card-body">
+      <div class="vs"><div class="vs-l">Автоматизация как первый шаг — клиент не знает что автоматизировать, нет доверия, нет данных о процессах, длинный цикл продажи €2K+</div><div class="vs-m">↔</div><div class="vs-r">AI X-Ray — клиент сразу понимает ценность, получает документ в руки, видит ROI до внедрения, цикл продажи 1 звонок</div></div>
+    </div>
+  </div>
+  <button class="action-btn" onclick="sendPrompt('Углуби концепцию: какие конкуренты продают похожий продукт и как нам дифференцироваться?')">Анализ конкурентов ↗</button>
+</div>
+
+<!-- PRODUCT -->
+<div id="product" class="section">
+  <div class="card featured">
+    <div class="card-title">Что клиент получает: структура отчёта AI X-Ray</div>
+    <div class="card-body" style="margin-top:6px">
+      <div class="report-block">
+        <div class="report-title">📊 Блок 1: Диагностика операций (3–5 стр.)</div>
+        <div class="report-body">Карта текущих процессов компании: где тратится время, где теряются данные, какие задачи делают люди которые мог бы делать AI. Визуальная схема + список находок.</div>
+      </div>
+      <div class="report-block">
+        <div class="report-title">💰 Блок 2: Калькулятор потерь (2–3 стр.)</div>
+        <div class="report-body">Конкретные цифры: "Ваша команда тратит 47 ч/нед на ручные задачи. При стоимости часа €25 = €61,100/год. Автоматизация этих задач стоит €990/мес = экономия €4,000/мес." Цифры реальные, не абстрактные.</div>
+      </div>
+      <div class="report-block">
+        <div class="report-title">🎯 Блок 3: Топ-3 возможности для AI (5–7 стр.)</div>
+        <div class="report-body">Три конкретные точки внедрения AI с: описанием решения, ожидаемым ROI, сложностью внедрения (1–10), сроком окупаемости. Ранжированы по impact/effort.</div>
+      </div>
+      <div class="report-block">
+        <div class="report-title">🗺️ Блок 4: 90-дневный план действий (3–4 стр.)</div>
+        <div class="report-body">Пошаговый роадмап: что делать в первые 30, 60 и 90 дней. Что нужно: бюджет, инструменты, ресурсы. Без воды — конкретные шаги.</div>
+      </div>
+      <div class="report-block">
+        <div class="report-title">🏆 Блок 5: Бенчмарк по отрасли (2–3 стр.)</div>
+        <div class="report-body">Сравнение с конкурентами: "Средний отель вашего сегмента автоматизировал X, Y, Z. Вы пока этого не сделали. Вот что вы теряете относительно рынка." Создаёт urgency.</div>
+      </div>
+      <div style="margin-top:8px;font-size:12px;color:var(--color-text-secondary)">Итого: 18–25 страниц персонализированного документа. Формат: брендированный PDF + краткая презентация (10 слайдов).</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title">Данные которые мы получаем от клиента</div>
+      <div class="card-body">
+        <div style="margin-bottom:6px;font-size:12px"><strong style="font-weight:500">Онлайн-анкета (45 мин):</strong></div>
+        <span class="tag">Кол-во сотрудников и роли</span>
+        <span class="tag">Основные процессы (топ-5)</span>
+        <span class="tag">Используемые инструменты</span>
+        <span class="tag">Топ-3 боли и потери</span>
+        <span class="tag">Кол-во клиентов/лидов в мес</span>
+        <span class="tag">Средний чек</span>
+        <span class="tag">Время на ручные задачи/нед</span>
+        <span class="tag">Сайт компании</span>
+        <span class="tag">Отрасль и вертикаль</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Что AI анализирует дополнительно</div>
+      <div class="card-body">
+        <span class="tag">Сайт компании (автопарсинг)</span>
+        <span class="tag">Google Reviews / отзывы</span>
+        <span class="tag">LinkedIn профиль</span>
+        <span class="tag">Публичные данные конкурентов</span>
+        <span class="tag">Отраслевые бенчмарки</span>
+        <span class="tag">Вакансии (показывают боли)</span>
+        <div style="margin-top:8px;font-size:12px;color:var(--color-text-secondary)">Клиент даёт минимум — AI собирает максимум. Отчёт выглядит как глубокое исследование.</div>
+      </div>
+    </div>
+  </div>
+  <button class="action-btn" onclick="sendPrompt('Напиши полную структуру анкеты для AI X-Ray: все вопросы, логику и формат для Typeform/Tally')">Написать анкету ↗</button>
+</div>
+
+<!-- DELIVERY -->
+<div id="delivery" class="section">
+  <div class="card">
+    <div class="card-title">Процесс доставки — от оплаты до PDF</div>
+    <div style="margin-top:10px">
+      <div class="step"><div class="step-num">1</div><div><div class="step-t">Клиент оплачивает €390 и получает ссылку на анкету</div><div class="step-b">Automated: Stripe → Typeform. Время нашей команды: 0 минут.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-t">Клиент заполняет анкету (45 мин)</div><div class="step-b">42 вопроса + загрузка документов (опционально). Автоматическое сохранение в Airtable.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-t">AI генерирует черновик отчёта (автоматически)</div><div class="step-b">Make.com trigger → Claude API → структурированный драфт 18-25 стр. Время: ~8 минут. Наше время: 0.</div></div></div>
+      <div class="step"><div class="step-num">4</div><div><div class="step-t">Наш аналитик финализирует (1.5–2 ч)</div><div class="step-b">Проверка цифр, добавление вертикальной экспертизы, брендирование. Персонализация которую AI не сделает.</div></div></div>
+      <div class="step"><div class="step-num">5</div><div><div class="step-t">Доставка клиенту + 30-мин созвон</div><div class="step-b">Email с PDF + приглашение на "разбор отчёта". Созвон — не опция, а часть продукта. Там происходит апсейл.</div></div></div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title">Технический стек (всё no-code)</div>
+      <div class="card-body">
+        <div class="row-item"><span>Оплата</span><span class="muted">Stripe / Teya</span></div>
+        <div class="row-item"><span>Анкета</span><span class="muted">Tally / Typeform</span></div>
+        <div class="row-item"><span>База данных</span><span class="muted">Airtable / Notion</span></div>
+        <div class="row-item"><span>Автоматизация</span><span class="muted">Make.com</span></div>
+        <div class="row-item"><span>AI генерация</span><span class="muted">Claude API</span></div>
+        <div class="row-item"><span>Документ</span><span class="muted">Google Docs / Canva</span></div>
+        <div class="row-item"><span>Созвон</span><span class="muted">Calendly + Zoom</span></div>
+        <div class="row-item"><span>Доставка</span><span class="muted">Gmail / Notion page</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Экономика одного X-Ray</div>
+      <div class="card-body">
+        <div class="row-item"><span>Доход</span><span style="font-weight:500;color:var(--color-text-success)">+€390</span></div>
+        <div class="row-item"><span>Claude API (генерация)</span><span class="muted">-€1.50</span></div>
+        <div class="row-item"><span>Make.com + tools</span><span class="muted">-€3</span></div>
+        <div class="row-item"><span>Рабочее время (2 ч × €30)</span><span class="muted">-€60</span></div>
+        <div class="row-item"><span>Созвон (30 мин)</span><span class="muted">-€15</span></div>
+        <div class="row-item" style="border-top:1px solid var(--color-border-secondary);padding-top:10px;margin-top:4px"><span style="font-weight:500">Маржа на один отчёт</span><span style="font-weight:500;color:var(--color-text-success)">~€310 (79%)</span></div>
+        <div style="font-size:12px;color:var(--color-text-secondary);margin-top:8px">При 10 отчётах/мес = €3,100 clean profit без учёта апсейлов</div>
+      </div>
+    </div>
+  </div>
+  <button class="action-btn" onclick="sendPrompt('Создай детальный prompt для Claude API для генерации AI X-Ray отчёта на основе данных анкеты')">Написать AI Prompt ↗</button>
+</div>
+
+<!-- VALUE -->
+<div id="value" class="section">
+  <div class="card featured">
+    <div class="card-title">Почему воспринимаемая ценность €2,500 при цене €390</div>
+    <div class="card-body">
+      <div style="margin-bottom:14px;margin-top:6px">
+        <div style="font-size:13px;font-weight:500;margin-bottom:6px">Аналоги на рынке:</div>
+        <div class="row-item"><span>McKinsey / Big4 бизнес-аудит</span><span style="color:var(--color-text-danger)">€15,000–50,000</span></div>
+        <div class="row-item"><span>Местный бизнес-консультант</span><span style="color:var(--color-text-danger)">€150–200/ч × 15 ч = €2,500</span></div>
+        <div class="row-item"><span>AI-стратегия от агентства</span><span style="color:var(--color-text-danger)">€3,000–8,000</span></div>
+        <div class="row-item"><span>Сделать самому (opportunity cost)</span><span style="color:var(--color-text-danger)">40–60 ч × CEO time</span></div>
+        <div class="row-item" style="background:var(--color-background-success);padding:8px;border-radius:6px;border:none;margin-top:6px"><span style="color:var(--color-text-success);font-weight:500">AI X-Ray от нас</span><span style="color:var(--color-text-success);font-weight:500">€390 за 3 дня</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Психология покупки — почему "не купить" не работает</div>
+    <div class="card-body">
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+        <div><span class="badge badge-b">Любопытство</span> "Хочу знать где я теряю деньги" — универсальное желание каждого CEO</div>
+        <div><span class="badge badge-b">FOMO</span> "Конкуренты возможно это уже знают и используют"</div>
+        <div><span class="badge badge-b">Low risk</span> €390 — это меньше одного обеда с партнёром в хорошем ресторане</div>
+        <div><span class="badge badge-b">Tangible</span> Клиент получает документ. Не обещание — физический артефакт с его именем</div>
+        <div><span class="badge badge-b">No commitment</span> "Это не внедрение — это просто анализ. Можете ничего не делать после"</div>
+        <div><span class="badge badge-b">Urgency</span> "Каждый месяц без анализа = потери продолжаются. Сегодня €390 = завтра сэкономленные тысячи"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="stat"><div class="stat-l">Среднее найденное потерь у SMB</div><div class="stat-n">€3,200</div><div class="stat-l">в месяц (по данным исследований)</div></div>
+    <div class="stat"><div class="stat-l">ROI для клиента только от отчёта</div><div class="stat-n">8×</div><div class="stat-l">ещё до внедрения</div></div>
+  </div>
+</div>
+
+<!-- PITCH -->
+<div id="pitch" class="section">
+  <div class="card featured">
+    <div class="card-title">Питч в одном абзаце (10 секунд)</div>
+    <div class="card-body" style="font-size:15px;line-height:1.7;font-style:italic;margin-top:4px">
+      "Мы делаем AI-рентген вашего бизнеса — находим где именно вы теряете деньги, время и клиентов, и даём точный план как это исправить. Стоит €390, готово за 3 дня, консультант за такой анализ берёт €2,500. Хотите узнать, сколько вы теряете прямо сейчас?"
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Тексты для разных каналов</div>
+    <div class="card-body">
+      <div class="report-block">
+        <div class="report-title">LinkedIn пост (органика)</div>
+        <div class="report-body">"Мы проанализировали 47 бизнесов за последние 6 месяцев. Средний владелец SMB теряет €3,200/мес на задачах которые AI делает автоматически. Самые частые потери: [список]. Мы делаем полный AI-рентген за €390 (консультант берёт €2,500). Готово за 72 часа. Ссылка в комментарии 👇"</div>
+      </div>
+      <div class="report-block">
+        <div class="report-title">Cold outreach (email / LinkedIn DM)</div>
+        <div class="report-body">"[Имя], посмотрел ваш сайт и вакансии — вижу что вы ищете [роль]. Обычно это сигнал что есть процессы которые перегружают команду. Мы делаем AI-рентген бизнеса: находим топ-3 места где теряются деньги и даём план автоматизации. За €390, за 3 дня. Хотите пример отчёта для [отрасль]?"</div>
+      </div>
+      <div class="report-block">
+        <div class="report-title">Лендинг — главный заголовок</div>
+        <div class="report-body">"Ваш бизнес теряет €X в месяц. Вы просто ещё не знаете где. AI X-Ray — персональный анализ за 72 часа. €390 вместо €2,500 у консультанта."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Типичные возражения и ответы</div>
+    <div class="card-body">
+      <div style="margin-bottom:10px"><span class="badge badge-w">❓</span> "А что если в отчёте не будет ничего нового?"<br><div style="font-size:12px;margin-top:4px;padding:8px;background:var(--color-background-secondary);border-radius:6px">Ответ: "Если в течение 7 дней вы решите что отчёт не дал никакой ценности — вернём деньги. Но из 47 клиентов этого не попросил ни один."</div></div>
+      <div style="margin-bottom:10px"><span class="badge badge-w">❓</span> "У нас специфический бизнес, это работает?"<br><div style="font-size:12px;margin-top:4px;padding:8px;background:var(--color-background-secondary);border-radius:6px">Ответ: "Именно поэтому мы делаем индивидуальный анализ, а не шаблон. Анкета адаптирована под вашу отрасль."</div></div>
+      <div><span class="badge badge-w">❓</span> "Это просто ChatGPT, я сам могу сделать"<br><div style="font-size:12px;margin-top:4px;padding:8px;background:var(--color-background-secondary);border-radius:6px">Ответ: "Конечно можете. Это займёт 40+ часов вашего времени. Сколько стоит час вашего времени? Если больше €10 — мы дешевле."</div></div>
+    </div>
+  </div>
+  <button class="action-btn" onclick="sendPrompt('Напиши полный текст лендинга для AI X-Ray: все блоки от заголовка до CTA, включая FAQ и социальные доказательства')">Написать лендинг ↗</button>
+</div>
+
+<!-- SALES -->
+<div id="sales" class="section">
+  <div class="card">
+    <div class="card-title">Воронка продаж AI X-Ray</div>
+    <div class="funnel">
+      <div class="f-row"><div><strong style="font-weight:500">Трафик</strong> — LinkedIn, cold email, партнёры</div><div class="muted">100%</div></div>
+      <div class="f-row"><div>Скачал пример отчёта / посмотрел лендинг</div><div class="muted">40%</div></div>
+      <div class="f-row"><div>Нажал "Заказать AI X-Ray"</div><div class="muted">12%</div></div>
+      <div class="f-row active"><div style="color:var(--color-text-success);font-weight:500">Оплатил €390</div><div style="color:var(--color-text-success);font-weight:500">8–10%</div></div>
+      <div class="f-row active"><div style="color:var(--color-text-success);font-weight:500">Пришёл на разбор-созвон</div><div style="color:var(--color-text-success);font-weight:500">85% из купивших</div></div>
+      <div class="f-row active"><div style="color:var(--color-text-success);font-weight:500">Купил следующий шаг (€990+)</div><div style="color:var(--color-text-success);font-weight:500">40–50%</div></div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title">Каналы привлечения (с конверсией)</div>
+      <div class="card-body">
+        <div class="row-item"><span>LinkedIn outbound</span><span class="muted">Конв. 3–6%</span></div>
+        <div class="row-item"><span>Партнёры (бухгалтеры, юристы)</span><span class="muted">Конв. 8–15%</span></div>
+        <div class="row-item"><span>Реферал от клиентов</span><span class="muted">Конв. 20–35%</span></div>
+        <div class="row-item"><span>Google Ads (боль-запросы)</span><span class="muted">Конв. 2–4%</span></div>
+        <div class="row-item"><span>LinkedIn контент-маркетинг</span><span class="muted">Конв. 1–2%</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Метрики на 30-й день запуска</div>
+      <div class="card-body">
+        <div class="row-item"><span>Цель: X-Ray продаж</span><span style="font-weight:500">10–15 штук</span></div>
+        <div class="row-item"><span>Выручка X-Ray</span><span style="font-weight:500">€3,900–5,850</span></div>
+        <div class="row-item"><span>Апсейлы (40%)</span><span style="font-weight:500">+€4,000–7,000</span></div>
+        <div class="row-item"><span>Итого Мес 1</span><span style="font-weight:500;color:var(--color-text-success)">~€10K</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- UPSELL -->
+<div id="upsell" class="section">
+  <div class="highlight">
+    Главная цель AI X-Ray — не €390. Главная цель — <strong style="font-weight:500">получить 30-минутный разговор с CEO</strong>, где мы показываем найденные проблемы и переходим к решению. X-Ray — это билет в дверь.
+  </div>
+
+  <div class="card featured">
+    <div class="card-title">Лестница ценности — путь клиента после X-Ray</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="min-width:80px;text-align:right;font-size:12px;color:var(--color-text-secondary)">Стартует</div>
+        <div style="flex:1;background:var(--color-background-secondary);border-radius:8px;padding:12px">
+          <div style="font-size:13px;font-weight:500">AI X-Ray — €390</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">Анализ + план. Один раз. Доверие построено.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="min-width:80px;text-align:right;font-size:12px;color:var(--color-text-secondary)">40–50% идут дальше</div>
+        <div style="flex:1;background:var(--color-background-info);border-radius:8px;padding:12px;border:0.5px solid var(--color-border-info)">
+          <div style="font-size:13px;font-weight:500;color:var(--color-text-info)">AI Pilot — €2,490 разово</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">Внедряем агента #1 из X-Ray рекомендаций. 30 дней, реальный результат.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="min-width:80px;text-align:right;font-size:12px;color:var(--color-text-secondary)">60% пилотов → подписка</div>
+        <div style="flex:1;background:var(--color-background-success);border-radius:8px;padding:12px">
+          <div style="font-size:13px;font-weight:500;color:var(--color-text-success)">PRAGMA Subscription — €990–2,490/мес</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">Полный набор агентов + Control Panel. Долгосрочные отношения.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Скрипт разбора X-Ray (конец созвона)</div>
+    <div class="card-body">
+      <div style="padding:10px;background:var(--color-background-secondary);border-radius:6px;font-size:13px;font-style:italic;line-height:1.7">
+        "Итак, в вашем бизнесе мы нашли 3 точки потерь общим объёмом ~€3,800/мес. Самая быстрая — автоматизация обработки заявок. Сейчас ваша команда тратит на это 18 ч/нед. Мы можем запустить агента за 30 дней, который сократит это до 2 ч/нед. Пилот стоит €2,490 разово. Окупится за 5–6 недель. Хотите чтобы я подготовил точное предложение?"
+      </div>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div class="stat"><div class="stat-l">X-Ray → Pilot конверсия</div><div class="stat-n">40–50%</div><div class="stat-l">цель</div></div>
+    <div class="stat"><div class="stat-l">LTV клиента через X-Ray</div><div class="stat-n">€18K+</div><div class="stat-l">за 24 мес</div></div>
+    <div class="stat"><div class="stat-l">CAC через X-Ray</div><div class="stat-n">€390</div><div class="stat-l">самоокупаемый канал</div></div>
+  </div>
+</div>
+
+<!-- OPS -->
+<div id="ops" class="section">
+  <div class="card">
+    <div class="card-title">Запуск с нуля — таймлайн</div>
+    <div style="margin-top:8px">
+      <div class="timeline-row"><div class="t-label">День 1–3</div><div class="t-bar"><strong style="font-weight:500">Инфраструктура:</strong> Tally форма (анкета 42 вопроса) → Airtable → Make.com workflow → Claude API prompt. Настройка: 6–8 ч.</div></div>
+      <div class="timeline-row"><div class="t-label">День 4–5</div><div class="t-bar"><strong style="font-weight:500">Первый тест:</strong> Заполнить анкету самостоятельно, сгенерировать отчёт, оценить качество. Итерация prompt.</div></div>
+      <div class="timeline-row"><div class="t-label">День 6–7</div><div class="t-bar"><strong style="font-weight:500">Шаблон отчёта:</strong> Branding в Canva/Google Docs. Лендинг (1 страница на Webflow/Notion). Stripe оплата.</div></div>
+      <div class="timeline-row"><div class="t-label">День 8–10</div><div class="t-bar"><strong style="font-weight:500">Бета-тест:</strong> 2–3 клиента бесплатно (знакомые CEO). Собрать отзывы и цифры для кейсов.</div></div>
+      <div class="timeline-row"><div class="t-label">День 11–14</div><div class="t-bar"><strong style="font-weight:500">Первые продажи:</strong> LinkedIn outreach 50 контактов/день. Цель: 3 продажи в первые 2 недели.</div></div>
+      <div class="timeline-row"><div class="t-label">Мес 2–3</div><div class="t-bar"><strong style="font-weight:500">Масштабирование:</strong> Партнёрская программа, контент, апсейлы. Цель: 10–15 X-Ray/мес.</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Минимальная команда для запуска</div>
+    <div class="card-body">
+      <div class="row-item"><span>Создание анкеты + настройка workflow</span><span class="muted">1 человек, 10–12 ч</span></div>
+      <div class="row-item"><span>Написание AI-промпта и тест отчётов</span><span class="muted">1 человек, 8–10 ч</span></div>
+      <div class="row-item"><span>Лендинг + брендинг шаблона</span><span class="muted">1 человек, 4–6 ч</span></div>
+      <div class="row-item"><span>На каждый отчёт (финализация)</span><span class="muted">1.5–2 ч/отчёт</span></div>
+      <div class="row-item" style="font-weight:500"><span>Итого на запуск</span><span>~25 ч · один человек</span></div>
+    </div>
+  </div>
+  <button class="action-btn" onclick="sendPrompt('Давай начнём строить: напиши полную анкету из 42 вопросов для AI X-Ray и AI-промпт для генерации отчёта на русском')">Начать строить прямо сейчас ↗</button>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>

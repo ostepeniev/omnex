@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI X-Ray — Анкета-діагностика бізнесу | OMNEX</title>
+<meta name="description" content="42 питання для глибокого AI-аналізу вашого бізнесу. Заповніть анкету — отримайте 20-сторінковий персональний звіт за 72 години.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+<div class="nav-inner">
+  <a href="/" class="logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="17" cy="17" r="16" stroke="rgba(196,241,53,0.3)" stroke-width="1"/>
+        <circle cx="17" cy="17" r="6" fill="#C4F135"/>
+        <line x1="17" y1="1" x2="17" y2="11" stroke="#C4F135" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="17" y1="23" x2="17" y2="33" stroke="#C4F135" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="1" y1="17" x2="11" y2="17" stroke="#C4F135" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="23" y1="17" x2="33" y2="17" stroke="#C4F135" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="logo-name">OMN<span>EX</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="/">Головна</a>
+    <a href="/ai-xray.html">AI X-Ray</a>
+  </div>
+  <div class="lang-switcher" id="langSwitcher">
+    <button data-lang="uk" class="active">UK</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="cs">CS</button>
+  </div>
+  <a href="/" class="nav-cta" style="text-decoration:none">← На сайт</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="q-hero">
+<div class="hero-bg">
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+</div>
+<div class="container" style="text-align:center">
+  <div class="hero-eyebrow" style="justify-content:center;display:flex">
+    <div class="octopus-badge">
+      <span class="pulse"></span>
+      AI X-RAY · Анкета-діагностика
+    </div>
+  </div>
+  <h1 class="display" style="font-size:clamp(36px,5vw,64px);margin-bottom:16px;max-width:600px;margin-left:auto;margin-right:auto">
+    Анкета-діагностика<br>вашого бізнесу
+  </h1>
+  <p style="font-size:17px;color:var(--muted);max-width:520px;margin:0 auto 20px;line-height:1.7">
+    42 питання · ~45 хвилин · Результат через 72 години
+  </p>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:32px">
+    <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--accent3)">✓</span> Відповідайте чесно — чим точніші дані, тим точніший аналіз</span>
+    <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--accent3)">✓</span> Якщо точних цифр немає — давайте найкращу оцінку</span>
+    <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--accent3)">✓</span> Ваші дані конфіденційні та захищені (GDPR)</span>
+  </div>
+</div>
+</section>
+
+<!-- PROGRESS BAR -->
+<div class="container">
+<div class="q-progress-wrap" id="qProgress">
+  <div class="q-progress-bar">
+    <div class="q-progress-fill" id="qProgressFill" style="width:0%"></div>
+  </div>
+  <div class="q-progress-info">
+    <span id="qProgressText">Блок 1 з 6 · Про компанію</span>
+    <span id="qProgressPct">0%</span>
+  </div>
+</div>
+
+<!-- ═══ BLOCK 1: About Company ═══ -->
+<div class="q-block active" id="block-1" data-block="1">
+  <div class="q-block-header">
+    <div class="q-block-num">1</div>
+    <div>
+      <div class="q-block-title">Про компанію</div>
+      <div class="q-block-desc">Базовий контекст — розуміємо масштаб і специфіку</div>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="q-question" data-q="1" data-type="text" data-required="true">
+    <div class="q-question-label"><span class="q-required">*</span> Q1. Як називається ваша компанія?</div>
+    <div class="q-question-hint">💡 Назва потрібна для персоналізації звіту</div>
+    <input type="text" class="q-text-input" data-field="q1" placeholder="Назва компанії">
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-question" data-q="2" data-type="radio" data-required="true">
+    <div class="q-question-label"><span class="q-required">*</span> Q2. В якій галузі працює ваша компанія?</div>
+    <div class="q-question-hint">💡 Оберіть найбільш близький варіант</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q2" value="B2B-послуги"><span class="q-radio"></span>B2B-послуги (консалтинг, агентства, IT-компанії)</label>
+      <label class="q-option"><input type="radio" name="q2" value="Нерухомість"><span class="q-radio"></span>Нерухомість (агентство, управління, девелопмент)</label>
+      <label class="q-option"><input type="radio" name="q2" value="Гостинність"><span class="q-radio"></span>Гостинність (готелі, апартаменти, глемпінг, туризм)</label>
+      <label class="q-option"><input type="radio" name="q2" value="E-commerce"><span class="q-radio"></span>E-commerce / роздрібна торгівля</label>
+      <label class="q-option"><input type="radio" name="q2" value="Виробництво"><span class="q-radio"></span>Виробництво / промисловість</label>
+      <label class="q-option"><input type="radio" name="q2" value="Медицина"><span class="q-radio"></span>Медицина та охорона здоров'я</label>
+      <label class="q-option"><input type="radio" name="q2" value="Будівництво"><span class="q-radio"></span>Будівництво та ремонт</label>
+      <label class="q-option"><input type="radio" name="q2" value="Логістика"><span class="q-radio"></span>Логістика та транспорт</label>
+      <label class="q-option"><input type="radio" name="q2" value="Фінанси"><span class="q-radio"></span>Фінанси та бухгалтерія</label>
+      <label class="q-option"><input type="radio" name="q2" value="Освіта"><span class="q-radio"></span>Освіта та навчання</label>
+      <label class="q-option"><input type="radio" name="q2" value="Інше"><span class="q-radio"></span>Інше (вказати нижче)</label>
+    </div>
+    <div class="q-conditional" data-show-if="q2=Інше" style="margin-top:10px">
+      <input type="text" class="q-text-input" data-field="q2_other" placeholder="Опишіть вашу галузь">
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-question" data-q="3" data-type="text">
+    <div class="q-question-label">Q3. Вкажіть сайт вашої компанії (якщо є)</div>
+    <div class="q-question-hint">💡 Допомагає нам вивчити ваш бізнес до складання звіту. Не обов'язково.</div>
+    <input type="text" class="q-text-input" data-field="q3" placeholder="https://example.com">
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-question" data-q="4" data-type="radio" data-required="true">
+    <div class="q-question-label"><span class="q-required">*</span> Q4. Скільки років існує ваша компанія?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q4" value="<1"><span class="q-radio"></span>Менше 1 року (стартап)</label>
+      <label class="q-option"><input type="radio" name="q4" value="1-3"><span class="q-radio"></span>1–3 роки</label>
+      <label class="q-option"><input type="radio" name="q4" value="3-7"><span class="q-radio"></span>3–7 років</label>
+      <label class="q-option"><input type="radio" name="q4" value="7-15"><span class="q-radio"></span>7–15 років</label>
+      <label class="q-option"><input type="radio" name="q4" value="15+"><span class="q-radio"></span>Більше 15 років</label>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q-question" data-q="5" data-type="radio" data-required="true">
+    <div class="q-question-label"><span class="q-required">*</span> Q5. Який річний оборот вашої компанії?</div>
+    <div class="q-question-hint">💡 Дані конфіденційні. Потрібні для розрахунку потенційного ROI.</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q5" value="<100k"><span class="q-radio"></span>До €100,000</label>
+      <label class="q-option"><input type="radio" name="q5" value="100k-500k"><span class="q-radio"></span>€100,000 – €500,000</label>
+      <label class="q-option"><input type="radio" name="q5" value="500k-2m"><span class="q-radio"></span>€500,000 – €2,000,000</label>
+      <label class="q-option"><input type="radio" name="q5" value="2m-5m"><span class="q-radio"></span>€2,000,000 – €5,000,000</label>
+      <label class="q-option"><input type="radio" name="q5" value="5m-15m"><span class="q-radio"></span>€5,000,000 – €15,000,000</label>
+      <label class="q-option"><input type="radio" name="q5" value="15m+"><span class="q-radio"></span>Більше €15,000,000</label>
+      <label class="q-option"><input type="radio" name="q5" value="skip"><span class="q-radio"></span>Волію не вказувати</label>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q-question" data-q="6" data-type="radio">
+    <div class="q-question-label">Q6. В якій країні/регіоні працює ваша компанія?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q6" value="Чехія"><span class="q-radio"></span>Чехія</label>
+      <label class="q-option"><input type="radio" name="q6" value="Словаччина"><span class="q-radio"></span>Словаччина</label>
+      <label class="q-option"><input type="radio" name="q6" value="Польща"><span class="q-radio"></span>Польща</label>
+      <label class="q-option"><input type="radio" name="q6" value="Німеччина"><span class="q-radio"></span>Німеччина</label>
+      <label class="q-option"><input type="radio" name="q6" value="Австрія"><span class="q-radio"></span>Австрія</label>
+      <label class="q-option"><input type="radio" name="q6" value="Угорщина"><span class="q-radio"></span>Угорщина</label>
+      <label class="q-option"><input type="radio" name="q6" value="Інша ЄС"><span class="q-radio"></span>Інша країна ЄС</label>
+      <label class="q-option"><input type="radio" name="q6" value="Не ЄС"><span class="q-radio"></span>Інша країна (не ЄС)</label>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q-question" data-q="7" data-type="radio">
+    <div class="q-question-label">Q7. Яка основна бізнес-модель компанії?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q7" value="B2B послуги"><span class="q-radio"></span>Продаж послуг клієнтам (B2B)</label>
+      <label class="q-option"><input type="radio" name="q7" value="B2C послуги"><span class="q-radio"></span>Продаж послуг клієнтам (B2C)</label>
+      <label class="q-option"><input type="radio" name="q7" value="Товари онлайн"><span class="q-radio"></span>Продаж товарів (онлайн)</label>
+      <label class="q-option"><input type="radio" name="q7" value="Товари офлайн"><span class="q-radio"></span>Продаж товарів (офлайн / магазин)</label>
+      <label class="q-option"><input type="radio" name="q7" value="Змішана"><span class="q-radio"></span>Змішана модель (і послуги, і товари)</label>
+      <label class="q-option"><input type="radio" name="q7" value="SaaS"><span class="q-radio"></span>Підписка / SaaS</label>
+      <label class="q-option"><input type="radio" name="q7" value="Підряд"><span class="q-radio"></span>Проєкти під ключ / підряд</label>
+      <label class="q-option"><input type="radio" name="q7" value="Інше"><span class="q-radio"></span>Інше</label>
+    </div>
+  </div>
+
+  <div class="q-block-nav">
+    <div></div>
+    <button class="q-nav-next" data-next="2">Далі — Команда і структура →</button>
+  </div>
+</div>
+
+<!-- ═══ BLOCK 2: Team & Structure ═══ -->
+<div class="q-block" id="block-2" data-block="2">
+  <div class="q-block-header">
+    <div class="q-block-num">2</div>
+    <div>
+      <div class="q-block-title">Команда і структура</div>
+      <div class="q-block-desc">Розуміємо хто і чим займається — основа для розрахунку втрат</div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q-question" data-q="8" data-type="radio" data-required="true">
+    <div class="q-question-label"><span class="q-required">*</span> Q8. Скільки людей працює у вашій компанії?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q8" value="1-5"><span class="q-radio"></span>1–5 осіб</label>
+      <label class="q-option"><input type="radio" name="q8" value="6-15"><span class="q-radio"></span>6–15 осіб</label>
+      <label class="q-option"><input type="radio" name="q8" value="16-30"><span class="q-radio"></span>16–30 осіб</label>
+      <label class="q-option"><input type="radio" name="q8" value="31-60"><span class="q-radio"></span>31–60 осіб</label>
+      <label class="q-option"><input type="radio" name="q8" value="61-100"><span class="q-radio"></span>61–100 осіб</label>
+      <label class="q-option"><input type="radio" name="q8" value="101-200"><span class="q-radio"></span>101–200 осіб</label>
+      <label class="q-option"><input type="radio" name="q8" value="200+"><span class="q-radio"></span>Більше 200 осіб</label>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q-question" data-q="9" data-type="checkbox">
+    <div class="q-question-label">Q9. Які функціональні відділи або ролі є у вашій компанії?</div>
+    <div class="q-question-hint">💡 Можна обрати декілька варіантів</div>
+    <div class="q-options">
+      <label class="q-option"><input type="checkbox" name="q9" value="Продажі"><span class="q-check"></span>Продажі / менеджери з продажу</label>
+      <label class="q-option"><input type="checkbox" name="q9" value="Маркетинг"><span class="q-check"></span>Маркетинг / реклама</label>
+      <label class="q-option"><input type="checkbox" name="q9" value="Підтримка"><span class="q-check"></span>Клієнтський сервіс / підтримка</label>
+      <label class="q-option"><input type="checkbox" name="q9" value="Операції"><span class="q-check"></span>Операції / адміністративний персонал</label>
+      <label class="q-option"><input type="checkbox" name="q9" value="Бухгалтерія"><span class="q-check"></span>Бухгалтерія / фінанси</label>
+      <label class="q-option"><input type="checkbox" name="q9" value="IT"><span class="q-check"></span>IT / технічний персонал</label>
+      <label class="q-option"><input type="checkbox" name="q9" value="HR"><span class="q-check"></span>HR / кадри</label>
+      <label class="q-option"><input type="checkbox" name="q9" value="Виробництво"><span class="q-check"></span>Виробництво / склад / логістика</label>
+      <label class="q-option"><input type="checkbox" name="q9" value="Управління"><span class="q-check"></span>Управління (CEO, COO, директори)</label>
+      <label class="q-option"><input type="checkbox" name="q9" value="PM"><span class="q-check"></span>Проєктний офіс / проєкт-менеджери</label>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q-question" data-q="10" data-type="radio">
+    <div class="q-question-label">Q10. Чи є у вас виділений IT-спеціаліст або IT-відділ?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q10" value="Штатний"><span class="q-radio"></span>Так, штатний IT-спеціаліст / відділ</label>
+      <label class="q-option"><input type="radio" name="q10" value="Зовнішній"><span class="q-radio"></span>Ні, звертаємося до зовнішніх підрядників</label>
+      <label class="q-option"><input type="radio" name="q10" value="Суміщення"><span class="q-radio"></span>Ні, IT-питання вирішує хтось з команди "за сумісництвом"</label>
+      <label class="q-option"><input type="radio" name="q10" value="Немає"><span class="q-radio"></span>Немає IT-підтримки взагалі</label>
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="q-question" data-q="11" data-type="rating-matrix">
+    <div class="q-question-label">Q11. Як в середньому розподіляється робочий час вашої команди?</div>
+    <div class="q-question-hint">💡 Груба оцінка — не потрібно рахувати точно. Що займає БІЛЬШЕ за все часу?</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-left:28px">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--surface2);border-radius:var(--rs);border:1px solid var(--border)">
+        <span style="font-size:14px;flex:1">Спілкування з клієнтами</span>
+        <select class="form-select" data-field="q11_clients" style="width:120px;padding:6px 10px;font-size:12px">
+          <option value="">—</option><option>0-10%</option><option>10-30%</option><option>30-50%</option><option>50-70%+</option>
+        </select>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--surface2);border-radius:var(--rs);border:1px solid var(--border)">
+        <span style="font-size:14px;flex:1">Введення та обробка даних</span>
+        <select class="form-select" data-field="q11_data" style="width:120px;padding:6px 10px;font-size:12px">
+          <option value="">—</option><option>0-10%</option><option>10-30%</option><option>30-50%</option><option>50-70%+</option>
+        </select>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--surface2);border-radius:var(--rs);border:1px solid var(--border)">
+        <span style="font-size:14px;flex:1">Продажі та пошук нових клієнтів</span>
+        <select class="form-select" data-field="q11_sales" style="width:120px;padding:6px 10px;font-size:12px">
+          <option value="">—</option><option>0-10%</option><option>10-30%</option><option>30-50%</option><option>50-70%+</option>
+        </select>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--surface2);border-radius:var(--rs);border:1px solid var(--border)">
+        <span style="font-size:14px;flex:1">Адміністративна робота</span>
+        <select class="form-select" data-field="q11_admin" style="width:120px;padding:6px 10px;font-size:12px">
+          <option value="">—</option><option>0-10%</option><option>10-30%</option><option>30-50%</option><option>50-70%+</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="q-question" data-q="12" data-type="radio">
+    <div class="q-question-label">Q12. Хто у вашій компанії приймає рішення про впровадження нових інструментів?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q12" value="CEO"><span class="q-radio"></span>Тільки я (CEO / Власник)</label>
+      <label class="q-option"><input type="radio" name="q12" value="CEO+COO"><span class="q-radio"></span>Я разом з операційним директором / COO</label>
+      <label class="q-option"><input type="radio" name="q12" value="CEO+IT"><span class="q-radio"></span>Я разом з IT-керівником</label>
+      <label class="q-option"><input type="radio" name="q12" value="Колегіально"><span class="q-radio"></span>Колегіальне рішення (команда)</label>
+      <label class="q-option"><input type="radio" name="q12" value="IT"><span class="q-radio"></span>IT-відділ приймає рішення самостійно</label>
+      <label class="q-option"><input type="radio" name="q12" value="Повільно"><span class="q-radio"></span>Рішення приймається повільно — немає чіткої процедури</label>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="q-question" data-q="13" data-type="radio">
+    <div class="q-question-label">Q13. Наскільки ваша команда відкрита до нових технологій?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q13" value="Відкрита"><span class="q-radio"></span>Дуже відкрита — швидко адаптуються і пробують нове</label>
+      <label class="q-option"><input type="radio" name="q13" value="Помірно"><span class="q-radio"></span>Помірно — потрібно пояснити "навіщо"</label>
+      <label class="q-option"><input type="radio" name="q13" value="Спротив"><span class="q-radio"></span>Чинять опір — потрібно багато переконувати</label>
+      <label class="q-option"><input type="radio" name="q13" value="Сильний спротив"><span class="q-radio"></span>Сильно чинять опір — змінювати процеси дуже складно</label>
+    </div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="q-question" data-q="14" data-type="radio">
+    <div class="q-question-label">Q14. Який приблизний середньомісячний ФОП (фонд оплати праці)?</div>
+    <div class="q-question-hint">💡 Потрібно для розрахунку вартості ручної праці. Дані конфіденційні.</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q14" value="<5k"><span class="q-radio"></span>До €5,000</label>
+      <label class="q-option"><input type="radio" name="q14" value="5-15k"><span class="q-radio"></span>€5,000 – €15,000</label>
+      <label class="q-option"><input type="radio" name="q14" value="15-40k"><span class="q-radio"></span>€15,000 – €40,000</label>
+      <label class="q-option"><input type="radio" name="q14" value="40-100k"><span class="q-radio"></span>€40,000 – €100,000</label>
+      <label class="q-option"><input type="radio" name="q14" value="100k+"><span class="q-radio"></span>Більше €100,000</label>
+      <label class="q-option"><input type="radio" name="q14" value="skip"><span class="q-radio"></span>Волію не вказувати</label>
+    </div>
+  </div>
+
+  <div class="q-block-nav">
+    <button class="q-nav-back" data-prev="1">← Назад</button>
+    <button class="q-nav-next" data-next="3">Далі — Операції та процеси →</button>
+  </div>
+</div>
+
+<!-- ═══ BLOCK 3: Operations ═══ -->
+<div class="q-block" id="block-3" data-block="3">
+  <div class="q-block-header">
+    <div class="q-block-num">3</div>
+    <div>
+      <div class="q-block-title">Операції та процеси</div>
+      <div class="q-block-desc">Це найважливіший блок — тут живуть головні втрати</div>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="q-question" data-q="15" data-type="textarea" data-required="true">
+    <div class="q-question-label"><span class="q-required">*</span> Q15. Опишіть 3–5 ключових процесів вашого бізнесу</div>
+    <div class="q-question-hint">💡 Наприклад: "обробка заявок → дзвінок менеджера → виставлення рахунку → контроль оплати"</div>
+    <textarea class="q-text-input" data-field="q15" placeholder="Опишіть як є, без структури..." rows="4"></textarea>
+  </div>
+
+  <!-- Q16 -->
+  <div class="q-question" data-q="16" data-type="checkbox">
+    <div class="q-question-label">Q16. Які з цих задач виконуються вручну?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="checkbox" name="q16" value="Заявки"><span class="q-check"></span>Обробка вхідних заявок / запитів</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="FAQ"><span class="q-check"></span>Відповіді на типові питання клієнтів</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="Рахунки"><span class="q-check"></span>Виставлення рахунків і контроль оплат</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="Звіти"><span class="q-check"></span>Складання звітів для керівництва</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="CRM"><span class="q-check"></span>Введення даних в CRM / таблиці</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="Розклад"><span class="q-check"></span>Планування зустрічей та розкладу</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="Відгуки"><span class="q-check"></span>Моніторинг та відповіді на відгуки</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="Контент"><span class="q-check"></span>Публікація контенту в соцмережах</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="Follow-up"><span class="q-check"></span>Розсилки та follow-up листи</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="Онбордінг"><span class="q-check"></span>Онбордінг нових клієнтів</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="КП"><span class="q-check"></span>Складання комерційних пропозицій</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="Передача"><span class="q-check"></span>Передача інформації між відділами</label>
+      <label class="q-option"><input type="checkbox" name="q16" value="Документи"><span class="q-check"></span>Підготовка документів (договори, акти)</label>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="q-question" data-q="17" data-type="radio" data-required="true">
+    <div class="q-question-label"><span class="q-required">*</span> Q17. Скільки годин на тиждень команда СУМАРНО витрачає на рутину?</div>
+    <div class="q-question-hint">💡 Враховуйте всю команду. Якщо 5 осіб по 4 години — це 20 годин.</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q17" value="<10"><span class="q-radio"></span>До 10 годин на тиждень</label>
+      <label class="q-option"><input type="radio" name="q17" value="10-25"><span class="q-radio"></span>10–25 годин на тиждень</label>
+      <label class="q-option"><input type="radio" name="q17" value="25-50"><span class="q-radio"></span>25–50 годин на тиждень</label>
+      <label class="q-option"><input type="radio" name="q17" value="50-100"><span class="q-radio"></span>50–100 годин на тиждень</label>
+      <label class="q-option"><input type="radio" name="q17" value="100+"><span class="q-radio"></span>Більше 100 годин на тиждень</label>
+      <label class="q-option"><input type="radio" name="q17" value="unknown"><span class="q-radio"></span>Не знаю / складно оцінити</label>
+    </div>
+  </div>
+
+  <!-- Q18-Q23 simplified for space -->
+  <div class="q-question" data-q="18" data-type="radio">
+    <div class="q-question-label">Q18. Як швидко ви відповідаєте на вхідні заявки від нових клієнтів?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q18" value="5min"><span class="q-radio"></span>Протягом 5 хвилин</label>
+      <label class="q-option"><input type="radio" name="q18" value="1h"><span class="q-radio"></span>Протягом 1 години</label>
+      <label class="q-option"><input type="radio" name="q18" value="2-8h"><span class="q-radio"></span>Протягом робочого дня (2–8 годин)</label>
+      <label class="q-option"><input type="radio" name="q18" value="next-day"><span class="q-radio"></span>На наступний день</label>
+      <label class="q-option"><input type="radio" name="q18" value="late"><span class="q-radio"></span>Іноді не встигаємо відповісти вчасно</label>
+      <label class="q-option"><input type="radio" name="q18" value="no-system"><span class="q-radio"></span>Немає системи — відповідаємо коли бачимо</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="19" data-type="radio">
+    <div class="q-question-label">Q19. Чи трапляється що вхідні заявки "губляться"?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q19" value="Ні"><span class="q-radio"></span>Ні — у нас чітка система</label>
+      <label class="q-option"><input type="radio" name="q19" value="Рідко"><span class="q-radio"></span>Рідко (1–2 рази на місяць)</label>
+      <label class="q-option"><input type="radio" name="q19" value="Іноді"><span class="q-radio"></span>Іноді (кілька разів на тиждень)</label>
+      <label class="q-option"><input type="radio" name="q19" value="Часто"><span class="q-radio"></span>Часто — це реальна проблема</label>
+      <label class="q-option"><input type="radio" name="q19" value="Постійно"><span class="q-radio"></span>Постійно — не встигаємо за потоком</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="20" data-type="radio">
+    <div class="q-question-label">Q20. Як ви зараз готуєте звіти?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q20" value="auto"><span class="q-radio"></span>Автоматично — дані в дашборді</label>
+      <label class="q-option"><input type="radio" name="q20" value="semi-auto"><span class="q-radio"></span>Напівавтоматично</label>
+      <label class="q-option"><input type="radio" name="q20" value="manual"><span class="q-radio"></span>Повністю вручну — збираємо з різних джерел в Excel</label>
+      <label class="q-option"><input type="radio" name="q20" value="no"><span class="q-radio"></span>Не готуємо регулярних звітів</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="23" data-type="radio">
+    <div class="q-question-label">Q23. Що відбувається коли ключовий співробітник йде у відпустку чи звільняється?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q23" value="ok"><span class="q-radio"></span>Все працює — процеси задокументовані</label>
+      <label class="q-option"><input type="radio" name="q23" value="issues"><span class="q-radio"></span>Невеликі складнощі — але справляємося</label>
+      <label class="q-option"><input type="radio" name="q23" value="serious"><span class="q-radio"></span>Серйозні проблеми — багато завʼязано на конкретних людях</label>
+      <label class="q-option"><input type="radio" name="q23" value="chaos"><span class="q-radio"></span>Повний хаос — відхід людини паралізує роботу</label>
+    </div>
+  </div>
+
+  <div class="q-block-nav">
+    <button class="q-nav-back" data-prev="2">← Назад</button>
+    <button class="q-nav-next" data-next="4">Далі — Продажі та клієнти →</button>
+  </div>
+</div>
+
+<!-- ═══ BLOCK 4: Sales & Clients ═══ -->
+<div class="q-block" id="block-4" data-block="4">
+  <div class="q-block-header">
+    <div class="q-block-num">4</div>
+    <div>
+      <div class="q-block-title">Продажі та клієнти</div>
+      <div class="q-block-desc">Де втрачаються гроші на шляху від ліда до оплати</div>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="24" data-type="checkbox">
+    <div class="q-question-label">Q24. Звідки приходять ваші нові клієнти? (оберіть топ-3)</div>
+    <div class="q-options">
+      <label class="q-option"><input type="checkbox" name="q24" value="Сарафанне"><span class="q-check"></span>Сарафанне радіо / рекомендації</label>
+      <label class="q-option"><input type="checkbox" name="q24" value="Сайт"><span class="q-check"></span>Вхідні заявки з сайту</label>
+      <label class="q-option"><input type="checkbox" name="q24" value="Реклама"><span class="q-check"></span>Платна реклама (Google, Meta, LinkedIn)</label>
+      <label class="q-option"><input type="checkbox" name="q24" value="Холодні"><span class="q-check"></span>Холодні дзвінки / email-розсилки</label>
+      <label class="q-option"><input type="checkbox" name="q24" value="Соцмережі"><span class="q-check"></span>Соціальні мережі (органіка)</label>
+      <label class="q-option"><input type="checkbox" name="q24" value="Маркетплейси"><span class="q-check"></span>Галузеві площадки / маркетплейси</label>
+      <label class="q-option"><input type="checkbox" name="q24" value="Партнери"><span class="q-check"></span>Партнери та агенти</label>
+      <label class="q-option"><input type="checkbox" name="q24" value="Повторні"><span class="q-check"></span>Повторні замовлення від поточних клієнтів</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="25" data-type="radio">
+    <div class="q-question-label">Q25. Скільки нових лідів ви отримуєте на місяць?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q25" value="<10"><span class="q-radio"></span>Менше 10</label>
+      <label class="q-option"><input type="radio" name="q25" value="10-30"><span class="q-radio"></span>10–30</label>
+      <label class="q-option"><input type="radio" name="q25" value="30-100"><span class="q-radio"></span>30–100</label>
+      <label class="q-option"><input type="radio" name="q25" value="100-300"><span class="q-radio"></span>100–300</label>
+      <label class="q-option"><input type="radio" name="q25" value="300+"><span class="q-radio"></span>Більше 300</label>
+      <label class="q-option"><input type="radio" name="q25" value="unknown"><span class="q-radio"></span>Не відстежуємо</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="26" data-type="radio">
+    <div class="q-question-label">Q26. Яка ваша конверсія з ліда в клієнта (приблизно)?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q26" value="<5"><span class="q-radio"></span>Менше 5%</label>
+      <label class="q-option"><input type="radio" name="q26" value="5-15"><span class="q-radio"></span>5–15%</label>
+      <label class="q-option"><input type="radio" name="q26" value="15-30"><span class="q-radio"></span>15–30%</label>
+      <label class="q-option"><input type="radio" name="q26" value="30-50"><span class="q-radio"></span>30–50%</label>
+      <label class="q-option"><input type="radio" name="q26" value="50+"><span class="q-radio"></span>Більше 50%</label>
+      <label class="q-option"><input type="radio" name="q26" value="unknown"><span class="q-radio"></span>Не рахуємо / не знаємо</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="28" data-type="radio">
+    <div class="q-question-label">Q28. Чи ведете ви follow-up з клієнтами які не купили одразу?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q28" value="auto"><span class="q-radio"></span>Так — у нас автоматична серія дотиків</label>
+      <label class="q-option"><input type="radio" name="q28" value="manual"><span class="q-radio"></span>Так — менеджери роблять це вручну</label>
+      <label class="q-option"><input type="radio" name="q28" value="sometimes"><span class="q-radio"></span>Іноді — якщо памʼятаємо</label>
+      <label class="q-option"><input type="radio" name="q28" value="no"><span class="q-radio"></span>Ні — якщо не купив одразу, не повертаємося</label>
+    </div>
+  </div>
+
+  <div class="q-block-nav">
+    <button class="q-nav-back" data-prev="3">← Назад</button>
+    <button class="q-nav-next" data-next="5">Далі — Поточні інструменти →</button>
+  </div>
+</div>
+
+<!-- ═══ BLOCK 5: Tools ═══ -->
+<div class="q-block" id="block-5" data-block="5">
+  <div class="q-block-header">
+    <div class="q-block-num">5</div>
+    <div>
+      <div class="q-block-title">Поточні інструменти</div>
+      <div class="q-block-desc">Що вже використовуєте — щоб не пропонувати зайве</div>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="31" data-type="radio">
+    <div class="q-question-label">Q31. Яку CRM-систему ви використовуєте?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q31" value="HubSpot"><span class="q-radio"></span>HubSpot</label>
+      <label class="q-option"><input type="radio" name="q31" value="Salesforce"><span class="q-radio"></span>Salesforce</label>
+      <label class="q-option"><input type="radio" name="q31" value="Pipedrive"><span class="q-radio"></span>Pipedrive</label>
+      <label class="q-option"><input type="radio" name="q31" value="Bitrix24"><span class="q-radio"></span>Бітрікс24</label>
+      <label class="q-option"><input type="radio" name="q31" value="amoCRM"><span class="q-radio"></span>amoCRM</label>
+      <label class="q-option"><input type="radio" name="q31" value="Notion"><span class="q-radio"></span>Notion / Airtable (як CRM)</label>
+      <label class="q-option"><input type="radio" name="q31" value="Excel"><span class="q-radio"></span>Excel / Google Sheets (саморобна CRM)</label>
+      <label class="q-option"><input type="radio" name="q31" value="none"><span class="q-radio"></span>Не використовуємо CRM</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="33" data-type="checkbox">
+    <div class="q-question-label">Q33. Які інструменти для автоматизації ви вже використовуєте?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="checkbox" name="q33" value="Zapier"><span class="q-check"></span>Zapier</label>
+      <label class="q-option"><input type="checkbox" name="q33" value="Make"><span class="q-check"></span>Make (Integromat)</label>
+      <label class="q-option"><input type="checkbox" name="q33" value="n8n"><span class="q-check"></span>n8n</label>
+      <label class="q-option"><input type="checkbox" name="q33" value="Power Automate"><span class="q-check"></span>Power Automate (Microsoft)</label>
+      <label class="q-option"><input type="checkbox" name="q33" value="ChatGPT"><span class="q-check"></span>ChatGPT / Claude (для генерації контенту)</label>
+      <label class="q-option"><input type="checkbox" name="q33" value="AI-assistant"><span class="q-check"></span>AI-асистент (Copilot, Gemini тощо)</label>
+      <label class="q-option"><input type="checkbox" name="q33" value="none"><span class="q-check"></span>Не використовуємо інструменти автоматизації</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="35" data-type="radio">
+    <div class="q-question-label">Q35. Чи пробували ви вже впроваджувати AI-інструменти?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q35" value="no"><span class="q-radio"></span>Ні — ми тільки починаємо вивчати тему</label>
+      <label class="q-option"><input type="radio" name="q35" value="chatgpt"><span class="q-radio"></span>Пробували ChatGPT / Claude для написання текстів</label>
+      <label class="q-option"><input type="radio" name="q35" value="failed"><span class="q-radio"></span>Пробували AI-інструменти, але вони не прижилися</label>
+      <label class="q-option"><input type="radio" name="q35" value="some"><span class="q-radio"></span>Вже використовуємо AI в деяких процесах</label>
+      <label class="q-option"><input type="radio" name="q35" value="active"><span class="q-radio"></span>Активне впровадження AI в кількох відділах</label>
+    </div>
+  </div>
+
+  <div class="q-conditional" data-show-if="q35=failed">
+    <div class="q-question" data-q="35a" data-type="checkbox">
+      <div class="q-question-label">Q35а. Чому AI-інструменти не прижилися минулого разу?</div>
+      <div class="q-options">
+        <label class="q-option"><input type="checkbox" name="q35a" value="Спротив"><span class="q-check"></span>Команда не хотіла змінювати звичні процеси</label>
+        <label class="q-option"><input type="checkbox" name="q35a" value="Не підходив"><span class="q-check"></span>Інструмент не підходив під нашу специфіку</label>
+        <label class="q-option"><input type="checkbox" name="q35a" value="Немає часу"><span class="q-check"></span>Не було часу на навчання і налаштування</label>
+        <label class="q-option"><input type="checkbox" name="q35a" value="Немає ROI"><span class="q-check"></span>Результат не виправдав очікувань</label>
+        <label class="q-option"><input type="checkbox" name="q35a" value="Дорого"><span class="q-check"></span>Занадто дорого в обслуговуванні</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-block-nav">
+    <button class="q-nav-back" data-prev="4">← Назад</button>
+    <button class="q-nav-next" data-next="6">Далі — Болі та пріоритети →</button>
+  </div>
+</div>
+
+<!-- ═══ BLOCK 6: Pains & Priorities ═══ -->
+<div class="q-block" id="block-6" data-block="6">
+  <div class="q-block-header">
+    <div class="q-block-num">6</div>
+    <div>
+      <div class="q-block-title">Болі та пріоритети</div>
+      <div class="q-block-desc">Фінальний блок — що найважливіше саме для вас</div>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="37" data-type="radio" data-required="true">
+    <div class="q-question-label"><span class="q-required">*</span> Q37. Яка ваша головна ціль на найближчі 12 місяців?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q37" value="Зростання"><span class="q-radio"></span>Зростання виручки / масштабування</label>
+      <label class="q-option"><input type="radio" name="q37" value="Оптимізація"><span class="q-radio"></span>Оптимізація витрат / підвищення маржі</label>
+      <label class="q-option"><input type="radio" name="q37" value="Систематизація"><span class="q-radio"></span>Систематизація і порядок у процесах</label>
+      <label class="q-option"><input type="radio" name="q37" value="Автоматизація"><span class="q-radio"></span>Автоматизація рутини / зменшення залежності від людей</label>
+      <label class="q-option"><input type="radio" name="q37" value="Вихід"><span class="q-radio"></span>Вихід з операційки — більше часу для стратегії</label>
+      <label class="q-option"><input type="radio" name="q37" value="Все"><span class="q-radio"></span>Все вищеперераховане — хочу все</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="38" data-type="checkbox" data-required="true">
+    <div class="q-question-label"><span class="q-required">*</span> Q38. Які з цих проблем найбільше резонують з вами?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="checkbox" name="q38" value="Рутина"><span class="q-check"></span>Команда витрачає занадто багато часу на рутину</label>
+      <label class="q-option"><input type="checkbox" name="q38" value="Ліди"><span class="q-check"></span>Ліди або клієнти губляться через повільну реакцію</label>
+      <label class="q-option"><input type="checkbox" name="q38" value="Немає картини"><span class="q-check"></span>Немає чіткої картини що відбувається в бізнесі</label>
+      <label class="q-option"><input type="checkbox" name="q38" value="Витрати"><span class="q-check"></span>Високі витрати на персонал при низькій віддачі</label>
+      <label class="q-option"><input type="checkbox" name="q38" value="Залежність"><span class="q-check"></span>Залежність від конкретних людей</label>
+      <label class="q-option"><input type="checkbox" name="q38" value="Масштаб"><span class="q-check"></span>Важко масштабуватися без збільшення штату</label>
+      <label class="q-option"><input type="checkbox" name="q38" value="Конкуренти"><span class="q-check"></span>Конкуренти йдуть попереду по ефективності</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="39" data-type="radio">
+    <div class="q-question-label">Q39. Який результат ви хочете побачити через 90 днів?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q39" value="Рутина -30%"><span class="q-radio"></span>Скоротити час на рутину мінімум на 30%</label>
+      <label class="q-option"><input type="radio" name="q39" value="Ліди 100%"><span class="q-radio"></span>Перестати втрачати ліди</label>
+      <label class="q-option"><input type="radio" name="q39" value="Дашборд"><span class="q-radio"></span>Мати дашборд з реальними цифрами бізнесу</label>
+      <label class="q-option"><input type="radio" name="q39" value="ФОП -"><span class="q-radio"></span>Скоротити ФОП не скорочуючи якість</label>
+      <label class="q-option"><input type="radio" name="q39" value="Все"><span class="q-radio"></span>Кілька з вищеперерахованого — все важливо</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="40" data-type="radio">
+    <div class="q-question-label">Q40. Який бюджет ви готові виділити на автоматизацію / AI на місяць?</div>
+    <div class="q-options">
+      <label class="q-option"><input type="radio" name="q40" value="<300"><span class="q-radio"></span>До €300/міс</label>
+      <label class="q-option"><input type="radio" name="q40" value="300-800"><span class="q-radio"></span>€300 – €800/міс</label>
+      <label class="q-option"><input type="radio" name="q40" value="800-2000"><span class="q-radio"></span>€800 – €2,000/міс</label>
+      <label class="q-option"><input type="radio" name="q40" value="2000-5000"><span class="q-radio"></span>€2,000 – €5,000/міс</label>
+      <label class="q-option"><input type="radio" name="q40" value="5000+"><span class="q-radio"></span>Більше €5,000/міс — якщо є чіткий ROI</label>
+      <label class="q-option"><input type="radio" name="q40" value="after-roi"><span class="q-radio"></span>Готовий розглянути після отримання конкретних цифр ROI</label>
+    </div>
+  </div>
+
+  <div class="q-question" data-q="41" data-type="textarea">
+    <div class="q-question-label">Q41. Чи є щось конкретне що ви хочете щоб ми проаналізували?</div>
+    <div class="q-question-hint">💡 Будь-яка додаткова інформація: специфіка ринку, процес який давно турбує, конкурент у якого хочете перейняти практику.</div>
+    <textarea class="q-text-input" data-field="q41" placeholder="Будь-який контекст який допоможе зробити аналіз точнішим..." rows="3"></textarea>
+  </div>
+
+  <!-- Q42 — Contact Info -->
+  <div class="q-question" data-q="42" data-type="contact" data-required="true">
+    <div class="q-question-label"><span class="q-required">*</span> Q42. Як з вами найкраще зв'язатися для передачі звіту?</div>
+    <div class="q-question-hint">💡 Дзвінок на 30 хвилин включено у вартість. Ми підберемо зручний час.</div>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-left:28px">
+      <input type="text" class="q-text-input" data-field="q42_name" placeholder="Ваше ім'я *" style="margin:0;width:100%" required>
+      <input type="email" class="q-text-input" data-field="q42_email" placeholder="Email (обов'язково) *" style="margin:0;width:100%" required>
+      <input type="text" class="q-text-input" data-field="q42_phone" placeholder="Телефон / WhatsApp (опціонально)" style="margin:0;width:100%">
+      <select class="form-select" data-field="q42_lang" style="width:100%">
+        <option value="">Мова спілкування</option>
+        <option value="uk">Українська</option>
+        <option value="ru">Русский</option>
+        <option value="cs">Čeština</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="q-block-nav">
+    <button class="q-nav-back" data-prev="5">← Назад</button>
+    <button class="q-submit-btn" id="qSubmitBtn">Відправити анкету 🎯</button>
+  </div>
+</div>
+
+<!-- COMPLETION SCREEN -->
+<div class="q-complete" id="qComplete" style="display:none">
+  <div class="q-complete-icon">🎯</div>
+  <h2>Готово! Ваш AI X-Ray запущено</h2>
+  <p>Що відбувається далі:</p>
+  <div style="text-align:left;max-width:420px;margin:20px auto 0;display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--muted)">
+      <span style="color:var(--accent3);font-weight:700">1.</span> Протягом 24 годин — ми підтвердимо отримання анкети
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--muted)">
+      <span style="color:var(--accent3);font-weight:700">2.</span> Через 48–72 години — ви отримаєте готовий звіт на email
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--muted)">
+      <span style="color:var(--accent3);font-weight:700">3.</span> Після отримання — ми зв'яжемося для 30-хвилинного дзвінка-розбору
+    </div>
+  </div>
+  <div style="margin-top:32px">
+    <a href="/" class="btn btn-primary">← Повернутися на сайт</a>
+  </div>
+</div>
+
+</div>
+
+<div style="height:60px"></div>
+
+<script type="module" src="/js/questionnaire.js"></script>
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>
