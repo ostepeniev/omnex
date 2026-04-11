@@ -263,9 +263,9 @@
 <!-- PRODUCTS -->
 <section class="section" id="products" style="background:var(--surface)">
 <div class="container">
-  <div class="label fade-up">Продуктовая линейка</div>
-  <h2 class="display fade-up" style="font-size:clamp(32px,4vw,54px);max-width:560px;line-height:1.05;margin-bottom:32px">
-    Четыре продукта.<br>Один путь к AI-операционке.
+  <div class="label fade-up" data-i18n="products.label">Продуктова лінійка</div>
+  <h2 class="display fade-up" style="font-size:clamp(32px,4vw,54px);max-width:560px;line-height:1.05;margin-bottom:32px" data-i18n-html="products.title">
+    Чотири продукти.<br>Один шлях до AI-операційки.
   </h2>
   <div class="products-tabs fade-up">
     <button class="tab-btn active" data-tab="xray">AI X-Ray</button>
@@ -277,59 +277,59 @@
   <!-- X-RAY -->
   <div class="product-panel active" id="tab-xray">
     <div>
-      <div class="product-badge badge-entry">ENTRY · Первый шаг</div>
+      <div class="product-badge badge-entry" data-i18n="prod.xray.badge">ENTRY · Перший крок</div>
       <div class="product-name">AI X-Ray</div>
-      <div class="product-sub">Персональный AI-рентген вашего бизнеса. Находим где именно вы теряете деньги, время и клиентов — с расчётом ROI по каждой точке.</div>
+      <div class="product-sub" data-i18n="prod.xray.sub">Персональний AI-рентген вашого бізнесу. Знаходимо де саме ви втрачаєте гроші, час та клієнтів — з розрахунком ROI по кожній точці.</div>
       <div class="product-price">
         <span class="price-amount text-accent">€390</span>
-        <span class="price-period">разово · вместо €2,500 у консультанта</span>
+        <span class="price-period" data-i18n="prod.xray.period">разово · замість €2,500 у консультанта</span>
       </div>
       <ul class="feature-list">
-        <li><span class="feat-check">✓</span>20-страничный персональный отчёт</li>
-        <li><span class="feat-check">✓</span>Карта операционных потерь в €/мес</li>
-        <li><span class="feat-check">✓</span>Топ-3 возможности для AI с ROI-расчётом</li>
-        <li><span class="feat-check">✓</span>90-дневный план действий</li>
-        <li><span class="feat-check">✓</span>Бенчмарк против конкурентов в отрасли</li>
-        <li><span class="feat-check">✓</span>30-мин созвон-разбор с экспертом</li>
-        <li><span class="feat-check">✓</span>Гарантия возврата 7 дней</li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.xray.f1">20-сторінковий персональний звіт</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.xray.f2">Карта операційних втрат в €/міс</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.xray.f3">Топ-3 можливості для AI з ROI-розрахунком</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.xray.f4">90-денний план дій</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.xray.f5">Бенчмарк проти конкурентів у галузі</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.xray.f6">30-хв дзвінок-розбір з експертом</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.xray.f7">Гарантія повернення 7 днів</span></li>
       </ul>
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="#" class="btn btn-primary" data-modal="lead" data-product="xray">Заказать AI X-Ray — €390 →</a>
-        <a href="/ai-xray.html" class="btn btn-outline">Подробнее →</a>
+        <a href="#" class="btn btn-primary" data-modal="lead" data-product="xray" data-i18n="cta.btn1">Замовити AI X-Ray — €390 →</a>
+        <a href="/ai-xray.html" class="btn btn-outline" data-i18n="prod.xray.more">Детальніше →</a>
       </div>
     </div>
     <div>
       <!-- ROI Calculator -->
       <div class="calc-wrap">
-        <div class="calc-title">Калькулятор потенциальных потерь</div>
+        <div class="calc-title" data-i18n="calc.title">Калькулятор потенційних втрат</div>
         <div class="calc-row">
           <div style="display:flex;justify-content:space-between;align-items:center">
-            <span class="calc-label">Сотрудников в компании</span>
+            <span class="calc-label" data-i18n="calc.employees">Співробітників у компанії</span>
             <span class="calc-value mono" id="emp-val">25</span>
           </div>
           <input type="range" class="calc-slider" min="5" max="200" value="25" id="emp-slider">
         </div>
         <div class="calc-row">
           <div style="display:flex;justify-content:space-between;align-items:center">
-            <span class="calc-label">Средняя зарплата, €/мес</span>
+            <span class="calc-label" data-i18n="calc.salary">Середня зарплата, €/міс</span>
             <span class="calc-value mono" id="sal-val">1 800</span>
           </div>
           <input type="range" class="calc-slider" min="800" max="5000" step="100" value="1800" id="sal-slider">
         </div>
         <div class="calc-row">
           <div style="display:flex;justify-content:space-between;align-items:center">
-            <span class="calc-label">% времени на рутинные задачи</span>
+            <span class="calc-label" data-i18n="calc.routine">% часу на рутинні завдання</span>
             <span class="calc-value mono" id="rut-val">30%</span>
           </div>
           <input type="range" class="calc-slider" min="10" max="70" value="30" id="rut-slider">
         </div>
         <div class="calc-result">
-          <div class="result-row"><span>Стоимость рутины в мес.</span><span class="result-val neg" id="res-routine">€13 500</span></div>
-          <div class="result-row"><span>AI автоматизирует</span><span class="result-val" style="color:var(--accent3)">~70%</span></div>
-          <div class="result-row"><span>Потенциальная экономия/мес</span><span class="result-val pos" id="res-save">€9 450</span></div>
-          <div class="result-row"><span style="font-weight:700">ROI за год</span><span class="result-val pos" style="font-size:18px" id="res-roi">2 896%</span></div>
+          <div class="result-row"><span data-i18n="calc.r1">Вартість рутини на міс.</span><span class="result-val neg" id="res-routine">€13 500</span></div>
+          <div class="result-row"><span data-i18n="calc.r2">AI автоматизує</span><span class="result-val" style="color:var(--accent3)">~70%</span></div>
+          <div class="result-row"><span data-i18n="calc.r3">Потенційна економія/міс</span><span class="result-val pos" id="res-save">€9 450</span></div>
+          <div class="result-row"><span style="font-weight:700" data-i18n="calc.r4">ROI за рік</span><span class="result-val pos" style="font-size:18px" id="res-roi">2 896%</span></div>
         </div>
-        <div style="font-size:12px;color:var(--faint);margin-top:12px;font-family:'DM Mono',monospace">*оценочный расчёт · точные данные — в AI X-Ray</div>
+        <div style="font-size:12px;color:var(--faint);margin-top:12px;font-family:'DM Mono',monospace" data-i18n="calc.note">*орієнтовний розрахунок · точні дані — в AI X-Ray</div>
       </div>
     </div>
   </div>
@@ -337,35 +337,35 @@
   <!-- PILOT -->
   <div class="product-panel" id="tab-pilot">
     <div>
-      <div class="product-badge badge-growth">PILOT · Быстрый старт</div>
+      <div class="product-badge badge-growth" data-i18n="prod.pilot.badge">PILOT · Швидкий старт</div>
       <div class="product-name">OMNEX Pilot</div>
-      <div class="product-sub">Берём главную боль из AI X-Ray и запускаем рабочего AI-агента за 14 дней. Вы видите результат на своём бизнесе — не демо, а реальная работа.</div>
+      <div class="product-sub" data-i18n="prod.pilot.sub">Беремо головний біль з AI X-Ray і запускаємо робочого AI-агента за 14 днів. Ви бачите результат на своєму бізнесі — не демо, а реальна робота.</div>
       <div class="product-price">
         <span class="price-amount" style="color:var(--accent2)">€2,490</span>
-        <span class="price-period">разово · окупается за 3–6 недель</span>
+        <span class="price-period" data-i18n="prod.pilot.period">разово · окупається за 3–6 тижнів</span>
       </div>
       <ul class="feature-list">
-        <li><span class="feat-check">✓</span>1 настроенный AI-агент под ваш процесс</li>
-        <li><span class="feat-check">✓</span>Интеграция с вашими системами (CRM, почта, мессенджеры)</li>
-        <li><span class="feat-check">✓</span>Тестирование на реальных данных 14 дней</li>
-        <li><span class="feat-check">✓</span>Обучение команды (2 часа)</li>
-        <li><span class="feat-check">✓</span>Подробный отчёт результатов после пилота</li>
-        <li><span class="feat-check">✓</span>Гарантия: если агент не сэкономил больше €2,490 — доработаем бесплатно</li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.pilot.f1">1 налаштований AI-агент під ваш процес</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.pilot.f2">Інтеграція з вашими системами (CRM, пошта, месенджери)</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.pilot.f3">Тестування на реальних даних 14 днів</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.pilot.f4">Навчання команди (2 години)</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.pilot.f5">Детальний звіт результатів після пілота</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.pilot.f6">Гарантія: якщо агент не зекономив більше €2,490 — доопрацюємо безкоштовно</span></li>
       </ul>
-      <a href="#" class="btn btn-purple" data-modal="lead" data-product="pilot">Запустить пилот →</a>
+      <a href="#" class="btn btn-purple" data-modal="lead" data-product="pilot" data-i18n="prod.pilot.btn">Запустити пілот →</a>
     </div>
     <div class="product-visual" style="border-color:rgba(123,97,255,.2)">
       <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--accent2),transparent)"></div>
-      <div class="label" style="color:var(--accent2);margin-bottom:20px">Типичные пилот-агенты</div>
+      <div class="label" style="color:var(--accent2);margin-bottom:20px" data-i18n="prod.pilot.agents_label">Типові пілот-агенти</div>
       <div class="demo-agents-list">
-        <div class="demo-agent-row"><div class="agent-name-col"><div class="a-dot active"></div><span>Агент обработки заявок</span></div><span class="a-tasks">847 заявок/мес</span><span class="a-saving">-€1,240/мес</span></div>
-        <div class="demo-agent-row"><div class="agent-name-col"><div class="a-dot active"></div><span>Агент поддержки клиентов</span></div><span class="a-tasks">24/7 online</span><span class="a-saving">-€920/мес</span></div>
+        <div class="demo-agent-row"><div class="agent-name-col"><div class="a-dot active"></div><span data-i18n="prod.pilot.a1">Агент обробки заявок</span></div><span class="a-tasks">847 заявок/міс</span><span class="a-saving">-€1,240/міс</span></div>
+        <div class="demo-agent-row"><div class="agent-name-col"><div class="a-dot active"></div><span data-i18n="prod.pilot.a2">Агент підтримки клієнтів</span></div><span class="a-tasks">24/7 online</span><span class="a-saving">-€920/міс</span></div>
         <div class="demo-agent-row"><div class="agent-name-col"><div class="a-dot idle"></div><span>Агент follow-up</span></div><span class="a-tasks">auto-CRM</span><span class="a-saving">+18% конв.</span></div>
-        <div class="demo-agent-row"><div class="agent-name-col"><div class="a-dot active"></div><span>Агент отчётности</span></div><span class="a-tasks">daily digest</span><span class="a-saving">-€680/мес</span></div>
-        <div class="demo-agent-row"><div class="agent-name-col"><div class="a-dot active"></div><span>Агент броней и расписания</span></div><span class="a-tasks">PMS sync</span><span class="a-saving">-€560/мес</span></div>
+        <div class="demo-agent-row"><div class="agent-name-col"><div class="a-dot active"></div><span data-i18n="prod.pilot.a4">Агент звітності</span></div><span class="a-tasks">daily digest</span><span class="a-saving">-€680/міс</span></div>
+        <div class="demo-agent-row"><div class="agent-name-col"><div class="a-dot active"></div><span data-i18n="prod.pilot.a5">Агент бронювань та розкладу</span></div><span class="a-tasks">PMS sync</span><span class="a-saving">-€560/міс</span></div>
       </div>
-      <div style="margin-top:20px;padding:14px;background:var(--surface3);border-radius:var(--rs);font-size:13px;color:var(--muted);border:1px solid rgba(123,97,255,.15)">
-        Среднее по пилот-клиентам: <span style="color:var(--accent2);font-weight:600">-€2,800/мес</span> экономии · окупаемость <span style="color:var(--accent2);font-weight:600">26 дней</span>
+      <div style="margin-top:20px;padding:14px;background:var(--surface3);border-radius:var(--rs);font-size:13px;color:var(--muted);border:1px solid rgba(123,97,255,.15)" data-i18n-html="prod.pilot.avg">
+        Середнє по пілот-клієнтах: <span style="color:var(--accent2);font-weight:600">-€2,800/міс</span> економії · окупність <span style="color:var(--accent2);font-weight:600">26 днів</span>
       </div>
     </div>
   </div>
@@ -373,23 +373,23 @@
   <!-- CORE -->
   <div class="product-panel" id="tab-core">
     <div>
-      <div class="product-badge badge-scale">CORE · Полная система</div>
+      <div class="product-badge badge-scale" data-i18n="prod.core.badge">CORE · Повна система</div>
       <div class="product-name">OMNEX Core</div>
-      <div class="product-sub">Полный набор AI-агентов + единый командный центр. Ваша AI-команда которая работает 24/7 и отчитывается в деньгах каждую неделю.</div>
+      <div class="product-sub" data-i18n="prod.core.sub">Повний набір AI-агентів + єдиний командний центр. Ваша AI-команда яка працює 24/7 і звітує в грошах кожного тижня.</div>
       <div class="product-price">
         <span class="price-amount text-accent">€990</span>
-        <span class="price-period">/ месяц · от 3 месяцев</span>
+        <span class="price-period" data-i18n="prod.core.period">/ місяць · від 3 місяців</span>
       </div>
       <ul class="feature-list">
-        <li><span class="feat-check">✓</span>До 5 AI-агентов (любой набор)</li>
-        <li><span class="feat-check">✓</span>OMNEX Control Panel — дашборд CEO</li>
-        <li><span class="feat-check">✓</span>До 8 интеграций (CRM, ERP, мессенджеры)</li>
-        <li><span class="feat-check">✓</span>Еженедельный ROI-отчёт в €</li>
-        <li><span class="feat-check">✓</span>Приоритетная поддержка (Slack, &lt;4 ч)</li>
-        <li><span class="feat-check">✓</span>Ежемесячная оптимизация агентов</li>
-        <li><span class="feat-check">✓</span>GDPR-compliant · данные в ЕС</li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.core.f1">До 5 AI-агентів (будь-який набір)</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.core.f2">OMNEX Control Panel — дашборд CEO</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.core.f3">До 8 інтеграцій (CRM, ERP, месенджери)</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.core.f4">Щотижневий ROI-звіт в €</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.core.f5">Пріоритетна підтримка (Slack, &lt;4 год)</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.core.f6">Щомісячна оптимізація агентів</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.core.f7">GDPR-compliant · дані в ЄС</span></li>
       </ul>
-      <a href="#" class="btn btn-primary" data-modal="lead" data-product="core">Начать с Core →</a>
+      <a href="#" class="btn btn-primary" data-modal="lead" data-product="core" data-i18n="prod.core.btn">Почати з Core →</a>
     </div>
     <div>
       <!-- Mini demo of Control Panel -->
@@ -402,12 +402,12 @@
         </div>
         <div style="padding:20px">
           <div class="demo-kpi-grid">
-            <div class="demo-kpi"><div class="demo-kpi-label">Экономия/мес</div><div class="demo-kpi-val text-accent">€3,420</div><div class="demo-kpi-change change-up">↑ +12% к прошлому</div></div>
-            <div class="demo-kpi"><div class="demo-kpi-label">Обработ. заявок</div><div class="demo-kpi-val">1,247</div><div class="demo-kpi-change change-up">↑ автоматически</div></div>
-            <div class="demo-kpi"><div class="demo-kpi-label">Активных агентов</div><div class="demo-kpi-val text-green">5 / 5</div><div class="demo-kpi-change" style="color:var(--accent3)">● все активны</div></div>
+            <div class="demo-kpi"><div class="demo-kpi-label" data-i18n="demo.core.k1">Економія/міс</div><div class="demo-kpi-val text-accent">€3,420</div><div class="demo-kpi-change change-up" data-i18n="demo.core.k1c">↑ +12% до попер.</div></div>
+            <div class="demo-kpi"><div class="demo-kpi-label" data-i18n="demo.core.k2">Оброблено заявок</div><div class="demo-kpi-val">1,247</div><div class="demo-kpi-change change-up" data-i18n="demo.core.k2c">↑ автоматично</div></div>
+            <div class="demo-kpi"><div class="demo-kpi-label" data-i18n="demo.core.k3">Активних агентів</div><div class="demo-kpi-val text-green">5 / 5</div><div class="demo-kpi-change" style="color:var(--accent3)" data-i18n="demo.core.k3c">● всі активні</div></div>
           </div>
           <div class="demo-chart">
-            <div style="font-size:12px;color:var(--muted);margin-bottom:12px;font-family:'DM Mono',monospace">Экономия по неделям (€)</div>
+            <div style="font-size:12px;color:var(--muted);margin-bottom:12px;font-family:'DM Mono',monospace" data-i18n="demo.core.chart">Економія по тижнях (€)</div>
             <div class="chart-bars">
               <div class="chart-bar" style="background:var(--accent2);opacity:.5;height:45%"></div>
               <div class="chart-bar" style="background:var(--accent2);opacity:.6;height:55%"></div>
@@ -420,12 +420,12 @@
               <div class="chart-bar" style="background:var(--accent);height:100%"></div>
             </div>
             <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--faint);margin-top:8px;font-family:'DM Mono',monospace">
-              <span>Нед 1</span><span>Нед 4</span><span>Нед 8</span><span>Нед 12</span>
+              <span>Тиж 1</span><span>Тиж 4</span><span>Тиж 8</span><span>Тиж 12</span>
             </div>
           </div>
-          <div class="agent-status"><span style="display:flex;align-items:center;gap:8px"><div class="status-dot status-active" style="width:7px;height:7px;border-radius:50%"></div>Агент продаж</span><span class="mono" style="font-size:12px;color:var(--accent3)">+€1,100/мес</span></div>
-          <div class="agent-status"><span style="display:flex;align-items:center;gap:8px"><div class="status-dot status-active" style="width:7px;height:7px;border-radius:50%"></div>Поддержка 24/7</span><span class="mono" style="font-size:12px;color:var(--accent3)">+€920/мес</span></div>
-          <div class="agent-status"><span style="display:flex;align-items:center;gap:8px"><div class="status-dot" style="background:var(--gold);width:7px;height:7px;border-radius:50%"></div>Аналитика</span><span class="mono" style="font-size:12px;color:var(--gold)">оптимизация</span></div>
+          <div class="agent-status"><span style="display:flex;align-items:center;gap:8px"><div class="status-dot status-active" style="width:7px;height:7px;border-radius:50%"></div><span data-i18n="demo.core.agent1">Агент продажів</span></span><span class="mono" style="font-size:12px;color:var(--accent3)">+€1,100/міс</span></div>
+          <div class="agent-status"><span style="display:flex;align-items:center;gap:8px"><div class="status-dot status-active" style="width:7px;height:7px;border-radius:50%"></div><span data-i18n="demo.core.agent2">Підтримка 24/7</span></span><span class="mono" style="font-size:12px;color:var(--accent3)">+€920/міс</span></div>
+          <div class="agent-status"><span style="display:flex;align-items:center;gap:8px"><div class="status-dot" style="background:var(--gold);width:7px;height:7px;border-radius:50%"></div><span data-i18n="demo.core.agent3">Аналітика</span></span><span class="mono" style="font-size:12px;color:var(--gold)" data-i18n="demo.core.agent3s">оптимізація</span></div>
         </div>
       </div>
     </div>
@@ -434,32 +434,32 @@
   <!-- ENTERPRISE -->
   <div class="product-panel" id="tab-enterprise">
     <div>
-      <div class="product-badge badge-enterprise">ENTERPRISE · Полная трансформация</div>
+      <div class="product-badge badge-enterprise" data-i18n="prod.ent.badge">ENTERPRISE · Повна трансформація</div>
       <div class="product-name">OMNEX Enterprise</div>
-      <div class="product-sub">Кастомные AI-агенты под уникальные процессы компании. Выделенная команда. On-premise опция. SLA 99.9%. Для бизнеса 100+ человек.</div>
+      <div class="product-sub" data-i18n="prod.ent.sub">Кастомні AI-агенти під унікальні процеси компанії. Виділена команда. On-premise опція. SLA 99.9%. Для бізнесу 100+ людей.</div>
       <div class="product-price">
         <span class="price-amount text-gold">Custom</span>
-        <span class="price-period">от €5,000/мес</span>
+        <span class="price-period" data-i18n="prod.ent.period">від €5,000/міс</span>
       </div>
       <ul class="feature-list">
-        <li><span class="feat-check">✓</span>Неограниченное количество AI-агентов</li>
-        <li><span class="feat-check">✓</span>Кастомная разработка агентов под специфику</li>
-        <li><span class="feat-check">✓</span>On-premise или private cloud развёртывание</li>
-        <li><span class="feat-check">✓</span>Выделенный Customer Success менеджер</li>
-        <li><span class="feat-check">✓</span>SLA 99.9% + аудит безопасности</li>
-        <li><span class="feat-check">✓</span>White-label опция для партнёров</li>
-        <li><span class="feat-check">✓</span>Интеграция с SAP, Oracle, кастомными ERP</li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.ent.f1">Необмежена кількість AI-агентів</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.ent.f2">Кастомна розробка агентів під специфіку</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.ent.f3">On-premise або private cloud розгортання</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.ent.f4">Виділений Customer Success менеджер</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.ent.f5">SLA 99.9% + аудит безпеки</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.ent.f6">White-label опція для партнерів</span></li>
+        <li><span class="feat-check">✓</span><span data-i18n="prod.ent.f7">Інтеграція з SAP, Oracle, кастомними ERP</span></li>
       </ul>
-      <a href="#" class="btn btn-gold" data-modal="lead" data-product="enterprise">Запросить Enterprise →</a>
+      <a href="#" class="btn btn-gold" data-modal="lead" data-product="enterprise" data-i18n="prod.ent.btn">Запросити Enterprise →</a>
     </div>
     <div class="product-visual" style="border-color:rgba(255,176,32,.2)">
       <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--gold),transparent)"></div>
-      <div class="label" style="color:var(--gold);margin-bottom:20px">Enterprise возможности</div>
+      <div class="label" style="color:var(--gold);margin-bottom:20px" data-i18n="prod.ent.vis_label">Enterprise можливості</div>
       <div style="display:flex;flex-direction:column;gap:12px">
-        <div style="padding:14px;background:var(--surface3);border-radius:var(--rs);border:1px solid rgba(255,176,32,.15)"><div style="font-size:13px;font-weight:600;margin-bottom:4px">Вертикальные отраслевые агенты</div><div style="font-size:12px;color:var(--muted)">Готовые конфигурации для гостеприимства, недвижимости, производства, ритейла, медицины</div></div>
-        <div style="padding:14px;background:var(--surface3);border-radius:var(--rs);border:1px solid rgba(255,176,32,.15)"><div style="font-size:13px;font-weight:600;margin-bottom:4px">Multi-company управление</div><div style="font-size:12px;color:var(--muted)">Единый дашборд для холдингов с несколькими юридическими лицами и командами</div></div>
-        <div style="padding:14px;background:var(--surface3);border-radius:var(--rs);border:1px solid rgba(255,176,32,.15)"><div style="font-size:13px;font-weight:600;margin-bottom:4px">Реселлер / White-label программа</div><div style="font-size:12px;color:var(--muted)">Для агентств, консультантов и системных интеграторов. Маржа 20–35%.</div></div>
-        <div style="padding:14px;background:var(--surface3);border-radius:var(--rs);border:1px solid rgba(255,176,32,.15)"><div style="font-size:13px;font-weight:600;margin-bottom:4px">Успешные внедрения за 30 дней</div><div style="font-size:12px;color:var(--muted)">Structured onboarding: discovery → build → deploy → optimize. Никакого хаоса.</div></div>
+        <div style="padding:14px;background:var(--surface3);border-radius:var(--rs);border:1px solid rgba(255,176,32,.15)"><div style="font-size:13px;font-weight:600;margin-bottom:4px" data-i18n="prod.ent.v1t">Вертикальні галузеві агенти</div><div style="font-size:12px;color:var(--muted)" data-i18n="prod.ent.v1d">Готові конфігурації для гостинності, нерухомості, виробництва, рітейлу, медицини</div></div>
+        <div style="padding:14px;background:var(--surface3);border-radius:var(--rs);border:1px solid rgba(255,176,32,.15)"><div style="font-size:13px;font-weight:600;margin-bottom:4px" data-i18n="prod.ent.v2t">Multi-company управління</div><div style="font-size:12px;color:var(--muted)" data-i18n="prod.ent.v2d">Єдиний дашборд для холдингів з кількома юридичними особами та командами</div></div>
+        <div style="padding:14px;background:var(--surface3);border-radius:var(--rs);border:1px solid rgba(255,176,32,.15)"><div style="font-size:13px;font-weight:600;margin-bottom:4px" data-i18n="prod.ent.v3t">Реселер / White-label програма</div><div style="font-size:12px;color:var(--muted)" data-i18n="prod.ent.v3d">Для агентств, консультантів та системних інтеграторів. Маржа 20–35%.</div></div>
+        <div style="padding:14px;background:var(--surface3);border-radius:var(--rs);border:1px solid rgba(255,176,32,.15)"><div style="font-size:13px;font-weight:600;margin-bottom:4px" data-i18n="prod.ent.v4t">Успішні впровадження за 30 днів</div><div style="font-size:12px;color:var(--muted)" data-i18n="prod.ent.v4d">Structured onboarding: discovery → build → deploy → optimize. Жодного хаосу.</div></div>
       </div>
     </div>
   </div>
@@ -470,33 +470,33 @@
 <!-- INTERACTIVE AI DEMO -->
 <section class="section">
 <div class="container">
-  <div class="label fade-up">Живая демонстрация</div>
-  <h2 class="display fade-up" style="font-size:clamp(32px,4vw,52px);max-width:540px;line-height:1.05;margin-bottom:12px">Посмотрите как выглядит OMNEX Control Panel</h2>
-  <p class="fade-up" style="font-size:16px;color:var(--muted);max-width:480px;margin-bottom:0">Нажимайте на пункты меню слева — это интерактивная демо-версия реального дашборда.</p>
+  <div class="label fade-up" data-i18n="demo.label">Жива демонстрація</div>
+  <h2 class="display fade-up" style="font-size:clamp(32px,4vw,52px);max-width:540px;line-height:1.05;margin-bottom:12px" data-i18n="demo.title">Подивіться як виглядає OMNEX Control Panel</h2>
+  <p class="fade-up" style="font-size:16px;color:var(--muted);max-width:480px;margin-bottom:0" data-i18n="demo.sub">Натискайте на пункти меню зліва — це інтерактивна демо-версія реального дашборда.</p>
   <div class="ai-demo fade-up">
     <div class="demo-bar-top">
       <div class="demo-circle" style="background:#FF5F56"></div>
       <div class="demo-circle" style="background:#FFBD2E"></div>
       <div class="demo-circle" style="background:#27C93F"></div>
-      <div class="demo-url">app.omnex.io · CEO Control Panel · Компания: Demo Corp</div>
+      <div class="demo-url" data-i18n="demo.url">app.omnex.io · CEO Control Panel · Компанія: Demo Corp</div>
     </div>
     <div class="demo-body">
       <div class="demo-sidebar">
-        <button class="demo-nav-item active" data-panel="overview"><span class="demo-icon">◎</span> Обзор</button>
-        <button class="demo-nav-item" data-panel="agents"><span class="demo-icon">◈</span> Агенты</button>
-        <button class="demo-nav-item" data-panel="savings"><span class="demo-icon">◆</span> Экономия</button>
-        <button class="demo-nav-item" data-panel="leads"><span class="demo-icon">◉</span> Лиды</button>
+        <button class="demo-nav-item active" data-panel="overview"><span class="demo-icon">◎</span> <span data-i18n="demo.nav.overview">Огляд</span></button>
+        <button class="demo-nav-item" data-panel="agents"><span class="demo-icon">◈</span> <span data-i18n="demo.nav.agents">Агенти</span></button>
+        <button class="demo-nav-item" data-panel="savings"><span class="demo-icon">◆</span> <span data-i18n="demo.nav.savings">Економія</span></button>
+        <button class="demo-nav-item" data-panel="leads"><span class="demo-icon">◉</span> <span data-i18n="demo.nav.leads">Ліди</span></button>
       </div>
       <div class="demo-content">
 
         <div class="demo-content-panel active" id="demo-overview">
           <div class="demo-kpi-grid">
-            <div class="demo-kpi"><div class="demo-kpi-label">Экономия эта неделя</div><div class="demo-kpi-val text-accent">€847</div><div class="demo-kpi-change change-up">↑ +8% к пред.</div></div>
-            <div class="demo-kpi"><div class="demo-kpi-label">Обработано заявок</div><div class="demo-kpi-val">312</div><div class="demo-kpi-change change-up">↑ авто: 94%</div></div>
-            <div class="demo-kpi"><div class="demo-kpi-label">Время ответа</div><div class="demo-kpi-val text-green">2.3 мин</div><div class="demo-kpi-change change-up">↓ было 4.2 ч</div></div>
+            <div class="demo-kpi"><div class="demo-kpi-label" data-i18n="demo.ov.k1">Економія цей тиждень</div><div class="demo-kpi-val text-accent">€847</div><div class="demo-kpi-change change-up" data-i18n="demo.ov.k1c">↑ +8% до попер.</div></div>
+            <div class="demo-kpi"><div class="demo-kpi-label" data-i18n="demo.ov.k2">Оброблено заявок</div><div class="demo-kpi-val">312</div><div class="demo-kpi-change change-up" data-i18n="demo.ov.k2c">↑ авто: 94%</div></div>
+            <div class="demo-kpi"><div class="demo-kpi-label" data-i18n="demo.ov.k3">Час відповіді</div><div class="demo-kpi-val text-green">2.3 хв</div><div class="demo-kpi-change change-up" data-i18n="demo.ov.k3c">↓ було 4.2 год</div></div>
           </div>
           <div class="demo-chart">
-            <div style="font-size:11px;color:var(--muted);margin-bottom:12px;font-family:'DM Mono',monospace">ЕЖЕДНЕВНАЯ ЭКОНОМИЯ (€)</div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:12px;font-family:'DM Mono',monospace" data-i18n="demo.ov.chart">ЩОДЕННА ЕКОНОМІЯ (€)</div>
             <div class="chart-bars" style="gap:8px">
               <div style="flex:1;background:rgba(196,241,53,.3);border-radius:3px 3px 0 0;height:65%"></div>
               <div style="flex:1;background:rgba(196,241,53,.4);border-radius:3px 3px 0 0;height:72%"></div>
@@ -507,41 +507,41 @@
               <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:100%"></div>
             </div>
           </div>
-          <div style="font-size:13px;color:var(--muted);font-family:'DM Mono',monospace;padding:12px;background:var(--surface3);border-radius:var(--rs)">
-            ● Все 4 агента активны · Последнее событие: 2 мин назад · Следующий отчёт: в 09:00
+          <div style="font-size:13px;color:var(--muted);font-family:'DM Mono',monospace;padding:12px;background:var(--surface3);border-radius:var(--rs)" data-i18n="demo.ov.status">
+            ● Всі 4 агенти активні · Остання подія: 2 хв тому · Наступний звіт: о 09:00
           </div>
         </div>
 
         <div class="demo-content-panel" id="demo-agents">
-          <div style="font-size:13px;color:var(--muted);margin-bottom:16px;font-family:'DM Mono',monospace">СТАТУС АГЕНТОВ · обновлено 2 мин назад</div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:16px;font-family:'DM Mono',monospace" data-i18n="demo.ag.header">СТАТУС АГЕНТІВ · оновлено 2 хв тому</div>
           <div class="demo-agents-list">
-            <div class="demo-agent-row" style="grid-template-columns:1fr auto auto auto"><div class="agent-name-col"><div class="a-dot active"></div><span style="font-weight:500">Агент продаж</span></div><span class="a-tasks">вчера: 47 заявок</span><span class="tag tag-green">активен</span><span class="a-saving">€1,100/мес</span></div>
-            <div class="demo-agent-row" style="grid-template-columns:1fr auto auto auto"><div class="agent-name-col"><div class="a-dot active"></div><span style="font-weight:500">Поддержка 24/7</span></div><span class="a-tasks">вчера: 134 ответа</span><span class="tag tag-green">активен</span><span class="a-saving">€920/мес</span></div>
-            <div class="demo-agent-row" style="grid-template-columns:1fr auto auto auto"><div class="agent-name-col"><div class="a-dot idle"></div><span style="font-weight:500">CEO Аналитика</span></div><span class="a-tasks">отчёт в 09:00</span><span class="tag tag-purple">готовится</span><span class="a-saving">€680/мес</span></div>
-            <div class="demo-agent-row" style="grid-template-columns:1fr auto auto auto"><div class="agent-name-col"><div class="a-dot active"></div><span style="font-weight:500">Follow-up агент</span></div><span class="a-tasks">вчера: 23 follow-up</span><span class="tag tag-green">активен</span><span class="a-saving">+18% конв.</span></div>
+            <div class="demo-agent-row" style="grid-template-columns:1fr auto auto auto"><div class="agent-name-col"><div class="a-dot active"></div><span style="font-weight:500" data-i18n="demo.ag.a1">Агент продажів</span></div><span class="a-tasks" data-i18n="demo.ag.a1t">вчора: 47 заявок</span><span class="tag tag-green" data-i18n="demo.ag.active">активний</span><span class="a-saving">€1,100/міс</span></div>
+            <div class="demo-agent-row" style="grid-template-columns:1fr auto auto auto"><div class="agent-name-col"><div class="a-dot active"></div><span style="font-weight:500" data-i18n="demo.ag.a2">Підтримка 24/7</span></div><span class="a-tasks" data-i18n="demo.ag.a2t">вчора: 134 відповіді</span><span class="tag tag-green" data-i18n="demo.ag.active">активний</span><span class="a-saving">€920/міс</span></div>
+            <div class="demo-agent-row" style="grid-template-columns:1fr auto auto auto"><div class="agent-name-col"><div class="a-dot idle"></div><span style="font-weight:500" data-i18n="demo.ag.a3">CEO Аналітика</span></div><span class="a-tasks" data-i18n="demo.ag.a3t">звіт о 09:00</span><span class="tag tag-purple" data-i18n="demo.ag.preparing">готується</span><span class="a-saving">€680/міс</span></div>
+            <div class="demo-agent-row" style="grid-template-columns:1fr auto auto auto"><div class="agent-name-col"><div class="a-dot active"></div><span style="font-weight:500">Follow-up агент</span></div><span class="a-tasks" data-i18n="demo.ag.a4t">вчора: 23 follow-up</span><span class="tag tag-green" data-i18n="demo.ag.active">активний</span><span class="a-saving">+18% конв.</span></div>
           </div>
         </div>
 
         <div class="demo-content-panel" id="demo-savings">
-          <div style="font-size:13px;color:var(--muted);margin-bottom:16px;font-family:'DM Mono',monospace">ФИНАНСОВЫЙ ЭФФЕКТ · этот месяц</div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:16px;font-family:'DM Mono',monospace" data-i18n="demo.sv.header">ФІНАНСОВИЙ ЕФЕКТ · цей місяць</div>
           <div style="display:flex;flex-direction:column;gap:10px">
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--surface2);border-radius:var(--rs);font-size:14px"><span>Экономия ФОТ (рутина → AI)</span><span class="mono text-green">+€2,700</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--surface2);border-radius:var(--rs);font-size:14px"><span>Дополнительные лиды (скорость)</span><span class="mono text-green">+€1,840</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--surface2);border-radius:var(--rs);font-size:14px"><span>Сэкономлено на аутсорс поддержке</span><span class="mono text-green">+€960</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--surface2);border-radius:var(--rs);font-size:14px"><span>Стоимость OMNEX Core</span><span class="mono text-red">-€990</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:14px;background:rgba(196,241,53,.08);border:1px solid rgba(196,241,53,.2);border-radius:var(--rs);font-size:16px;font-weight:700"><span>Чистый эффект в месяц</span><span class="mono text-accent">+€5,510</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--surface2);border-radius:var(--rs);font-size:14px"><span data-i18n="demo.sv.r1">Економія ФОП (рутина → AI)</span><span class="mono text-green">+€2,700</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--surface2);border-radius:var(--rs);font-size:14px"><span data-i18n="demo.sv.r2">Додаткові ліди (швидкість)</span><span class="mono text-green">+€1,840</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--surface2);border-radius:var(--rs);font-size:14px"><span data-i18n="demo.sv.r3">Зекономлено на аутсорс підтримці</span><span class="mono text-green">+€960</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--surface2);border-radius:var(--rs);font-size:14px"><span data-i18n="demo.sv.r4">Вартість OMNEX Core</span><span class="mono text-red">-€990</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:14px;background:rgba(196,241,53,.08);border:1px solid rgba(196,241,53,.2);border-radius:var(--rs);font-size:16px;font-weight:700"><span data-i18n="demo.sv.total">Чистий ефект на місяць</span><span class="mono text-accent">+€5,510</span></div>
           </div>
         </div>
 
         <div class="demo-content-panel" id="demo-leads">
-          <div style="font-size:13px;color:var(--muted);margin-bottom:16px;font-family:'DM Mono',monospace">ВОРОНКА ЛИДОВ · последние 7 дней</div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:16px;font-family:'DM Mono',monospace" data-i18n="demo.ld.header">ВОРОНКА ЛІДІВ · останні 7 днів</div>
           <div style="display:flex;flex-direction:column;gap:8px">
-            <div><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px"><span>Входящих заявок</span><span>247</span></div><div class="demo-bar-track"><div class="demo-bar-fill" style="--pct:100%;background:var(--accent2)"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px"><span>Обработано агентом (немедленно)</span><span>232 (94%)</span></div><div class="demo-bar-track"><div class="demo-bar-fill" style="--pct:94%;background:var(--accent)"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px"><span>Квалифицировано</span><span>148 (60%)</span></div><div class="demo-bar-track"><div class="demo-bar-fill" style="--pct:60%;background:var(--accent3)"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px"><span>Переданы менеджеру</span><span>89</span></div><div class="demo-bar-track"><div class="demo-bar-fill" style="--pct:36%;background:var(--gold)"></div></div></div>
-            <div style="padding:12px;background:var(--surface2);border-radius:var(--rs);font-size:12px;color:var(--muted);margin-top:8px;font-family:'DM Mono',monospace">
-              Среднее время первого ответа: <span style="color:var(--accent)">2.3 мин</span> (до OMNEX: 4.2 часа)
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px"><span data-i18n="demo.ld.r1">Вхідних заявок</span><span>247</span></div><div class="demo-bar-track"><div class="demo-bar-fill" style="--pct:100%;background:var(--accent2)"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px"><span data-i18n="demo.ld.r2">Оброблено агентом (миттєво)</span><span>232 (94%)</span></div><div class="demo-bar-track"><div class="demo-bar-fill" style="--pct:94%;background:var(--accent)"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px"><span data-i18n="demo.ld.r3">Кваліфіковано</span><span>148 (60%)</span></div><div class="demo-bar-track"><div class="demo-bar-fill" style="--pct:60%;background:var(--accent3)"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px"><span data-i18n="demo.ld.r4">Передано менеджеру</span><span>89</span></div><div class="demo-bar-track"><div class="demo-bar-fill" style="--pct:36%;background:var(--gold)"></div></div></div>
+            <div style="padding:12px;background:var(--surface2);border-radius:var(--rs);font-size:12px;color:var(--muted);margin-top:8px;font-family:'DM Mono',monospace" data-i18n-html="demo.ld.avg">
+              Середній час першої відповіді: <span style="color:var(--accent)">2.3 хв</span> (до OMNEX: 4.2 години)
             </div>
           </div>
         </div>

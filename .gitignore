@@ -6,3 +6,5 @@ dist/
 .env.local
 .env.*.local
 questionnaire_raw.md
+
+.vercel
