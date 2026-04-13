@@ -363,9 +363,83 @@ function goBack(){
   updateStrip(q.b); renderDots(); updFwd(); updBack();
 }
 function submit(){
+  const date = new Date().toLocaleString('uk-UA');
+
+  // ── 1. SAVE TO LOCALSTORAGE (primary backup) ──
+  const payload = {
+    client: 'Race Expert',
+    date: date,
+    answersRaw: ans,
+    answersFormatted: {}
+  };
+  QS.forEach((q,i) => {
+    const a = ans[i];
+    if(a === undefined){ payload.answersFormatted[i] = '—'; return; }
+    if(q.type === 'text') payload.answersFormatted[i] = a;
+    else if(q.type === 'single') payload.answersFormatted[i] = q.opts[a];
+    else payload.answersFormatted[i] = a.map(ai => q.opts[ai]);
+  });
+  localStorage.setItem('re_survey_answers', JSON.stringify(payload));
+  localStorage.setItem('re_survey_done', '1');
+  localStorage.setItem('re_survey_date', date);
+
+  // ── 2. CONSOLE LOG (debug) ──
+  console.log('📋 Race Expert Survey — Answers saved:', JSON.stringify(payload, null, 2));
+
+  // ── 3. AUTO-DOWNLOAD .MD FILE (offline backup) ──
+  try {
+    const md = buildSurveyMD(date);
+    const blob = new Blob([md], {type:'text/markdown;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `raceexpert-survey-${Date.now()}.md`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  } catch(e) {
+    console.warn('Auto-download failed:', e);
+  }
+
+  // ── 4. SHOW THANK YOU SCREEN ──
   document.getElementById('survey').classList.add('gone-left');
   document.getElementById('thankyou').classList.remove('gone-right');
-  console.log('Answers:',JSON.stringify(ans,null,2));
+}
+
+function buildSurveyMD(date){
+  let md = `# Брифінг Race Expert — Mission Control Dashboard\n\n`;
+  md += `**Дата:** ${date}  \n`;
+  md += `**Джерело:** Standalone Survey  \n\n---\n\n`;
+
+  const blocks = [
+    {id:'b1', lbl:'Головний біль та пріоритети'},
+    {id:'b2', lbl:'Дані та системи'},
+    {id:'b3', lbl:'Замовлення та продажі'},
+    {id:'b4', lbl:'Склад та логістика'},
+    {id:'b5', lbl:'Фінанси'},
+    {id:'b6', lbl:'Очікування від MVP'},
+  ];
+
+  blocks.forEach(bl => {
+    const bqs = QS.filter(q => q.b === bl.id);
+    if(!bqs.length) return;
+    md += `## ${bl.lbl}\n\n`;
+    bqs.forEach(q => {
+      const idx = QS.indexOf(q);
+      const a = ans[idx];
+      md += `**П.${String(idx+1).padStart(2,'0')}. ${q.t}**\n\n`;
+      if(a === undefined){ md += `> *Не відповіли*\n\n`; return; }
+      if(q.type === 'text') md += `> ${a}\n\n`;
+      else if(q.type === 'single') md += `- [x] ${q.opts[a]}\n\n`;
+      else {
+        q.opts.forEach((opt, oi) => { md += `- [${a.includes(oi)?'x':' '}] ${opt}\n`; });
+        md += '\n';
+      }
+    });
+    md += `---\n\n`;
+  });
+  return md;
 }
 </script>
 </body>
