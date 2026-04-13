@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════
-   OMNEX — Main JavaScript
+   OMNEX – Main JavaScript
    ══════════════════════════════════════════════════════ */
 
 // ── TELEGRAM BOT CONFIG ──
@@ -241,21 +241,21 @@ async function sendToTelegram(data) {
   }
 
   const productLabels = {
-    'xray': 'AI X-Ray — €390',
-    'pilot': 'OMNEX Pilot — €2,490',
-    'core': 'OMNEX Core — €990/мес',
-    'enterprise': 'Enterprise — Custom',
+    'xray': 'AI X-Ray – €390',
+    'pilot': 'OMNEX Pilot – €2,490',
+    'core': 'OMNEX Core – €990/мес',
+    'enterprise': 'Enterprise – Custom',
     'consult': 'Бесплатная консультация',
   };
 
   const now = new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Prague' });
 
   let text = `🔔 *Нова заявка OMNEX*\n\n`;
-  text += `👤 *Ім'я:* ${data.name || '—'}\n`;
-  text += `🏢 *Компанія:* ${data.company || '—'}\n`;
-  text += `📧 *Email:* ${data.email || '—'}\n`;
-  text += `📱 *Телефон:* ${data.phone || '—'}\n`;
-  text += `📦 *Продукт:* ${productLabels[data.product] || data.product || '—'}\n`;
+  text += `👤 *Ім'я:* ${data.name || '–'}\n`;
+  text += `🏢 *Компанія:* ${data.company || '–'}\n`;
+  text += `📧 *Email:* ${data.email || '–'}\n`;
+  text += `📱 *Телефон:* ${data.phone || '–'}\n`;
+  text += `📦 *Продукт:* ${productLabels[data.product] || data.product || '–'}\n`;
   if (data.message) text += `💬 *Повідомлення:* ${data.message}\n`;
   text += `\n🕐 ${now}`;
 

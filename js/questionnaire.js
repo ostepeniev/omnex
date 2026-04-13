@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════
-   OMNEX — Questionnaire Logic
+   OMNEX – Questionnaire Logic
    Multi-step form with progress tracking, conditional
    logic, validation and Telegram submission.
    ══════════════════════════════════════════════════════ */
@@ -201,16 +201,16 @@ async function sendQuestionnaireToTelegram(data) {
 
   const now = new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Prague' });
   let text = `📋 *AI X-Ray Анкета*\n\n`;
-  text += `👤 *Ім'я:* ${data.q42_name || '—'}\n`;
-  text += `📧 *Email:* ${data.q42_email || '—'}\n`;
-  text += `📱 *Телефон:* ${data.q42_phone || '—'}\n`;
-  text += `🏢 *Компанія:* ${data.q1 || '—'}\n`;
-  text += `🏭 *Галузь:* ${data.q2 || '—'}\n`;
-  text += `📊 *Оборот:* ${data.q5 || '—'}\n`;
-  text += `👥 *Команда:* ${data.q8 || '—'}\n`;
-  text += `⏰ *Рутина/тижд:* ${data.q17 || '—'}\n`;
-  text += `🎯 *Ціль:* ${data.q37 || '—'}\n`;
-  text += `💰 *Бюджет AI:* ${data.q40 || '—'}\n`;
+  text += `👤 *Ім'я:* ${data.q42_name || '–'}\n`;
+  text += `📧 *Email:* ${data.q42_email || '–'}\n`;
+  text += `📱 *Телефон:* ${data.q42_phone || '–'}\n`;
+  text += `🏢 *Компанія:* ${data.q1 || '–'}\n`;
+  text += `🏭 *Галузь:* ${data.q2 || '–'}\n`;
+  text += `📊 *Оборот:* ${data.q5 || '–'}\n`;
+  text += `👥 *Команда:* ${data.q8 || '–'}\n`;
+  text += `⏰ *Рутина/тижд:* ${data.q17 || '–'}\n`;
+  text += `🎯 *Ціль:* ${data.q37 || '–'}\n`;
+  text += `💰 *Бюджет AI:* ${data.q40 || '–'}\n`;
   text += `\n🕐 ${now}`;
 
   await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
