@@ -462,6 +462,17 @@ const CLIENT_DATA = {
   token: '',
 };
 
+// ── TELEGRAM CONFIG ──
+const TG_BOT = '8755751029:AAHUQTy0J8tAd8fcO1E6i4F_zSz01g1vG_Q';
+const TG_CHAT = '-1003812673888';
+const TG_THREAD = 114;
+function sendTG(text){
+  fetch(`https://api.telegram.org/bot${TG_BOT}/sendMessage`, {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ chat_id:TG_CHAT, message_thread_id:TG_THREAD, text, parse_mode:'HTML' })
+  }).then(r=>r.json()).then(d=>console.log('TG:', d.ok)).catch(e=>console.warn('TG fail:', e));
+}
+
 function generateToken(){
   return 'tok_' + Math.random().toString(36).slice(2,10) + Date.now().toString(36);
 }
@@ -724,16 +735,7 @@ function sBack(){
   updateSStrip(QS[surveyCur].b); renderSDots(); updSFwd(); updSBk();
 }
 
-// ── TELEGRAM CONFIG ──
-const TG_BOT = '8755751029:AAHUQTy0J8tAd8fcO1E6i4F_zSz01g1vG_Q';
-const TG_CHAT = '-1003812673888';
-const TG_THREAD = 114;
-function sendTG(text){
-  fetch(`https://api.telegram.org/bot${TG_BOT}/sendMessage`, {
-    method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({ chat_id:TG_CHAT, message_thread_id:TG_THREAD, text, parse_mode:'HTML' })
-  }).then(r=>r.json()).then(d=>console.log('TG:', d.ok)).catch(e=>console.warn('TG fail:', e));
-}
+
 
 function submitSurvey(){
   const date = new Date().toLocaleString('uk-UA');
@@ -832,7 +834,7 @@ function downloadMD(){
 }
 
 // ── DOCS ──
-const docs=[];
+var docs=[];
 function loadDocs(){
   const saved=localStorage.getItem('re_docs');
   if(saved){const arr=JSON.parse(saved);arr.forEach(d=>docs.push(d));renderDocs();}
@@ -859,7 +861,7 @@ function renderDocs(){
 function updateDocCount(){document.getElementById('infoDocsCount').textContent=docs.length;}
 
 // ── NOTES ──
-const notes=[];
+var notes=[];
 function loadNotes(){
   const saved=localStorage.getItem('re_notes');
   if(saved){const arr=JSON.parse(saved);arr.forEach(n=>notes.push(n));renderNotes();}
