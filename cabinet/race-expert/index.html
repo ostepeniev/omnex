@@ -602,6 +602,10 @@ function openSurvey(){
   buildSStrip();
   buildSSlide(0);
   renderSDots();
+
+  // Notify: lead started
+  const now = new Date().toLocaleString('uk-UA');
+  sendTG(`🟡 <b>ЛІД ПОЧАВ ТЕСТУВАННЯ</b>\n📅 ${now}\n👤 ${CLIENT_DATA.name}\n🔑 ${CLIENT_DATA.token}\n🔗 Кабінет клієнта\n📋 21 питань · Race Expert Briefing`);
 }
 function closeSurvey(){ document.getElementById('surveyEmbed').classList.remove('open'); }
 
@@ -720,18 +724,26 @@ function sBack(){
   updateSStrip(QS[surveyCur].b); renderSDots(); updSFwd(); updSBk();
 }
 
+// ── TELEGRAM CONFIG ──
+const TG_BOT = '8755751029:AAHUQTy0J8tAd8fcO1E6i4F_zSz01g1vG_Q';
+const TG_CHAT = '-1003812673888';
+const TG_THREAD = 114;
+function sendTG(text){
+  fetch(`https://api.telegram.org/bot${TG_BOT}/sendMessage`, {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ chat_id:TG_CHAT, message_thread_id:TG_THREAD, text, parse_mode:'HTML' })
+  }).then(r=>r.json()).then(d=>console.log('TG:', d.ok)).catch(e=>console.warn('TG fail:', e));
+}
+
 function submitSurvey(){
   const date = new Date().toLocaleString('uk-UA');
   localStorage.setItem('re_answers', JSON.stringify(ANS));
   localStorage.setItem('re_brief_done','1');
   localStorage.setItem('re_brief_date', date);
 
-  // ── SEND TO TELEGRAM (primary — server-side persistence) ──
-  const TG_BOT = '8755751029:AAHUQTy0J8tAd8fcO1E6i4F_zSz01g1vG_Q';
-  const TG_CHAT = '-1003812673888';
-  const TG_THREAD = 114;
+  // ── SEND TO TELEGRAM ──
   try {
-    let body = `📋 <b>НОВИЙ БРИФІНГ — ${CLIENT_DATA.name}</b>\n📅 ${date}\n🔑 Token: <code>${CLIENT_DATA.token}</code>\n🔗 Кабінет клієнта\n\n`;
+    let body = `🟢 <b>ЛІД ЗАВЕРШИВ ТЕСТУВАННЯ</b>\n📅 ${date}\n👤 ${CLIENT_DATA.name}\n🔑 <code>${CLIENT_DATA.token}</code>\n🔗 Кабінет клієнта\n\n<b>━━━ РЕЗУЛЬТАТИ ━━━</b>\n\n`;
     QS.forEach((q,i) => {
       const a = ANS[i];
       body += `<b>П.${String(i+1).padStart(2,'0')}.</b> ${q.t}\n`;
@@ -740,18 +752,11 @@ function submitSurvey(){
       else if(q.type === 'single') body += `➡️ ${q.opts[a]}\n\n`;
       else body += `➡️ ${a.map(ai => q.opts[ai]).join(', ')}\n\n`;
     });
-    const chunks = [];
-    for(let i = 0; i < body.length; i += 4000) chunks.push(body.slice(i, i + 4000));
-    chunks.forEach((chunk, ci) => {
-      fetch(`https://api.telegram.org/bot${TG_BOT}/sendMessage`, {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({
-          chat_id: TG_CHAT, message_thread_id: TG_THREAD,
-          text: chunks.length > 1 ? `[${ci+1}/${chunks.length}]\n${chunk}` : chunk,
-          parse_mode: 'HTML'
-        })
-      }).then(r=>r.json()).then(d=>console.log('✅ TG sent:', d.ok)).catch(e=>console.warn('TG fail:', e));
-    });
+    for(let i = 0; i < body.length; i += 4000){
+      const chunk = body.slice(i, i + 4000);
+      const total = Math.ceil(body.length / 4000);
+      sendTG(total > 1 ? `[${Math.floor(i/4000)+1}/${total}]\n${chunk}` : chunk);
+    }
   } catch(e) { console.warn('TG error:', e); }
 
   closeSurvey();

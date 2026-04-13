@@ -138,16 +138,24 @@ html,body { height:100%; overflow:hidden; background:var(--bg); color:var(--text
 .btn-fwd:disabled { opacity:.3; box-shadow:none; cursor:default; }
 
 /* ── THANK YOU ── */
-#thankyou { background:var(--bg); align-items:center; justify-content:center; padding:40px 24px; text-align:center; gap:14px; }
+#thankyou { background:var(--bg); align-items:center; justify-content:center; padding:40px 24px; text-align:center; gap:14px; overflow-y:auto; }
 .ty-icon { font-size:72px; animation:pop .6s cubic-bezier(.34,1.56,.64,1) both; }
 @keyframes pop { from{transform:scale(0) rotate(-15deg);opacity:0} to{transform:scale(1) rotate(0);opacity:1} }
 .ty-title { font-family:'Rajdhani',sans-serif; font-size:30px; font-weight:700; background:linear-gradient(135deg,#fff,#94a3b8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 .ty-sub { font-size:14px; color:var(--text2); line-height:1.7; max-width:300px; }
-.ty-cards { display:flex; flex-direction:column; gap:10px; width:100%; }
+.ty-cards { display:flex; flex-direction:column; gap:10px; width:100%; max-width:340px; }
 .ty-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 18px; display:flex; align-items:center; gap:14px; animation:fadeUp .4s ease both; }
-.ty-card:nth-child(1){animation-delay:.2s} .ty-card:nth-child(2){animation-delay:.35s} .ty-card:nth-child(3){animation-delay:.5s}
+.ty-card:nth-child(1){animation-delay:.2s} .ty-card:nth-child(2){animation-delay:.35s} .ty-card:nth-child(3){animation-delay:.5s} .ty-card:nth-child(4){animation-delay:.65s}
 .ty-card-icon { font-size:22px; flex-shrink:0; }
 .ty-card-txt { font-size:14px; color:var(--text2); text-align:left; line-height:1.4; }
+.ty-divider { width:60px; height:1px; background:linear-gradient(90deg,transparent,var(--blue2),transparent); margin:8px 0; }
+.ty-contact-title { font-family:'Rajdhani',sans-serif; font-size:13px; font-weight:600; color:var(--text3); letter-spacing:2px; text-transform:uppercase; }
+.ty-btns { display:flex; flex-direction:column; gap:10px; width:100%; max-width:340px; }
+.ty-btn { display:flex; align-items:center; justify-content:center; gap:10px; padding:16px; border-radius:14px; border:1px solid var(--border2); background:var(--card); color:var(--text); font-family:'Rajdhani',sans-serif; font-size:16px; font-weight:600; letter-spacing:1px; text-decoration:none; transition:all .2s; cursor:pointer; animation:fadeUp .4s ease both; }
+.ty-btn:nth-child(1){animation-delay:.7s} .ty-btn:nth-child(2){animation-delay:.8s}
+.ty-btn:active { transform:scale(.97); }
+.ty-btn.primary { background:linear-gradient(135deg,var(--blue),#1d4ed8); border-color:var(--blue); color:#fff; box-shadow:0 4px 16px rgba(26,86,219,.3); }
+.ty-brand { font-size:11px; color:var(--text3); margin-top:6px; letter-spacing:1px; }
 
 .bg-glow { position:fixed; top:-200px; left:50%; transform:translateX(-50%); width:500px; height:500px; background:radial-gradient(ellipse,rgba(26,86,219,.1) 0%,transparent 70%); pointer-events:none; z-index:0; }
 </style>
@@ -198,13 +206,21 @@ html,body { height:100%; overflow:hidden; background:var(--bg); color:var(--text
 <!-- THANK YOU -->
 <div class="screen gone-right" id="thankyou">
   <div class="ty-icon">🚀</div>
-  <div class="ty-title">Дякуємо!</div>
-  <p class="ty-sub">Проаналізуємо відповіді та підготуємо персональну пропозицію. Зв'яжемося протягом 24 годин.</p>
+  <div class="ty-title">Дякуємо за ваші відповіді!</div>
+  <p class="ty-sub">Наша команда вже отримала ваші результати та розпочинає аналіз. Ми підготуємо персональну пропозицію спеціально для вас.</p>
   <div class="ty-cards">
-    <div class="ty-card"><span class="ty-card-icon">🤖</span><span class="ty-card-txt">AI-аналітика ваших даних і процесів</span></div>
-    <div class="ty-card"><span class="ty-card-icon">📊</span><span class="ty-card-txt">Персональний план дашборду та інтеграцій</span></div>
-    <div class="ty-card"><span class="ty-card-icon">⚡</span><span class="ty-card-txt">Автоматизація ключових бізнес-процесів</span></div>
+    <div class="ty-card"><span class="ty-card-icon">🔍</span><span class="ty-card-txt"><b style="color:var(--text)">Крок 1.</b> Аналіз ваших відповідей AI-системою</span></div>
+    <div class="ty-card"><span class="ty-card-icon">📊</span><span class="ty-card-txt"><b style="color:var(--text)">Крок 2.</b> Підготовка персонального плану дашборду</span></div>
+    <div class="ty-card"><span class="ty-card-icon">💰</span><span class="ty-card-txt"><b style="color:var(--text)">Крок 3.</b> Розрахунок вартості та строків</span></div>
+    <div class="ty-card"><span class="ty-card-icon">📞</span><span class="ty-card-txt"><b style="color:var(--text)">Крок 4.</b> Зв'яжемося протягом 24 годин</span></div>
   </div>
+  <div class="ty-divider"></div>
+  <div class="ty-contact-title">Зв'язатися з нами</div>
+  <div class="ty-btns">
+    <a class="ty-btn primary" href="https://t.me/oleg_ssh" target="_blank">💬 Написати в Telegram</a>
+    <a class="ty-btn" href="mailto:hello@raceexpert.com.ua">📧 hello@raceexpert.com.ua</a>
+  </div>
+  <div class="ty-brand">RACE EXPERT · Mission Control Dashboard</div>
 </div>
 
 <script>
@@ -237,10 +253,26 @@ const ans={};
 let cur=0;
 document.getElementById('qTot').textContent=QS.length;
 
+// ── TELEGRAM CONFIG ──
+const TG_BOT = '8755751029:AAHUQTy0J8tAd8fcO1E6i4F_zSz01g1vG_Q';
+const TG_CHAT = '-1003812673888';
+const TG_THREAD = 114;
+
+function sendTG(text){
+  fetch(`https://api.telegram.org/bot${TG_BOT}/sendMessage`, {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ chat_id:TG_CHAT, message_thread_id:TG_THREAD, text, parse_mode:'HTML' })
+  }).then(r=>r.json()).then(d=>console.log('TG:', d.ok)).catch(e=>console.warn('TG fail:', e));
+}
+
 function startSurvey(){
   document.getElementById('intro').classList.add('gone-left');
   document.getElementById('survey').classList.remove('gone-right');
   buildStrip(); buildSlide(0); renderDots();
+
+  // Notify: lead started
+  const now = new Date().toLocaleString('uk-UA');
+  sendTG(`🟡 <b>ЛІД ПОЧАВ ТЕСТУВАННЯ</b>\n📅 ${now}\n🔗 Standalone Survey\n📋 21 питань · Race Expert Briefing`);
 }
 
 function buildStrip(){
