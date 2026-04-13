@@ -462,39 +462,6 @@ const CLIENT_DATA = {
   token: '',
 };
 
-// ── INIT ──
-(function init(){
-  // Parse token from URL
-  const params = new URLSearchParams(location.search);
-  const token = params.get('token') || localStorage.getItem('re_token') || generateToken();
-  CLIENT_DATA.token = token;
-  localStorage.setItem('re_token', token);
-
-  // Parse name
-  if (params.get('name')) {
-    CLIENT_DATA.name = decodeURIComponent(params.get('name'));
-    CLIENT_DATA.initials = CLIENT_DATA.name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
-  }
-
-  // Set date
-  const storedDate = localStorage.getItem('re_reg_date') || new Date().toLocaleDateString('uk-UA');
-  localStorage.setItem('re_reg_date', storedDate);
-
-  // Apply to UI
-  document.getElementById('clientName').textContent = CLIENT_DATA.name;
-  document.getElementById('clientAvatar').textContent = CLIENT_DATA.initials;
-  document.getElementById('overviewAvatar').textContent = CLIENT_DATA.initials;
-  document.getElementById('infoCompany').textContent = CLIENT_DATA.company;
-  document.getElementById('infoToken').textContent = token.slice(0,16)+'...';
-  document.getElementById('infoDate').textContent = storedDate;
-
-  // Load saved state
-  loadBriefingState();
-  loadDocs();
-  loadNotes();
-  updateDocCount();
-})();
-
 function generateToken(){
   return 'tok_' + Math.random().toString(36).slice(2,10) + Date.now().toString(36);
 }
@@ -597,6 +564,34 @@ const QS=[
   {b:'b6',t:'Що має бути в дашборді, щоб ви сказали «готово і ми ним користуємось»?',h:'Оберіть ваші критерії успіху',type:'multi',opts:['Готові блоки: Замовлення, Продажі, Склад, Фінанси','Цифри 100% співпадають з поточними звітами','Налаштовані автоматичні алерти','Суттєво зменшилась ручна робота команди','CEO реально користується дашбордом щодня']},
   {b:'b6',t:'Чи включаємо щоденні автоматичні звіти в Telegram для керівництва?',h:'AI-дайджест кожного ранку в закритий канал',type:'single',opts:['Так, це важливо','Ні, залишимо на наступний етап']},
 ];
+
+// ── INIT (must be after ANS, QS, BLOCKS declarations) ──
+(function init(){
+  const params = new URLSearchParams(location.search);
+  const token = params.get('token') || localStorage.getItem('re_token') || generateToken();
+  CLIENT_DATA.token = token;
+  localStorage.setItem('re_token', token);
+
+  if (params.get('name')) {
+    CLIENT_DATA.name = decodeURIComponent(params.get('name'));
+    CLIENT_DATA.initials = CLIENT_DATA.name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+  }
+
+  const storedDate = localStorage.getItem('re_reg_date') || new Date().toLocaleDateString('uk-UA');
+  localStorage.setItem('re_reg_date', storedDate);
+
+  document.getElementById('clientName').textContent = CLIENT_DATA.name;
+  document.getElementById('clientAvatar').textContent = CLIENT_DATA.initials;
+  document.getElementById('overviewAvatar').textContent = CLIENT_DATA.initials;
+  document.getElementById('infoCompany').textContent = CLIENT_DATA.company;
+  document.getElementById('infoToken').textContent = token.slice(0,16)+'...';
+  document.getElementById('infoDate').textContent = storedDate;
+
+  loadBriefingState();
+  loadDocs();
+  loadNotes();
+  updateDocCount();
+})();
 
 function openSurvey(){
   surveyCur=0;
