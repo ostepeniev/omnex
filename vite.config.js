@@ -8,6 +8,9 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         xray: resolve(__dirname, 'ai-xray.html'),
         questionnaire: resolve(__dirname, 'questionnaire.html'),
+        // Client Cabinets
+        'cabinet-race-expert': resolve(__dirname, 'cabinet/race-expert/index.html'),
+        'cabinet-race-expert-survey': resolve(__dirname, 'cabinet/race-expert/survey.html'),
       },
     },
   },

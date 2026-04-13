@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Race Expert · Брифінг</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+:root {
+  --bg:#070910; --card:#0f1320; --card2:#161b2e;
+  --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.15);
+  --blue:#1a56db; --blue2:#3b82f6; --cyan:#06b6d4; --green:#10b981;
+  --text:#f1f5f9; --text2:#94a3b8; --text3:#475569;
+}
+html,body { height:100%; overflow:hidden; background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; overscroll-behavior:none; }
+
+/* ── SCREENS ── */
+.screen { position:fixed; inset:0; display:flex; flex-direction:column; transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .4s ease; }
+.screen.gone-left  { transform:translateX(-100%); opacity:0; pointer-events:none; }
+.screen.gone-right { transform:translateX(100%);  opacity:0; pointer-events:none; }
+
+/* ── INTRO ── */
+#intro {
+  background:var(--bg); align-items:center; justify-content:center;
+  padding:32px 24px max(24px,env(safe-area-inset-bottom)); text-align:center; gap:0;
+}
+.il { animation:fadeUp .6s ease both; }
+.il:nth-child(1){animation-delay:.0s} .il:nth-child(2){animation-delay:.12s}
+.il:nth-child(3){animation-delay:.22s} .il:nth-child(4){animation-delay:.32s}
+.il:nth-child(5){animation-delay:.42s} .il:nth-child(6){animation-delay:.52s}
+.il:nth-child(7){animation-delay:.62s}
+@keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+
+.intro-brand { display:flex; align-items:center; justify-content:center; gap:6px; margin-bottom:28px; }
+.intro-brand span:first-child { font-family:'Rajdhani',sans-serif; font-size:28px; font-weight:700; color:var(--text); }
+.intro-brand span:last-child  { font-family:'Rajdhani',sans-serif; font-size:28px; font-weight:700; color:var(--blue2); }
+
+/* Runner */
+.runner-wrap { width:180px; height:60px; position:relative; margin-bottom:28px; }
+.runner-track { position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--blue2),transparent); }
+.runner-emoji {
+  position:absolute; bottom:5px; font-size:30px;
+  animation:run 2.3s ease-in-out infinite;
+  /* scaleX(-1) = flip so runner faces RIGHT → */
+  transform:scaleX(-1);
+  display:inline-block;
+  filter:drop-shadow(0 0 8px var(--blue));
+}
+/* Note: because we flip the element, "left" animates the element
+   from right side (visually) to left — so we reverse the keyframe positions */
+@keyframes run {
+  0%   { left:calc(100% + 5px); opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:1; }
+  100% { left:-40px; opacity:0; }
+}
+.speed-lines { position:absolute; bottom:8px; left:0; right:0; display:flex; flex-direction:column; gap:4px; overflow:hidden; pointer-events:none; }
+.speed-line { height:1px; background:linear-gradient(90deg,transparent,rgba(59,130,246,.4),transparent); animation:spd 2.3s ease-in-out infinite; }
+.speed-line:nth-child(1){ width:40%; margin-left:10%; animation-delay:0s; }
+.speed-line:nth-child(2){ width:28%; margin-left:5%;  animation-delay:.1s; }
+@keyframes spd { 0%{transform:translateX(200%);opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{transform:translateX(-300%);opacity:0} }
+
+.intro-title { font-family:'Rajdhani',sans-serif; font-size:26px; font-weight:700; line-height:1.25; margin-bottom:10px; background:linear-gradient(135deg,#fff,#94a3b8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.intro-sub { font-size:14px; color:var(--text2); line-height:1.65; margin-bottom:28px; max-width:300px; }
+.intro-stats { display:flex; gap:10px; width:100%; margin-bottom:28px; }
+.stat-chip { flex:1; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:14px 6px; text-align:center; }
+.stat-chip .v { font-family:'Rajdhani',sans-serif; font-size:24px; font-weight:700; color:var(--blue2); display:block; }
+.stat-chip .l { font-size:10px; color:var(--text3); letter-spacing:.5px; }
+
+.start-btn { width:100%; padding:18px; border-radius:14px; border:none; cursor:pointer; font-family:'Rajdhani',sans-serif; font-size:18px; font-weight:700; letter-spacing:2px; text-transform:uppercase; background:linear-gradient(135deg,var(--blue),#1d4ed8); color:white; box-shadow:0 8px 28px rgba(26,86,219,.4); transition:transform .15s,box-shadow .15s; margin-bottom:14px; }
+.start-btn:active { transform:scale(.97); box-shadow:0 4px 14px rgba(26,86,219,.3); }
+.intro-note { font-size:12px; color:var(--text3); }
+
+/* ── SURVEY ── */
+#survey { background:var(--bg); overflow:hidden; }
+
+.top-bar { flex-shrink:0; display:flex; align-items:center; gap:12px; padding:12px 20px 0; padding-top:max(12px,env(safe-area-inset-top)); }
+.tb-brand { font-family:'Rajdhani',sans-serif; font-size:16px; font-weight:700; color:var(--text); white-space:nowrap; }
+.tb-brand em { color:var(--blue2); font-style:normal; }
+.tb-mid { flex:1; }
+.tb-prog-track { height:3px; background:rgba(255,255,255,.06); border-radius:2px; overflow:hidden; }
+.tb-prog-fill { height:100%; background:linear-gradient(90deg,var(--blue),var(--cyan)); border-radius:2px; transition:width .5s cubic-bezier(.4,0,.2,1); box-shadow:0 0 6px var(--blue2); }
+.tb-pct { font-family:'Rajdhani',sans-serif; font-size:11px; color:var(--blue2); margin-top:3px; font-weight:600; }
+.tb-counter { font-size:11px; color:var(--text3); white-space:nowrap; }
+
+.block-strip { flex-shrink:0; padding:12px 20px 0; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+.block-strip::-webkit-scrollbar { display:none; }
+.bchip { flex-shrink:0; padding:6px 14px; border-radius:20px; font-size:11px; font-weight:600; letter-spacing:.4px; border:1px solid var(--border); color:var(--text3); transition:all .3s; white-space:nowrap; }
+.bchip.active { border-color:var(--blue2); color:var(--blue2); background:rgba(59,130,246,.1); }
+.bchip.done   { border-color:rgba(16,185,129,.4); color:var(--green); background:rgba(16,185,129,.07); }
+
+/* Slide viewport */
+.q-vp { flex:1; position:relative; overflow:hidden; }
+.q-slide {
+  position:absolute; inset:0; padding:16px 20px 0;
+  overflow-y:auto; overflow-x:hidden; scrollbar-width:none;
+  transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .35s ease;
+}
+.q-slide::-webkit-scrollbar { display:none; }
+.q-slide.right { transform:translateX(110%); opacity:0; pointer-events:none; }
+.q-slide.left  { transform:translateX(-110%); opacity:0; pointer-events:none; }
+
+.q-badge { display:inline-flex; align-items:center; gap:5px; padding:4px 11px; border-radius:20px; background:rgba(26,86,219,.12); border:1px solid rgba(26,86,219,.22); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--blue2); margin-bottom:12px; }
+.q-badge-dot { width:5px; height:5px; border-radius:50%; background:var(--blue2); }
+.q-num  { font-size:10px; color:var(--text3); letter-spacing:2px; margin-bottom:6px; font-weight:600; }
+.q-text { font-family:'Rajdhani',sans-serif; font-size:21px; font-weight:700; line-height:1.3; margin-bottom:5px; }
+.q-hint { font-size:13px; color:var(--text2); line-height:1.5; margin-bottom:16px; }
+
+.opts { display:flex; flex-direction:column; gap:8px; padding-bottom:16px; }
+.opt { display:flex; align-items:center; gap:13px; padding:15px 16px; border-radius:14px; border:1px solid var(--border); background:var(--card); cursor:pointer; transition:border-color .18s,background .18s; min-height:54px; text-align:left; }
+.opt:active { transform:scale(.985); }
+.opt.sel { border-color:var(--blue2); background:rgba(26,86,219,.14); }
+.opt-ind { width:22px; height:22px; border-radius:50%; border:2px solid var(--text3); flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all .18s; }
+.opt-ind.sq { border-radius:6px; }
+.opt.sel .opt-ind { background:var(--blue); border-color:var(--blue); }
+.opt-pip { width:8px; height:8px; border-radius:50%; background:#fff; opacity:0; transition:opacity .15s; }
+.opt.sel .opt-pip { opacity:1; }
+.opt-ind.sq .opt-pip { width:auto; height:auto; border-radius:0; font-size:12px; font-weight:700; color:#fff; background:none; }
+.opt-ind.sq .opt-pip::before { content:'✓'; }
+.opt-lbl { font-size:15px; color:var(--text2); line-height:1.4; flex:1; }
+.opt.sel .opt-lbl { color:var(--text); }
+
+.q-ta { width:100%; padding:15px 16px; background:var(--card); border:1px solid var(--border); border-radius:14px; color:var(--text); font-family:'Inter',sans-serif; font-size:15px; line-height:1.6; min-height:120px; resize:none; outline:none; transition:border-color .2s; -webkit-appearance:none; }
+.q-ta:focus { border-color:var(--blue2); }
+.q-ta::placeholder { color:var(--text3); }
+
+/* Bottom nav */
+.bot-nav { flex-shrink:0; padding:10px 20px; padding-bottom:max(12px,env(safe-area-inset-bottom)); background:rgba(7,9,16,.96); border-top:1px solid var(--border); backdrop-filter:blur(20px); }
+.nav-dots { display:flex; justify-content:center; gap:5px; margin-bottom:10px; }
+.ndot { width:5px; height:5px; border-radius:3px; background:var(--card2); border:1px solid var(--text3); transition:all .3s; }
+.ndot.cur  { width:20px; background:var(--blue2); border-color:var(--blue2); }
+.ndot.done { background:var(--green); border-color:var(--green); }
+.nav-row { display:flex; gap:10px; }
+.btn-back { padding:16px 20px; border-radius:14px; background:var(--card); border:1px solid var(--border); color:var(--text2); font-family:'Rajdhani',sans-serif; font-size:16px; font-weight:600; cursor:pointer; transition:all .15s; letter-spacing:1px; flex-shrink:0; }
+.btn-back:active { transform:scale(.97); }
+.btn-back.invisible { visibility:hidden; }
+.btn-fwd { flex:1; padding:16px; border-radius:14px; border:none; cursor:pointer; font-family:'Rajdhani',sans-serif; font-size:18px; font-weight:700; letter-spacing:2px; text-transform:uppercase; background:linear-gradient(135deg,var(--blue),#1d4ed8); color:#fff; transition:all .15s; box-shadow:0 4px 20px rgba(26,86,219,.35); }
+.btn-fwd:active   { transform:scale(.97); }
+.btn-fwd:disabled { opacity:.3; box-shadow:none; cursor:default; }
+
+/* ── THANK YOU ── */
+#thankyou { background:var(--bg); align-items:center; justify-content:center; padding:40px 24px; text-align:center; gap:14px; }
+.ty-icon { font-size:72px; animation:pop .6s cubic-bezier(.34,1.56,.64,1) both; }
+@keyframes pop { from{transform:scale(0) rotate(-15deg);opacity:0} to{transform:scale(1) rotate(0);opacity:1} }
+.ty-title { font-family:'Rajdhani',sans-serif; font-size:30px; font-weight:700; background:linear-gradient(135deg,#fff,#94a3b8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.ty-sub { font-size:14px; color:var(--text2); line-height:1.7; max-width:300px; }
+.ty-cards { display:flex; flex-direction:column; gap:10px; width:100%; }
+.ty-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 18px; display:flex; align-items:center; gap:14px; animation:fadeUp .4s ease both; }
+.ty-card:nth-child(1){animation-delay:.2s} .ty-card:nth-child(2){animation-delay:.35s} .ty-card:nth-child(3){animation-delay:.5s}
+.ty-card-icon { font-size:22px; flex-shrink:0; }
+.ty-card-txt { font-size:14px; color:var(--text2); text-align:left; line-height:1.4; }
+
+.bg-glow { position:fixed; top:-200px; left:50%; transform:translateX(-50%); width:500px; height:500px; background:radial-gradient(ellipse,rgba(26,86,219,.1) 0%,transparent 70%); pointer-events:none; z-index:0; }
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<!-- INTRO -->
+<div class="screen" id="intro">
+  <div class="intro-brand il"><span>RACE</span><span>EXPERT</span></div>
+  <div class="runner-wrap il">
+    <div class="speed-lines"><div class="speed-line"></div><div class="speed-line"></div></div>
+    <div class="runner-emoji">🏃</div>
+    <div class="runner-track"></div>
+  </div>
+  <h1 class="intro-title il">Допоможіть нам створити<br>ваш ідеальний дашборд</h1>
+  <p class="intro-sub il">Відповідайте на питання — отримаєте персональну пропозицію з AI-автоматизацією</p>
+  <div class="intro-stats il">
+    <div class="stat-chip"><span class="v">21</span><span class="l">ПИТАННЯ</span></div>
+    <div class="stat-chip"><span class="v">~5</span><span class="l">ХВИЛИН</span></div>
+    <div class="stat-chip"><span class="v">AI</span><span class="l">АНАЛІЗ</span></div>
+  </div>
+  <button class="start-btn il" onclick="startSurvey()">▶ &nbsp;Почати</button>
+  <p class="intro-note il">🔒 Відповіді конфіденційні</p>
+</div>
+
+<!-- SURVEY -->
+<div class="screen gone-right" id="survey">
+  <div class="top-bar">
+    <div class="tb-brand">RACE<em>EXPERT</em></div>
+    <div class="tb-mid">
+      <div class="tb-prog-track"><div class="tb-prog-fill" id="pFill" style="width:0%"></div></div>
+      <div class="tb-pct" id="pPct">0%</div>
+    </div>
+    <div class="tb-counter"><span id="qCur">1</span>/<span id="qTot">21</span></div>
+  </div>
+  <div class="block-strip" id="bStrip"></div>
+  <div class="q-vp" id="qVp"></div>
+  <div class="bot-nav">
+    <div class="nav-dots" id="nDots"></div>
+    <div class="nav-row">
+      <button class="btn-back invisible" id="bBack" onclick="goBack()">← Назад</button>
+      <button class="btn-fwd" id="bFwd" onclick="goNext()" disabled>Далі →</button>
+    </div>
+  </div>
+</div>
+
+<!-- THANK YOU -->
+<div class="screen gone-right" id="thankyou">
+  <div class="ty-icon">🚀</div>
+  <div class="ty-title">Дякуємо!</div>
+  <p class="ty-sub">Проаналізуємо відповіді та підготуємо персональну пропозицію. Зв'яжемося протягом 24 годин.</p>
+  <div class="ty-cards">
+    <div class="ty-card"><span class="ty-card-icon">🤖</span><span class="ty-card-txt">AI-аналітика ваших даних і процесів</span></div>
+    <div class="ty-card"><span class="ty-card-icon">📊</span><span class="ty-card-txt">Персональний план дашборду та інтеграцій</span></div>
+    <div class="ty-card"><span class="ty-card-icon">⚡</span><span class="ty-card-txt">Автоматизація ключових бізнес-процесів</span></div>
+  </div>
+</div>
+
+<script>
+const BLOCKS=[{id:'b1',lbl:'🔥 Головний біль'},{id:'b2',lbl:'🔧 Дані та системи'},{id:'b3',lbl:'📦 Замовлення'},{id:'b4',lbl:'🏭 Склад'},{id:'b5',lbl:'💰 Фінанси'},{id:'b6',lbl:'🎯 Очікування'}];
+const QS=[
+  {b:'b1',t:'Яка зараз ваша головна операційна проблема?',h:'Оберіть від 1 до 3 варіантів',type:'multi',opts:['Немає єдиної картини — дані в різних системах','Багато ручної роботи (оплати, звірки, склад)','Пізно бачимо проблеми (затримки, дефіцит, падіння продажів)','Різні цифри в CRM і 1C — не знаємо кому вірити','Немає контролю над прибутком і маржею']},
+  {b:'b1',t:'Якщо б дашборд вирішив ОДНУ проблему — що це має бути?',h:'Опишіть коротко своїми словами',type:'text',ph:'Наприклад: "бачити стан складу в реальному часі без дзвінків..."'},
+  {b:'b1',t:'Які рішення CEO приймає вручну щодня, а хотів би бачити автоматично?',h:'Опишіть конкретні ситуації',type:'text',ph:'Наприклад: "щодня дзвоню бухгалтеру щоб дізнатись скільки грошей на рахунку..."'},
+  {b:'b2',t:'Які системи зараз реально використовуються?',h:'Оберіть всі, що використовуєте',type:'multi',opts:['KEY CRM','1C','Сайт (raceexpert.com.ua)','MonoPay','Нова Пошта','Excel / Google Sheets','Рекламні кабінети (Meta, Google)','Банкінг (онлайн-банк)','Інше']},
+  {b:'b2',t:'Де зараз є найбільші розбіжності між системами?',h:'Оберіть всі проблемні місця',type:'multi',opts:['CRM ≠ 1C по сумах замовлень','Оплати не сходяться','Залишки на складі відрізняються','Статуси замовлень різні в різних системах','Немає помітних розбіжностей']},
+  {b:'b2',t:'Чи є API-доступи до систем або тільки ручні вивантаження?',h:'Це визначає складність інтеграції',type:'single',opts:['Є API у всіх системах','Є API частково (у деяких)','Переважно файли та вивантаження вручну','Не знаю, треба уточнити']},
+  {b:'b2',t:'Як часто потрібно оновлення даних у дашборді?',h:'Від цього залежить архітектура системи',type:'single',opts:['Real-time (кожні хвилини)','Кожні 15–30 хвилин','Щогодини','Раз на день — вранці']},
+  {b:'b2',t:'За який період потрібно вивантажити дані для старту?',h:'Більше даних — краща аналітика',type:'single',opts:['Тільки з моменту запуску','За останній місяць','З початку поточного року','За весь час роботи']},
+  {b:'b2',t:'Чи потрібне розмежування прав доступу?',h:'Хто що бачить в системі',type:'single',opts:['Всі співробітники бачать усе','CEO бачить усе, керівники — тільки свій блок','Складна ієрархія — обговоримо окремо']},
+  {b:'b3',t:'Що для вас «ветеранський спорт» технічно?',h:'Впливає на структуру фільтрів і бази даних',type:'single',opts:['Окрема категорія товарів в системі','Тег або тип клієнта в CRM','Окремий канал продажів','Поки не визначено єдиного стандарту']},
+  {b:'b3',t:'Яка формула валового прибутку у вас прийнята?',h:'Буде основою всіх фінансових розрахунків',type:'single',opts:['Виручка − собівартість','Виручка − собівартість − логістика − еквайринг','Своя формула — є окремий документ','Ще не визначена, хочемо обговорити']},
+  {b:'b3',t:'Чи потрібен план-факт (порівняння з планом)?',h:'Порівняння реальних показників з цілями',type:'single',opts:['Так, хочемо в Основному дашборді','Так, але в наступній фазі','Поки ні, не актуально']},
+  {b:'b3',t:'Як технічно фіксуються «набори» товарів?',h:'Набори — кілька товарів в одному комплекті',type:'single',opts:['Це окремий товар (SKU) в системі','Збираються динамічно при відправці','Немає єдиного стандарту']},
+  {b:'b4',t:'Який цільовий SLA для відвантаження?',h:'Максимальний час від підтвердження до відправки',type:'single',opts:['До 24 годин','До 48 годин','До 72 годин','Залежить від категорії товару']},
+  {b:'b4',t:'Де фіксуються затримки складу зараз?',h:'Як ви дізнаєтесь про проблеми на складі?',type:'single',opts:['В CRM (є статуси)','В 1C','У таблиці Excel','Ніде — бачимо постфактум або через дзвінки']},
+  {b:'b4',t:'Чи потрібна інтеграція з Новою Поштою?',h:'ТТН, статуси доставки, % невикупу, аномалії',type:'single',opts:['Так, в Основному дашборді','Так, але в наступній фазі','Не пріоритет зараз']},
+  {b:'b5',t:'Хто зараз вручну перевіряє оплати?',h:'Хто займається звіркою CRM ↔ 1C ↔ банк?',type:'single',opts:['Бухгалтер','Оператор CRM','Обидва — бухгалтер та оператор','Ніхто, вже є автоматизація']},
+  {b:'b5',t:'Які типи платежів найчастіше викликають проблеми?',h:'Оберіть всі проблемні типи',type:'multi',opts:['Онлайн-еквайринг (MonoPay)','Нова Пошта (після оплата / викуп)','Банківський рахунок (B2B)','Часткові оплати','Повернення коштів']},
+  {b:'b5',t:'Що з фінансів критично бачити щодня?',h:'Оберіть найважливіше для щоденного контролю',type:'multi',opts:['Залишки на рахунках (банк, каса)','Дебіторська заборгованість','Кредиторська заборгованість','Прибуток і маржа за день/місяць','Прогноз прибутку до кінця місяця']},
+  {b:'b6',t:'Що має бути в дашборді, щоб ви сказали «готово і ми ним користуємось»?',h:'Оберіть ваші критерії успіху',type:'multi',opts:['Готові блоки: Замовлення, Продажі, Склад, Фінанси','Цифри 100% співпадають з поточними звітами','Налаштовані автоматичні алерти','Суттєво зменшилась ручна робота команди','CEO реально користується дашбордом щодня']},
+  {b:'b6',t:'Чи включаємо щоденні автоматичні звіти в Telegram для керівництва?',h:'AI-дайджест кожного ранку в закритий канал',type:'single',opts:['Так, це важливо','Ні, залишимо на наступний етап']},
+];
+
+const ans={};
+let cur=0;
+document.getElementById('qTot').textContent=QS.length;
+
+function startSurvey(){
+  document.getElementById('intro').classList.add('gone-left');
+  document.getElementById('survey').classList.remove('gone-right');
+  buildStrip(); buildSlide(0); renderDots();
+}
+
+function buildStrip(){
+  document.getElementById('bStrip').innerHTML=BLOCKS.map(b=>`<div class="bchip" id="bc-${b.id}">${b.lbl}</div>`).join('');
+}
+function updateStrip(bid){
+  BLOCKS.forEach(b=>{
+    const el=document.getElementById('bc-'+b.id);
+    if(!el)return;
+    el.className='bchip';
+    if(b.id===bid){el.classList.add('active');el.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
+    else{const done=QS.filter(q=>q.b===b.id).every(q=>ans[QS.indexOf(q)]!==undefined);if(done)el.classList.add('done');}
+  });
+}
+
+function buildSlide(idx){
+  const q=QS[idx];
+  const vp=document.getElementById('qVp');
+  vp.querySelectorAll('.q-slide.left').forEach(s=>s.remove());
+
+  const s=document.createElement('div');
+  s.className='q-slide right';
+  s.id='s'+idx;
+  const bl=BLOCKS.find(b=>b.id===q.b);
+  s.innerHTML=`
+    <div class="q-badge"><span class="q-badge-dot"></span>${bl?bl.lbl:''}</div>
+    <div class="q-num">ПИТАННЯ ${String(idx+1).padStart(2,'0')} / ${QS.length}</div>
+    <div class="q-text">${q.t}</div>
+    <div class="q-hint">${q.h}</div>
+    <div class="opts" id="o${idx}"></div>
+  `;
+  vp.appendChild(s);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>s.classList.remove('right')));
+
+  const oc=s.querySelector('#o'+idx);
+  if(q.type==='text'){
+    const ta=document.createElement('textarea');
+    ta.className='q-ta'; ta.placeholder=q.ph||''; ta.value=ans[idx]||''; ta.rows=5;
+    ta.oninput=()=>{ans[idx]=ta.value.trim();updFwd();};
+    oc.appendChild(ta);
+  } else {
+    const isSingle=q.type==='single';
+    const sel=ans[idx]?[...ans[idx]]:[];
+    q.opts.forEach((opt,oi)=>{
+      const btn=document.createElement('button');
+      const isS=isSingle?(ans[idx]===oi):sel.includes(oi);
+      btn.className='opt'+(isS?' sel':'');
+      btn.innerHTML=`<div class="opt-ind${isSingle?'':' sq'}"><div class="opt-pip"></div></div><span class="opt-lbl">${opt}</span>`;
+      btn.ontouchstart=()=>{};
+      btn.onclick=()=>{
+        if(isSingle){
+          ans[idx]=oi;
+          oc.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+          btn.classList.add('sel');
+          updFwd(); setTimeout(()=>goNext(),300);
+        } else {
+          const si=sel.indexOf(oi);
+          if(si>-1)sel.splice(si,1); else sel.push(oi);
+          ans[idx]=sel.length?[...sel]:undefined;
+          btn.classList.toggle('sel',sel.includes(oi));
+          updFwd();
+        }
+      };
+      oc.appendChild(btn);
+    });
+  }
+
+  const pct=Math.round((idx/QS.length)*100);
+  document.getElementById('pFill').style.width=pct+'%';
+  document.getElementById('pPct').textContent=pct+'%';
+  document.getElementById('qCur').textContent=idx+1;
+  updateStrip(q.b); updFwd(); updBack();
+}
+
+function renderDots(){
+  const el=document.getElementById('nDots');
+  const tot=QS.length;
+  const st=Math.max(0,Math.min(cur-3,tot-7));
+  const en=Math.min(tot,st+7);
+  el.innerHTML='';
+  for(let i=st;i<en;i++){
+    const d=document.createElement('div');
+    d.className='ndot'+(i===cur?' cur':'')+(ans[i]!==undefined&&i!==cur?' done':'');
+    el.appendChild(d);
+  }
+}
+
+function updFwd(){
+  const q=QS[cur]; const btn=document.getElementById('bFwd');
+  let ok=false;
+  if(q.type==='text') ok=(ans[cur]||'').length>1;
+  else if(q.type==='single') ok=ans[cur]!==undefined;
+  else ok=!!(ans[cur]&&ans[cur].length>0);
+  btn.disabled=!ok;
+  btn.textContent=cur===QS.length-1?'Надіслати ✓':'Далі →';
+}
+function updBack(){
+  document.getElementById('bBack').className='btn-back'+(cur===0?' invisible':'');
+}
+
+function goNext(){
+  if(cur===QS.length-1){submit();return;}
+  document.getElementById('s'+cur).classList.add('left');
+  cur++; buildSlide(cur); renderDots();
+}
+function goBack(){
+  if(cur===0)return;
+  const old=document.getElementById('s'+cur);
+  old.classList.add('right');
+  setTimeout(()=>old.remove(),400);
+  cur--;
+  let prev=document.getElementById('s'+cur);
+  if(!prev){buildSlide(cur);prev=document.getElementById('s'+cur);}
+  prev.classList.remove('left');
+  const q=QS[cur];
+  const pct=Math.round((cur/QS.length)*100);
+  document.getElementById('pFill').style.width=pct+'%';
+  document.getElementById('pPct').textContent=pct+'%';
+  document.getElementById('qCur').textContent=cur+1;
+  updateStrip(q.b); renderDots(); updFwd(); updBack();
+}
+function submit(){
+  document.getElementById('survey').classList.add('gone-left');
+  document.getElementById('thankyou').classList.remove('gone-right');
+  console.log('Answers:',JSON.stringify(ans,null,2));
+}
+</script>
+</body>
+</html>
