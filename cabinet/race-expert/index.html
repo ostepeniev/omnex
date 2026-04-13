@@ -726,12 +726,40 @@ function submitSurvey(){
   localStorage.setItem('re_brief_done','1');
   localStorage.setItem('re_brief_date', date);
 
+  // ── SEND TO TELEGRAM (primary — server-side persistence) ──
+  const TG_BOT = '8755751029:AAHUQTy0J8tAd8fcO1E6i4F_zSz01g1vG_Q';
+  const TG_CHAT = '-1003812673888';
+  const TG_THREAD = 114;
+  try {
+    let body = `📋 <b>НОВИЙ БРИФІНГ — ${CLIENT_DATA.name}</b>\n📅 ${date}\n🔑 Token: <code>${CLIENT_DATA.token}</code>\n🔗 Кабінет клієнта\n\n`;
+    QS.forEach((q,i) => {
+      const a = ANS[i];
+      body += `<b>П.${String(i+1).padStart(2,'0')}.</b> ${q.t}\n`;
+      if(a === undefined) body += `➡️ <i>Не відповіли</i>\n\n`;
+      else if(q.type === 'text') body += `➡️ ${a}\n\n`;
+      else if(q.type === 'single') body += `➡️ ${q.opts[a]}\n\n`;
+      else body += `➡️ ${a.map(ai => q.opts[ai]).join(', ')}\n\n`;
+    });
+    const chunks = [];
+    for(let i = 0; i < body.length; i += 4000) chunks.push(body.slice(i, i + 4000));
+    chunks.forEach((chunk, ci) => {
+      fetch(`https://api.telegram.org/bot${TG_BOT}/sendMessage`, {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          chat_id: TG_CHAT, message_thread_id: TG_THREAD,
+          text: chunks.length > 1 ? `[${ci+1}/${chunks.length}]\n${chunk}` : chunk,
+          parse_mode: 'HTML'
+        })
+      }).then(r=>r.json()).then(d=>console.log('✅ TG sent:', d.ok)).catch(e=>console.warn('TG fail:', e));
+    });
+  } catch(e) { console.warn('TG error:', e); }
+
   closeSurvey();
   openTab('briefing');
   showBriefDone(ANS, date);
   showToast('✅ Брифінг збережено!');
 
-  // Webhook
+  // Webhook (additional, if configured)
   if(WEBHOOK_URL){
     fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:CLIENT_DATA.token,client:CLIENT_DATA.name,date,answers:buildMDObject()})}).catch(()=>{});
   }
