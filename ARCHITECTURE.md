@@ -46,7 +46,7 @@ Vercel CDN (production)
 ### Домени
 | Домен | Що обслуговує | SSL |
 |-------|---------------|-----|
-| (Vercel default) | Повний сайт | Vercel auto SSL |
+| `omnex-six.vercel.app` | Повний сайт (production) | Vercel auto SSL |
 
 ### ENV змінні
 | Змінна | Файл | Опис |

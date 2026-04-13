@@ -44,24 +44,20 @@ html,body { height:100%; overflow:hidden; background:var(--bg); color:var(--text
 .runner-emoji {
   position:absolute; bottom:5px; font-size:30px;
   animation:run 2.3s ease-in-out infinite;
-  /* scaleX(-1) = flip so runner faces RIGHT → */
-  transform:scaleX(-1);
   display:inline-block;
   filter:drop-shadow(0 0 8px var(--blue));
 }
-/* Note: because we flip the element, "left" animates the element
-   from right side (visually) to left — so we reverse the keyframe positions */
 @keyframes run {
-  0%   { left:calc(100% + 5px); opacity:0; }
+  0%   { left:-40px; opacity:0; }
   10%  { opacity:1; }
   90%  { opacity:1; }
-  100% { left:-40px; opacity:0; }
+  100% { left:calc(100% + 5px); opacity:0; }
 }
 .speed-lines { position:absolute; bottom:8px; left:0; right:0; display:flex; flex-direction:column; gap:4px; overflow:hidden; pointer-events:none; }
 .speed-line { height:1px; background:linear-gradient(90deg,transparent,rgba(59,130,246,.4),transparent); animation:spd 2.3s ease-in-out infinite; }
 .speed-line:nth-child(1){ width:40%; margin-left:10%; animation-delay:0s; }
 .speed-line:nth-child(2){ width:28%; margin-left:5%;  animation-delay:.1s; }
-@keyframes spd { 0%{transform:translateX(200%);opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{transform:translateX(-300%);opacity:0} }
+@keyframes spd { 0%{transform:translateX(-300%);opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{transform:translateX(200%);opacity:0} }
 
 .intro-title { font-family:'Rajdhani',sans-serif; font-size:26px; font-weight:700; line-height:1.25; margin-bottom:10px; background:linear-gradient(135deg,#fff,#94a3b8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 .intro-sub { font-size:14px; color:var(--text2); line-height:1.65; margin-bottom:28px; max-width:300px; }
