@@ -173,6 +173,10 @@ const translations = {
   "calc.r4": { uk: "ROI за рік", en: "ROI per year", cs: "ROI za rok" },
   "calc.note": { uk: "*орієнтовний розрахунок · точні дані — в AI X-Ray", en: "*estimated calculation · precise data — in AI X-Ray", cs: "*orientační výpočet · přesná data — v AI X-Ray" },
 
+  // ── PRODUCTS SECTION HEADER ──
+  "products.label": { uk: "Продуктова лінійка", en: "Product lineup", cs: "Produktová řada" },
+  "products.title": { uk: "Чотири продукти.<br>Один шлях до AI-операційки.", en: "Four products.<br>One path to AI operations.", cs: "Čtyři produkty.<br>Jedna cesta k AI operacím." },
+
   // ── PRODUCTS: X-RAY ──
   "prod.xray.badge": { uk: "ENTRY · Перший крок", en: "ENTRY · First step", cs: "ENTRY · První krok" },
   "prod.xray.sub": { uk: "Персональний AI-рентген вашого бізнесу. Знаходимо де саме ви втрачаєте гроші, час та клієнтів — з розрахунком ROI по кожній точці.", en: "Personal AI X-Ray of your business. We find exactly where you lose money, time and clients — with ROI calculation for each point.", cs: "Osobní AI rentgen vašeho byznysu. Zjistíme, kde přesně ztrácíte peníze, čas a klienty — s výpočtem ROI pro každý bod." },
@@ -237,6 +241,8 @@ const translations = {
   "prod.ent.v2d": { uk: "Агенти спілкуються мовою клієнта. Підтримка 12+ мов, включаючи CS, UK, DE, PL", en: "Agents communicate in client's language. Support for 12+ languages, including CS, UK, DE, PL", cs: "Agenti komunikují jazykem klienta. Podpora 12+ jazyků, včetně CS, UK, DE, PL" },
   "prod.ent.v3t": { uk: "Predictive Analytics", en: "Predictive Analytics", cs: "Prediktivní analytika" },
   "prod.ent.v3d": { uk: "AI прогнозує попит, churn, затримки оплат. Проактивні рекомендації для CEO", en: "AI predicts demand, churn, payment delays. Proactive recommendations for CEO", cs: "AI předpovídá poptávku, churn, zpoždění plateb. Proaktivní doporučení pro CEO" },
+  "prod.ent.v4t": { uk: "Успішні впровадження за 30 днів", en: "Successful implementation in 30 days", cs: "Úspěšná implementace za 30 dní" },
+  "prod.ent.v4d": { uk: "Structured onboarding: discovery → build → deploy → optimize. Жодного хаосу.", en: "Structured onboarding: discovery → build → deploy → optimize. Zero chaos.", cs: "Strukturovaný onboarding: discovery → build → deploy → optimize. Žádný chaos." },
 
   // ── DEMO SECTION ──
   "demo.label": { uk: "Жива демонстрація", en: "Live demonstration", cs: "Živá demonstrace" },
@@ -297,6 +303,7 @@ const translations = {
   "demo.ld.r2": { uk: "Оброблено агентом (миттєво)", en: "Processed by agent (instantly)", cs: "Zpracováno agentem (okamžitě)" },
   "demo.ld.r3": { uk: "Кваліфіковано", en: "Qualified", cs: "Kvalifikováno" },
   "demo.ld.r4": { uk: "Передано менеджеру", en: "Passed to manager", cs: "Předáno manažerovi" },
+  "demo.ld.avg": { uk: "Середня конверсія", en: "Average conversion", cs: "Průměrná konverze" },
 };
 
 // ── i18n ENGINE ──
