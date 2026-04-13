@@ -5,9 +5,9 @@
 // ── TELEGRAM BOT CONFIG ──
 // Replace these values with your real bot token + chat/thread IDs
 const TELEGRAM_CONFIG = {
-  botToken: 'YOUR_BOT_TOKEN',
-  chatId: 'YOUR_CHAT_ID',
-  threadId: null, // optional message_thread_id for forum topics
+  botToken: '8755751029:AAHUQTy0J8tAd8fcO1E6i4F_zSz01g1vG_Q',
+  chatId: '-1003812673888',
+  threadId: 114,
 };
 
 // ── NAV SCROLL EFFECT ──
@@ -208,7 +208,7 @@ function initModal() {
       e.preventDefault();
       const submitBtn = form.querySelector('.form-submit');
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Отправка...';
+      submitBtn.textContent = 'Відправляємо...';
 
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
@@ -225,7 +225,7 @@ function initModal() {
         if (successEl) successEl.classList.add('show');
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Отправить заявку →';
+        submitBtn.textContent = 'Відправити заявку →';
       }
     });
   }
@@ -250,13 +250,13 @@ async function sendToTelegram(data) {
 
   const now = new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Prague' });
 
-  let text = `🔔 *Новая заявка OMNEX*\n\n`;
-  text += `👤 *Имя:* ${data.name || '—'}\n`;
-  text += `🏢 *Компания:* ${data.company || '—'}\n`;
+  let text = `🔔 *Нова заявка OMNEX*\n\n`;
+  text += `👤 *Ім'я:* ${data.name || '—'}\n`;
+  text += `🏢 *Компанія:* ${data.company || '—'}\n`;
   text += `📧 *Email:* ${data.email || '—'}\n`;
   text += `📱 *Телефон:* ${data.phone || '—'}\n`;
   text += `📦 *Продукт:* ${productLabels[data.product] || data.product || '—'}\n`;
-  if (data.message) text += `💬 *Сообщение:* ${data.message}\n`;
+  if (data.message) text += `💬 *Повідомлення:* ${data.message}\n`;
   text += `\n🕐 ${now}`;
 
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;

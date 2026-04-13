@@ -195,14 +195,9 @@ function collectAllData() {
 }
 
 async function sendQuestionnaireToTelegram(data) {
-  // Try to send to Telegram (reuse config from main.js if available)
-  const botToken = 'YOUR_BOT_TOKEN';
-  const chatId = 'YOUR_CHAT_ID';
-
-  if (botToken === 'YOUR_BOT_TOKEN') {
-    console.log('📋 Questionnaire data:', JSON.stringify(data, null, 2));
-    return;
-  }
+  const botToken = '8755751029:AAHUQTy0J8tAd8fcO1E6i4F_zSz01g1vG_Q';
+  const chatId = '-1003812673888';
+  const threadId = 114;
 
   const now = new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Prague' });
   let text = `📋 *AI X-Ray Анкета*\n\n`;
@@ -223,6 +218,7 @@ async function sendQuestionnaireToTelegram(data) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       chat_id: chatId,
+      message_thread_id: threadId,
       text,
       parse_mode: 'Markdown',
     }),
