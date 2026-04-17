@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════
-   OMNEX – Questionnaire Logic
+   ROZUM – Questionnaire Logic
    Multi-step form with progress tracking, conditional
    logic, validation and Telegram submission.
    ══════════════════════════════════════════════════════ */

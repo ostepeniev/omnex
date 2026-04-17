@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════
-   OMNEX — Octopus AI Assistant Widget
+   ROZUM — Octopus AI Assistant Widget
    Animated floating octopus + ChatGPT-powered dialog
    ══════════════════════════════════════════════════════ */
 
@@ -10,21 +10,21 @@ import { t, getLanguage } from './i18n.js';
 const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY || '';
 
 // System prompt loaded inline (can be fetched from file)
-const SYSTEM_PROMPT = `Ти — OMNEX Octopus, розумний AI-помічник на сайті компанії OMNEX.
+const SYSTEM_PROMPT = `Ти — ROZUM Octopus, розумний AI-помічник на сайті компанії ROZUM.
 
 Хто ти:
-Ти — дружній, але професійний AI-асистент що працює на сайті OMNEX. Твій стиль — коротко, метко, нативно продаючи послуги OMNEX. Ти не нав'язливий — ти корисний. Ти ставиш питання і ведеш до рішення.
+Ти — дружній, але професійний AI-асистент що працює на сайті ROZUM. Твій стиль — коротко, метко, нативно продаючи послуги ROZUM. Ти не нав'язливий — ти корисний. Ти ставиш питання і ведеш до рішення.
 
-Про OMNEX:
-OMNEX — AI Operations Platform для середнього та великого бізнесу в Центральній та Східній Європі.
+Про ROZUM:
+ROZUM — AI Operations Platform для середнього та великого бізнесу в Центральній та Східній Європі.
 - Ми впроваджуємо AI-агентів в операційний центр бізнесу
 - Вимірюваний результат за 14 днів
 - GDPR compliant, дані в ЄС
 
-Продукти OMNEX:
+Продукти ROZUM:
 1. AI X-Ray — €390 (разово) — AI-рентген бізнесу. 20-сторінковий персональний звіт. Карта операційних втрат. Топ-3 можливості для AI. 30-хв дзвінок. Готово за 72 години. Гарантія повернення 7 днів.
-2. OMNEX Pilot — €2,490 (разово) — 1 AI-агент. Інтеграція. 14 днів. Окупається за 3-6 тижнів.
-3. OMNEX Core — від €990/міс — До 5 AI-агентів. Control Panel. Щотижневий ROI.
+2. ROZUM Pilot — €2,490 (разово) — 1 AI-агент. Інтеграція. 14 днів. Окупається за 3-6 тижнів.
+3. ROZUM Core — від €990/міс — До 5 AI-агентів. Control Panel. Щотижневий ROI.
 4. Enterprise — від €5,000/міс — Необмежено. Кастомно. On-premise.
 
 Статистика: 47 компаній проаналізовано. €3,200 середньомісячні втрати SMB. 21× конверсія при 5-хв відповіді. 8× ROI від AI X-Ray.
@@ -69,7 +69,7 @@ function createOctopusWidget() {
           <svg viewBox="0 0 32 32" fill="none"><ellipse cx="16" cy="12" rx="8" ry="9" fill="rgba(123,97,255,0.9)"/><circle cx="13" cy="10.5" r="1.5" fill="#C4F135"/><circle cx="19" cy="10.5" r="1.5" fill="#C4F135"/></svg>
         </div>
         <div>
-          <div class="octo-chat-name">OMNEX Octopus</div>
+          <div class="octo-chat-name">ROZUM Octopus</div>
           <div class="octo-chat-status">● Online</div>
         </div>
         <button class="octo-chat-close" id="octoChatClose">✕</button>
@@ -137,7 +137,7 @@ function createOctopusWidget() {
     } catch (err) {
       console.error('OpenAI error:', err);
       removeMessage(typingId);
-      addMessage('assistant', 'Вибачте, сталась помилка. Напишіть нам на hello@omnex.eu 📧');
+      addMessage('assistant', 'Вибачте, сталась помилка. Напишіть нам на hello@ROZUM.eu 📧');
     } finally {
       input.disabled = false;
       sendBtn.disabled = false;

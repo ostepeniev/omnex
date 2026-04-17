@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════
-   OMNEX – i18n (Internationalization) System
+   ROZUM – i18n (Internationalization) System
    Languages: uk (Ukrainian, default), en, cs
    ══════════════════════════════════════════════════════ */
 
@@ -13,14 +13,14 @@ const translations = {
   "nav.cta": { uk: "Почати – безкоштовно", en: "Start – free", cs: "Začít – zdarma" },
 
   // ── HERO ──
-  "hero.badge": { uk: "OMNEX · AI Operations Platform", en: "OMNEX · AI Operations Platform", cs: "OMNEX · AI Operations Platform" },
+  "hero.badge": { uk: "ROZUM · AI Operations Platform", en: "ROZUM · AI Operations Platform", cs: "ROZUM · AI Operations Platform" },
   "hero.title.line1": { uk: "Ваш бізнес", en: "Your business", cs: "Váš byznys" },
   "hero.title.line2": { uk: "працює розумніше.", en: "works smarter.", cs: "pracuje chytřeji." },
   "hero.title.line3": { uk: "Не більше людей.", en: "Not more people.", cs: "Ne více lidí." },
   "hero.sub": {
-    uk: "OMNEX впроваджує мережу AI-агентів в операційний центр вашого бізнесу. Вісім напрямків роботи. Один командний центр. Вимірюваний результат з першого тижня.",
-    en: "OMNEX deploys a network of AI agents into your business operations center. Eight work streams. One command center. Measurable results from week one.",
-    cs: "OMNEX nasazuje síť AI agentů do operačního centra vašeho podnikání. Osm pracovních směrů. Jedno řídicí centrum. Měřitelné výsledky od prvního týdne."
+    uk: "ROZUM впроваджує мережу AI-агентів в операційний центр вашого бізнесу. Вісім напрямків роботи. Один командний центр. Вимірюваний результат з першого тижня.",
+    en: "ROZUM deploys a network of AI agents into your business operations center. Eight work streams. One command center. Measurable results from week one.",
+    cs: "ROZUM nasazuje síť AI agentů do operačního centra vašeho podnikání. Osm pracovních směrů. Jedno řídicí centrum. Měřitelné výsledky od prvního týdne."
   },
   "hero.cta.audit": { uk: "Отримати безкоштовний AI-аудит →", en: "Get free AI audit →", cs: "Získejte bezplatný AI audit →" },
   "hero.cta.products": { uk: "Наші продукти", en: "Our products", cs: "Naše produkty" },
@@ -69,7 +69,7 @@ const translations = {
   "approach.s2.desc": { uk: "Беремо найпріоритетнішу точку з X-Ray і запускаємо робочого AI-агента на ваших даних. Ви бачите результат на своєму бізнесі, а не демо.", en: "We take the highest priority point from X-Ray and launch a working AI agent on your data. You see results on your business, not a demo.", cs: "Vezmeme nejprioritnější bod z X-Ray a spustíme funkčního AI agenta na vašich datech. Vidíte výsledky na svém byznysu, ne demo." },
   "approach.s2.dur": { uk: "€2,490 · 14 днів", en: "€2,490 · 14 days", cs: "€2 490 · 14 dní" },
   "approach.s3.title": { uk: "Core – розгортаємо AI-операційку", en: "Core – deploy AI operations", cs: "Core – nasazujeme AI operace" },
-  "approach.s3.desc": { uk: "Підключаємо повний набір агентів під ваші процеси. Налаштовуємо OMNEX Control Panel – єдиний командний центр. Інтеграція з вашими системами.", en: "Connect full set of agents for your processes. Set up OMNEX Control Panel – single command center. Integration with your systems.", cs: "Připojíme úplnou sadu agentů pro vaše procesy. Nastavíme OMNEX Control Panel – jediné řídicí centrum. Integrace s vašimi systémy." },
+  "approach.s3.desc": { uk: "Підключаємо повний набір агентів під ваші процеси. Налаштовуємо ROZUM Control Panel – єдиний командний центр. Інтеграція з вашими системами.", en: "Connect full set of agents for your processes. Set up ROZUM Control Panel – single command center. Integration with your systems.", cs: "Připojíme úplnou sadu agentů pro vaše procesy. Nastavíme ROZUM Control Panel – jediné řídicí centrum. Integrace s vašimi systémy." },
   "approach.s3.dur": { uk: "від €990/міс", en: "from €990/mo", cs: "od €990/měs" },
   "approach.s4.title": { uk: "Scale – зростання без найму нових людей", en: "Scale – grow without hiring new people", cs: "Scale – růst bez náboru nových lidí" },
   "approach.s4.desc": { uk: "Додаємо агентів за мірою зростання завдань. Щотижневі ROI-звіти. Агенти навчаються на даних вашого бізнесу і стають розумнішими кожен місяць.", en: "Add agents as tasks grow. Weekly ROI reports. Agents learn from your business data and get smarter every month.", cs: "Přidáváme agenty s růstem úkolů. Týdenní ROI reporty. Agenti se učí z dat vašeho byznysu a každý měsíc jsou chytřejší." },
@@ -91,7 +91,7 @@ const translations = {
   "cases.c2.m1": { uk: "ефект на місяць", en: "monthly effect", cs: "efekt za měsíc" },
   "cases.c2.m2": { uk: "зекономлено", en: "saved", cs: "uspořeno" },
   "cases.c2.m3": { uk: "конверсія лідів", en: "lead conversion", cs: "konverze leadů" },
-  "cases.c2.quote": { uk: "\"OMNEX зробив те що ми намагалися зробити 2 роки. За 14 днів.\"<div class=\"case-author\">– CEO, IT-агентство, Прага</div>", en: "\"OMNEX did what we tried to do for 2 years. In 14 days.\"<div class=\"case-author\">– CEO, IT agency, Prague</div>", cs: "\"OMNEX udělal to, o co jsme se snažili 2 roky. Za 14 dní.\"<div class=\"case-author\">– CEO, IT agentura, Praha</div>" },
+  "cases.c2.quote": { uk: "\"ROZUM зробив те що ми намагалися зробити 2 роки. За 14 днів.\"<div class=\"case-author\">– CEO, IT-агентство, Прага</div>", en: "\"ROZUM did what we tried to do for 2 years. In 14 days.\"<div class=\"case-author\">– CEO, IT agency, Prague</div>", cs: "\"ROZUM udělal to, o co jsme se snažili 2 roky. Za 14 dní.\"<div class=\"case-author\">– CEO, IT agentura, Praha</div>" },
   "cases.c3.tag": { uk: "Нерухомість", en: "Real Estate", cs: "Nemovitosti" },
   "cases.c3.company": { uk: "Агентство нерухомості, Пльзень · 12 агентів", en: "Real estate agency, Plzeň · 12 agents", cs: "Realitní kancelář, Plzeň · 12 agentů" },
   "cases.c3.desc": { uk: "CRM велася вручну, ліди кваліфікувалися по телефону, follow-up забувався. AI X-Ray знайшов €2,600/міс втрат. Агент кваліфікації запущений за 10 днів.", en: "CRM was manual, leads qualified by phone, follow-ups forgotten. AI X-Ray found €2,600/mo in losses. Qualification agent launched in 10 days.", cs: "CRM bylo ruční, leady se kvalifikovaly telefonicky, follow-upy se zapomínaly. AI X-Ray našel €2 600/měs ztrát. Agent kvalifikace spuštěn za 10 dní." },
@@ -119,7 +119,7 @@ const translations = {
   "faq.title": { uk: "Все що ви хотіли<br>запитати", en: "Everything you<br>wanted to ask", cs: "Vše, co jste chtěli<br>vědět" },
   "faq.q1.q": { uk: "Що саме я отримаю за €390? <span class=\"faq-icon\">+</span>", en: "What exactly will I get for €390? <span class=\"faq-icon\">+</span>", cs: "Co přesně dostanu za €390? <span class=\"faq-icon\">+</span>" },
   "faq.q1.a": { uk: "Персоналізований 20-сторінковий звіт: карта операційних втрат в €, топ-3 AI-можливості з ROI-розрахунком, 90-денний план дій, бенчмарк по галузі. Плюс 30-хвилинний дзвінок-розбір з нашим експертом. Готово за 72 години від моменту оплати.", en: "A personalized 20-page report: operational loss map in €, top-3 AI opportunities with ROI calculation, 90-day action plan, industry benchmark. Plus a 30-minute call with our expert. Ready within 72 hours from payment.", cs: "Personalizovaná 20stránková zpráva: mapa operačních ztrát v €, top 3 AI příležitosti s ROI výpočtem, 90denní akční plán, benchmark oboru. Plus 30minutový hovor s naším expertem. Hotovo do 72 hodin od platby." },
-  "faq.q2.q": { uk: "Чи потрібні нам IT-спеціалісти для роботи з OMNEX? <span class=\"faq-icon\">+</span>", en: "Do we need IT specialists to work with OMNEX? <span class=\"faq-icon\">+</span>", cs: "Potřebujeme IT specialisty pro práci s OMNEX? <span class=\"faq-icon\">+</span>" },
+  "faq.q2.q": { uk: "Чи потрібні нам IT-спеціалісти для роботи з ROZUM? <span class=\"faq-icon\">+</span>", en: "Do we need IT specialists to work with ROZUM? <span class=\"faq-icon\">+</span>", cs: "Potřebujeme IT specialisty pro práci s ROZUM? <span class=\"faq-icon\">+</span>" },
   "faq.q2.a": { uk: "Ні. Ви керуєте результатами через Control Panel – без коду і без технічних знань. Все налаштування, інтеграцію і підтримку робить наша команда. Ваша роль: заповнити анкету, прочитати звіт, прийняти рішення.", en: "No. You manage results via Control Panel – no code, no technical knowledge needed. Our team handles all setup, integration and support. Your role: fill the questionnaire, read the report, make decisions.", cs: "Ne. Výsledky spravujete přes Control Panel – bez kódu a bez technických znalostí. Veškeré nastavení, integraci i podporu zajišťuje náš tým. Vaše role: vyplnit dotazník, přečíst zprávu, rozhodnout se." },
   "faq.q3.q": { uk: "Як швидко з'являться перші результати? <span class=\"faq-icon\">+</span>", en: "How quickly will first results appear? <span class=\"faq-icon\">+</span>", cs: "Jak rychle se objeví první výsledky? <span class=\"faq-icon\">+</span>" },
   "faq.q3.a": { uk: "AI X-Ray – результат через 72 години. Перший агент в рамках Pilot – працює через 14 днів. Повна система Core – 3–4 тижні від старту. Це значно швидше ніж у будь-якого конкурента.", en: "AI X-Ray – results in 72 hours. First agent in Pilot – working in 14 days. Full Core system – 3–4 weeks from start. Significantly faster than any competitor.", cs: "AI X-Ray – výsledky za 72 hodin. První agent v Pilotu – funguje za 14 dní. Plný systém Core – 3–4 týdny od startu. Výrazně rychlejší než jakýkoliv konkurent." },
@@ -127,8 +127,8 @@ const translations = {
   "faq.q4.a": { uk: "Це найчастіший випадок. 90% невдач трапляються тому що починають з інструменту, а не з проблеми. AI X-Ray починає з проблеми: де саме біль, скільки вона коштує, який інструмент закриє саме її. Цей порядок кардинально змінює результат.", en: "This is the most common case. 90% of failures happen because people start with a tool, not a problem. AI X-Ray starts with the problem: where exactly it hurts, how much it costs, which tool will fix it. This order changes everything.", cs: "To je nejčastější případ. 90 % neúspěchů se děje, protože se začíná nástrojem, ne problémem. AI X-Ray začíná problémem: kde přesně bolí, kolik to stojí, jaký nástroj to vyřeší. Tento pořádek vše zásadně mění." },
   "faq.q5.q": { uk: "Наскільки безпечні наші дані? <span class=\"faq-icon\">+</span>", en: "How safe is our data? <span class=\"faq-icon\">+</span>", cs: "Jak bezpečná jsou naše data? <span class=\"faq-icon\">+</span>" },
   "faq.q5.a": { uk: "Всі дані обробляються в ЄС, відповідають вимогам GDPR. Ми підписуємо DPA (Data Processing Agreement). Дані анкети використовуються виключно для підготовки звіту і видаляються за запитом через 90 днів. Для Enterprise доступний on-premise варіант.", en: "All data processed in the EU, GDPR compliant. We sign DPA (Data Processing Agreement). Survey data is used exclusively for report preparation and deleted upon request after 90 days. On-premise option available for Enterprise.", cs: "Všechna data se zpracovávají v EU, v souladu s GDPR. Podepisujeme DPA (Data Processing Agreement). Data z dotazníku se používají výhradně pro přípravu zprávy a na požádání se mažou po 90 dnech. Pro Enterprise je k dispozici on-premise varianta." },
-  "faq.q6.q": { uk: "Що означає назва OMNEX? <span class=\"faq-icon\">+</span>", en: "What does the name OMNEX mean? <span class=\"faq-icon\">+</span>", cs: "Co znamená název OMNEX? <span class=\"faq-icon\">+</span>" },
-  "faq.q6.a": { uk: "OMNEX – від Omni (все, всюди) + Nexus (мережа, зв'язок). Це відображає суть платформи: багаторукий інтелект який працює паралельно в усіх напрямках вашого бізнесу. Зареєстровано як товарний знак в ЄС.", en: "OMNEX – from Omni (everything, everywhere) + Nexus (network, connection). This reflects the platform's essence: a multi-armed intelligence working in parallel across all directions of your business. Registered as a trademark in the EU.", cs: "OMNEX – z Omni (vše, všude) + Nexus (síť, spojení). To odráží podstatu platformy: mnohostranná inteligence pracující paralelně ve všech směrech vašeho byznysu. Registrováno jako ochranná známka v EU." },
+  "faq.q6.q": { uk: "Що означає назва ROZUM? <span class=\"faq-icon\">+</span>", en: "What does the name ROZUM mean? <span class=\"faq-icon\">+</span>", cs: "Co znamená název ROZUM? <span class=\"faq-icon\">+</span>" },
+  "faq.q6.a": { uk: "ROZUM – українське слово, що означає 'розум, інтелект'. Це відображає суть платформи: штучний інтелект який працює паралельно в усіх напрямках вашого бізнесу – розумно, автономно, цілодобово. Зареєстровано як товарний знак в ЄС.", en: "ROZUM – a Ukrainian word meaning 'mind, intellect'. This reflects the platform's essence: artificial intelligence working in parallel across all directions of your business – smart, autonomous, 24/7. Registered as a trademark in the EU.", cs: "ROZUM – ukrajinské slovo znamenající 'rozum, intelekt'. To odráží podstatu platformy: umělá inteligence pracující paralelně ve všech směrech vašeho byznysu – chytře, autonomně, 24/7. Registrováno jako ochranná známka v EU." },
 
   // ── FOOTER ──
   "footer.products": { uk: "Продукти", en: "Products", cs: "Produkty" },
@@ -157,7 +157,7 @@ const translations = {
   "modal.success.text": { uk: "Дякуємо! Ми зв'яжемося з вами протягом 4 годин.", en: "Thank you! We'll contact you within 4 hours.", cs: "Děkujeme! Kontaktujeme vás do 4 hodin." },
 
   // ── OCTOPUS WIDGET ──
-  "widget.greeting": { uk: "👋 Привіт! Я OMNEX Octopus – ваш AI-асистент. Задайте будь-яке питання!", en: "👋 Hi! I'm OMNEX Octopus – your AI assistant. Ask me anything!", cs: "👋 Ahoj! Jsem OMNEX Octopus – váš AI asistent. Zeptejte se mě na cokoliv!" },
+  "widget.greeting": { uk: "👋 Привіт! Я ROZUM Octopus – ваш AI-асистент. Задайте будь-яке питання!", en: "👋 Hi! I'm ROZUM Octopus – your AI assistant. Ask me anything!", cs: "👋 Ahoj! Jsem ROZUM Octopus – váš AI asistent. Zeptejte se mě na cokoliv!" },
   "widget.placeholder": { uk: "Задайте питання...", en: "Ask a question...", cs: "Položte otázku..." },
   "widget.send": { uk: "Надіслати", en: "Send", cs: "Odeslat" },
   "widget.thinking": { uk: "Думаю...", en: "Thinking...", cs: "Přemýšlím..." },
@@ -214,7 +214,7 @@ const translations = {
   "prod.core.sub": { uk: "Повний набір AI-агентів + єдиний командний центр. Ваша AI-команда яка працює 24/7 і звітує в грошах кожного тижня.", en: "Full set of AI agents + single command center. Your AI team working 24/7 and reporting in money every week.", cs: "Plná sada AI agentů + jedno řídicí centrum. Váš AI tým pracující 24/7 a reportující v penězích každý týden." },
   "prod.core.period": { uk: "/ місяць · від 3 місяців", en: "/ month · from 3 months", cs: "/ měsíc · od 3 měsíců" },
   "prod.core.f1": { uk: "До 5 AI-агентів (будь-який набір)", en: "Up to 5 AI agents (any combination)", cs: "Až 5 AI agentů (jakákoliv kombinace)" },
-  "prod.core.f2": { uk: "OMNEX Control Panel – дашборд CEO", en: "OMNEX Control Panel – CEO dashboard", cs: "OMNEX Control Panel – dashboard CEO" },
+  "prod.core.f2": { uk: "ROZUM Control Panel – дашборд CEO", en: "ROZUM Control Panel – CEO dashboard", cs: "ROZUM Control Panel – dashboard CEO" },
   "prod.core.f3": { uk: "До 8 інтеграцій (CRM, ERP, месенджери)", en: "Up to 8 integrations (CRM, ERP, messengers)", cs: "Až 8 integrací (CRM, ERP, messengery)" },
   "prod.core.f4": { uk: "Щотижневий ROI-звіт в €", en: "Weekly ROI report in €", cs: "Týdenní ROI report v €" },
   "prod.core.f5": { uk: "Пріоритетна підтримка (Slack, <4 год)", en: "Priority support (Slack, <4 hours)", cs: "Prioritní podpora (Slack, <4 hod)" },
@@ -246,9 +246,9 @@ const translations = {
 
   // ── DEMO SECTION ──
   "demo.label": { uk: "Жива демонстрація", en: "Live demonstration", cs: "Živá demonstrace" },
-  "demo.title": { uk: "Подивіться як виглядає OMNEX Control Panel", en: "See what OMNEX Control Panel looks like", cs: "Podívejte se, jak vypadá OMNEX Control Panel" },
+  "demo.title": { uk: "Подивіться як виглядає ROZUM Control Panel", en: "See what ROZUM Control Panel looks like", cs: "Podívejte se, jak vypadá ROZUM Control Panel" },
   "demo.sub": { uk: "Натискайте на пункти меню зліва – це інтерактивна демо-версія реального дашборда.", en: "Click menu items on the left – this is an interactive demo of the real dashboard.", cs: "Klikejte na položky menu vlevo – je to interaktivní demo reálného dashboardu." },
-  "demo.url": { uk: "app.omnex.io · CEO Control Panel · Компанія: Demo Corp", en: "app.omnex.io · CEO Control Panel · Company: Demo Corp", cs: "app.omnex.io · CEO Control Panel · Firma: Demo Corp" },
+  "demo.url": { uk: "app.ROZUM.io · CEO Control Panel · Компанія: Demo Corp", en: "app.ROZUM.io · CEO Control Panel · Company: Demo Corp", cs: "app.ROZUM.io · CEO Control Panel · Firma: Demo Corp" },
   "demo.nav.overview": { uk: "Огляд", en: "Overview", cs: "Přehled" },
   "demo.nav.agents": { uk: "Агенти", en: "Agents", cs: "Agenti" },
   "demo.nav.savings": { uk: "Економія", en: "Savings", cs: "Úspory" },
@@ -294,7 +294,7 @@ const translations = {
   "demo.sv.r1": { uk: "Економія ФОП (рутина → AI)", en: "Payroll savings (routine → AI)", cs: "Úspora mezd (rutina → AI)" },
   "demo.sv.r2": { uk: "Додаткові ліди (швидкість)", en: "Additional leads (speed)", cs: "Další leady (rychlost)" },
   "demo.sv.r3": { uk: "Зекономлено на аутсорс підтримці", en: "Saved on outsourced support", cs: "Ušetřeno na outsourcované podpoře" },
-  "demo.sv.r4": { uk: "Вартість OMNEX Core", en: "OMNEX Core cost", cs: "Cena OMNEX Core" },
+  "demo.sv.r4": { uk: "Вартість ROZUM Core", en: "ROZUM Core cost", cs: "Cena ROZUM Core" },
   "demo.sv.total": { uk: "Чистий ефект на місяць", en: "Net effect per month", cs: "Čistý efekt za měsíc" },
 
   // Demo: Leads panel
@@ -307,7 +307,7 @@ const translations = {
 };
 
 // ── i18n ENGINE ──
-let currentLang = localStorage.getItem('omnex-lang') || 'uk';
+let currentLang = localStorage.getItem('ROZUM-lang') || 'uk';
 
 function t(key) {
   const entry = translations[key];
@@ -317,7 +317,7 @@ function t(key) {
 
 function setLanguage(lang) {
   currentLang = lang;
-  localStorage.setItem('omnex-lang', lang);
+  localStorage.setItem('ROZUM-lang', lang);
   document.documentElement.lang = lang === 'uk' ? 'uk' : lang === 'cs' ? 'cs' : 'en';
   applyTranslations();
   // Dispatch event for other components to react

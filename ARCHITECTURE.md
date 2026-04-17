@@ -1,19 +1,19 @@
-# ARCHITECTURE.md — OMNEX Website
+# ARCHITECTURE.md — ROZUM Website
 
 > ⚠️ Цей файл — живий документ (Source of Truth). Оновлюється при кожній архітектурній зміні.
 > Останнє оновлення: 2026-04-13 (v2 — Client Cabinets)
 
 ## Огляд
 
-**Назва:** OMNEX Website (omnex-website)  
+**Назва:** ROZUM Website (ROZUM-website)  
 **Тип:** Static Multi-page Website (SPA characteristics)  
 **Стек:** HTML + Vanilla CSS + Vanilla JS (ES Modules) + Vite 6.3 (build tool)  
-**URL (production):** Vercel (project: `omnex`, ID: `prj_mPVWwTUOtB7Mr26zydgNPgFTh0cr`)  
-**Репозиторій:** `https://github.com/ostepeniev/omnex.git`  
-**Локальний шлях:** `d:\Antigraviti\OMNEX`  
+**URL (production):** Vercel (project: `ROZUM`, ID: `prj_mPVWwTUOtB7Mr26zydgNPgFTh0cr`)  
+**Репозиторій:** `https://github.com/ostepeniev/ROZUM.git`  
+**Локальний шлях:** `d:\Antigraviti\ROZUM`  
 
 ### Призначення
-Корпоративний сайт компанії OMNEX s.r.o. (Чехія) — AI Operations Platform для середнього та великого бізнесу в Центральній та Східній Європі. Сайт презентує продуктову лінійку (AI X-Ray, Pilot, Core, Enterprise), збирає ліди через модальні форми, включає інтерактивну анкету-діагностику для AI X-Ray і AI-чатбот (Octopus) на базі OpenAI.
+Корпоративний сайт компанії ROZUM s.r.o. (Чехія) — AI Operations Platform для середнього та великого бізнесу в Центральній та Східній Європі. Сайт презентує продуктову лінійку (AI X-Ray, Pilot, Core, Enterprise), збирає ліди через модальні форми, включає інтерактивну анкету-діагностику для AI X-Ray і AI-чатбот (Octopus) на базі OpenAI.
 
 ---
 
@@ -41,12 +41,12 @@ Vercel CDN (production)
 **Vercel Project:**
 - Project ID: `prj_mPVWwTUOtB7Mr26zydgNPgFTh0cr`
 - Org ID: `team_0CesaXUHAzvvIwHLdi9XmNnG`
-- Project Name: `omnex`
+- Project Name: `ROZUM`
 
 ### Домени
 | Домен | Що обслуговує | SSL |
 |-------|---------------|-----|
-| `omnex-six.vercel.app` | Повний сайт (production) | Vercel auto SSL |
+| `ROZUM-six.vercel.app` | Повний сайт (production) | Vercel auto SSL |
 
 ### ENV змінні
 | Змінна | Файл | Опис |
@@ -61,7 +61,7 @@ Vercel CDN (production)
 
 ### Структура файлів
 ```
-OMNEX/
+ROZUM/
 ├── index.html              # 🏠 Головна сторінка (757 рядків)
 ├── ai-xray.html            # 📊 AI X-Ray продуктова сторінка (495 рядків)
 ├── questionnaire.html      # 📝 Анкета-діагностика (670 рядків)
@@ -85,7 +85,7 @@ OMNEX/
 ├── .gitignore              # Excluded files
 │
 │── [Legacy / Reference files — НЕ входять в build]
-├── OMNEX_Website.html      # 📦 Стара монолітна версія (1474 рядків, inline CSS+JS, RU)
+├── ROZUM_Website.html      # 📦 Стара монолітна версія (1474 рядків, inline CSS+JS, RU)
 ├── ai_xray_product_full.html  # 📦 AI X-Ray product spec (ChatGPT artifact)
 ├── AI_XRay_Questionnaire.docx # 📦 Word документ з питаннями
 └── questionnaire_raw.md    # 📦 Raw markdown анкети (gitignored)
@@ -133,7 +133,7 @@ rollupOptions: {
 | 10 | `#cases` | Cases | 4 case study cards (Гостинність, B2B, Нерухомість, E-commerce) |
 | 11 | `#cta` | CTA | Final conversion block |
 | 12 | `#faq` | FAQ | 6 accordion items |
-| 13 | `footer` | Footer | 4-column grid, links, contacts (hello@omnex.eu, LinkedIn, Telegram) |
+| 13 | `footer` | Footer | 4-column grid, links, contacts (hello@ROZUM.eu, LinkedIn, Telegram) |
 | 14 | `#leadModal` | Lead Modal | Form: name, company, email, phone, product select, message → Telegram |
 
 ### 2. `/ai-xray.html` — AI X-Ray Product Page
@@ -147,7 +147,7 @@ rollupOptions: {
 | 3 | Why X-Ray | 3 value prop cards |
 | 4 | Report Structure | 6 report blocks (structure of 20-page report) |
 | 5 | Process | 5-step timeline (payment → questionnaire → AI → analyst → delivery) |
-| 6 | Value Comparison | Price comparison table (McKinsey, Agency, Consultant vs OMNEX) |
+| 6 | Value Comparison | Price comparison table (McKinsey, Agency, Consultant vs ROZUM) |
 | 7 | Objections | 4 FAQ cards addressing doubts |
 | 8 | Data Sources | What client provides vs What AI analyzes |
 | 9 | Next Steps | Customer journey funnel (X-Ray → Pilot → Core) |
@@ -276,7 +276,7 @@ TELEGRAM_CONFIG = {
 **Мови:** `uk` (default), `en`, `cs`  
 **Механізм:** `data-i18n` (textContent) + `data-i18n-html` (innerHTML)  
 **Ключів:** ~160 translation keys  
-**Storage:** `localStorage('omnex-lang')`  
+**Storage:** `localStorage('ROZUM-lang')`  
 **Exports:** `t()`, `setLanguage()`, `getLanguage()`, `applyTranslations()`, `initLanguageSwitcher()`  
 **Покриття:**
 - ✅ `index.html` — повністю перекладена (UK/EN/CS)
@@ -292,7 +292,7 @@ TELEGRAM_CONFIG = {
 - Chat dialog (header, messages, input)
 - System prompt inline (SPIN selling, product knowledge, multilingual)
 - Language-reactive placeholder
-- Error fallback: "Напишіть нам на hello@omnex.eu"
+- Error fallback: "Напишіть нам на hello@ROZUM.eu"
 
 ### `js/questionnaire.js` — Multi-step Form
 **Blocks:** 6, **Navigation:** Next/Back buttons  
@@ -362,7 +362,7 @@ TELEGRAM_CONFIG = {
 | Google Fonts | CSS | `fonts.googleapis.com` (Syne, DM Sans, DM Mono) |
 | LinkedIn | Link | `linkedin.com/in/olegalisio/` |
 | Telegram | Link | `t.me/oleg_ssh` |
-| Email | Link | `hello@omnex.eu` |
+| Email | Link | `hello@ROZUM.eu` |
 
 ### Зв'язки з іншими проектами
 | Проект | Тип зв'язку | Деталі |
@@ -424,7 +424,7 @@ sequenceDiagram
     U->>O: Types message
     O->>O: Shows "Думаю..." indicator
     O->>AI: POST /v1/chat/completions
-    Note over O,AI: system: OMNEX sales prompt<br>model: gpt-4o-mini<br>max_tokens: 300
+    Note over O,AI: system: ROZUM sales prompt<br>model: gpt-4o-mini<br>max_tokens: 300
     AI-->>O: Assistant response
     O->>O: Removes typing, shows reply
     Note over U,O: Chat history maintained in-memory
@@ -452,7 +452,7 @@ sequenceDiagram
 - [ ] **Ticker items in Russian** — Lines 141-156 in `index.html` have Russian text tickers
 - [ ] **No form backend** — No email notification, no CRM, no database — only Telegram (when configured)
 - [ ] **OpenAI API key in .env.local** — For Octopus widget; exposed to client-side (Vite `VITE_` prefix)
-- [ ] **Legacy files not cleaned** — `OMNEX_Website.html`, `ai_xray_product_full.html`, `AI_XRay_Questionnaire.docx` in root
+- [ ] **Legacy files not cleaned** — `ROZUM_Website.html`, `ai_xray_product_full.html`, `AI_XRay_Questionnaire.docx` in root
 - [ ] **No analytics** — No GA4, GTM, Meta Pixel, or similar tracking
 - [ ] **No favicon / OG meta** — No social sharing metadata, no favicon
 - [ ] **No error pages** — No 404 page
