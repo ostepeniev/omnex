@@ -1,7 +1,7 @@
 # ARCHITECTURE.md — ROZUM Website
 
 > ⚠️ Цей файл — живий документ (Source of Truth). Оновлюється при кожній архітектурній зміні.
-> Останнє оновлення: 2026-04-13 (v2 — Client Cabinets)
+> Останнє оновлення: 2026-04-18 (v3 — Rebrand OMNEX→ROZUM, AI X-Ray i18n, domain rozum.systems)
 
 ## Огляд
 
@@ -10,7 +10,7 @@
 **Стек:** HTML + Vanilla CSS + Vanilla JS (ES Modules) + Vite 6.3 (build tool)  
 **URL (production):** Vercel (project: `ROZUM`, ID: `prj_mPVWwTUOtB7Mr26zydgNPgFTh0cr`)  
 **Репозиторій:** `https://github.com/ostepeniev/ROZUM.git`  
-**Локальний шлях:** `d:\Antigraviti\ROZUM`  
+**Локальний шлях:** `d:\Antigraviti\OMNEX`  
 
 ### Призначення
 Корпоративний сайт компанії ROZUM s.r.o. (Чехія) — AI Operations Platform для середнього та великого бізнесу в Центральній та Східній Європі. Сайт презентує продуктову лінійку (AI X-Ray, Pilot, Core, Enterprise), збирає ліди через модальні форми, включає інтерактивну анкету-діагностику для AI X-Ray і AI-чатбот (Octopus) на базі OpenAI.
@@ -64,7 +64,7 @@ Vercel CDN (production)
 ```
 ROZUM/
 ├── index.html              # 🏠 Головна сторінка (757 рядків)
-├── ai-xray.html            # 📊 AI X-Ray продуктова сторінка (495 рядків)
+├── ai-xray.html            # 📊 AI X-Ray продуктова сторінка (500 рядків, i18n UK/EN/CS)
 ├── questionnaire.html      # 📝 Анкета-діагностика (670 рядків)
 ├── cabinet/                # 👤 Клієнтські кабінети (шаблонна структура)
 │   └── race-expert/        # ── Кабінет Race Expert (перший клієнт)
@@ -72,7 +72,7 @@ ROZUM/
 │       └── survey.html     # 📋 Брифінг-опитування (377 рядків, 21 питання, standalone)
 ├── js/
 │   ├── main.js             # ⚙️ Core JS: nav, tabs, calc, modal, particles, init (389 рядків)
-│   ├── i18n.js             # 🌐 Internationalization engine + dictionary (224 рядків, ~160 ключів)
+│   ├── i18n.js             # 🌐 Internationalization engine + dictionary (~510 рядків, ~280 ключів)
 │   ├── octopus.js          # 🐙 AI Chat Widget (OpenAI integration) (210 рядків)
 │   └── questionnaire.js    # 📋 Multi-step form logic (249 рядків)
 ├── styles/
@@ -134,27 +134,27 @@ rollupOptions: {
 | 10 | `#cases` | Cases | 4 case study cards (Гостинність, B2B, Нерухомість, E-commerce) |
 | 11 | `#cta` | CTA | Final conversion block |
 | 12 | `#faq` | FAQ | 6 accordion items |
-| 13 | `footer` | Footer | 4-column grid, links, contacts (hello@ROZUM.eu, LinkedIn, Telegram) |
+| 13 | `footer` | Footer | 4-column grid, links, contacts (hello@rozum.eu, LinkedIn, Telegram) |
 | 14 | `#leadModal` | Lead Modal | Form: name, company, email, phone, product select, message → Telegram |
 
 ### 2. `/ai-xray.html` — AI X-Ray Product Page
-**Мова:** `ru` ⚠️ (НЕ перекладено на UK, немає i18n, немає lang switcher)  
-**i18n:** ❌  
+**Мова:** `uk` (українська за замовчуванням)  
+**i18n:** ✅ (UK/EN/CS через `data-i18n` + `data-i18n-html` атрибути, ~120 ключів `xray.*`)  
 **Секції:**
 | # | Секція | Опис |
 |---|--------|------|
-| 1 | Nav | Спрощена навігація (посилання на `/#approach`, `/#products` тощо) |
-| 2 | Hero | Price card (€390 vs ~~€2,500~~), proof stats |
+| 1 | Nav | Навігація з lang switcher (UK/EN/CS), CTA button |
+| 2 | Hero | Price card (€390 vs ~~€2,500~~), proof stats, badge |
 | 3 | Why X-Ray | 3 value prop cards |
-| 4 | Report Structure | 6 report blocks (structure of 20-page report) |
+| 4 | Report Structure | 6 report blocks (structure of 20-page report) з тегами сторінок |
 | 5 | Process | 5-step timeline (payment → questionnaire → AI → analyst → delivery) |
 | 6 | Value Comparison | Price comparison table (McKinsey, Agency, Consultant vs ROZUM) |
 | 7 | Objections | 4 FAQ cards addressing doubts |
-| 8 | Data Sources | What client provides vs What AI analyzes |
+| 8 | Data Sources | What client provides (9 tags) vs What AI analyzes (6 tags) |
 | 9 | Next Steps | Customer journey funnel (X-Ray → Pilot → Core) |
 | 10 | CTA | Final conversion |
-| 11 | Footer | Same as index |
-| 12 | Lead Modal | Same form as index |
+| 11 | Footer | Same as index (with i18n) |
+| 12 | Lead Modal | Same form as index (with i18n) |
 
 ### 3. `/questionnaire.html` — AI X-Ray Questionnaire
 **Мова:** `uk` (українська)  
@@ -266,22 +266,22 @@ WEBHOOK_URL = ''; // Make.com / n8n / Zapier
 **Telegram Integration:**
 ```js
 TELEGRAM_CONFIG = {
-  botToken: 'YOUR_BOT_TOKEN',  // ⚠️ НЕ НАЛАШТОВАНО
-  chatId: 'YOUR_CHAT_ID',      // ⚠️ НЕ НАЛАШТОВАНО
-  threadId: null
+  botToken: '8755751029:AAHUQTy0J8tAd8fcO1E6i4F_zSz01g1vG_Q',
+  chatId: '-1003812673888',
+  threadId: 114  // Гілка "Lids AI"
 }
 ```
-> ⚠️ Telegram bot NOT configured — leads are logged to console only.
+> ✅ Telegram bot налаштований — ліди надходять в гілку "Lids AI".
 
 ### `js/i18n.js` — Internationalization
 **Мови:** `uk` (default), `en`, `cs`  
 **Механізм:** `data-i18n` (textContent) + `data-i18n-html` (innerHTML)  
-**Ключів:** ~160 translation keys  
+**Ключів:** ~280 translation keys  
 **Storage:** `localStorage('ROZUM-lang')`  
 **Exports:** `t()`, `setLanguage()`, `getLanguage()`, `applyTranslations()`, `initLanguageSwitcher()`  
 **Покриття:**
 - ✅ `index.html` — повністю перекладена (UK/EN/CS)
-- ❌ `ai-xray.html` — НЕ перекладена (залишилась RU)
+- ✅ `ai-xray.html` — повністю перекладена (UK/EN/CS, ~120 ключів `xray.*`)
 - ⚠️ `questionnaire.html` — lang switcher є, питання НЕ перекладені
 
 ### `js/octopus.js` — AI Chat Widget
