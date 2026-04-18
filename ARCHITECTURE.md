@@ -46,7 +46,8 @@ Vercel CDN (production)
 ### Домени
 | Домен | Що обслуговує | SSL |
 |-------|---------------|-----|
-| `ROZUM-six.vercel.app` | Повний сайт (production) | Vercel auto SSL |
+| `rozum.systems` | Production (custom domain) | Vercel auto SSL |
+| `rozum-s.vercel.app` | Vercel default subdomain | Vercel auto SSL |
 
 ### ENV змінні
 | Змінна | Файл | Опис |
