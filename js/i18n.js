@@ -241,6 +241,35 @@ const translations = {
   "xray.modal.title": { uk: "Замовити AI X-Ray", en: "Order AI X-Ray", cs: "Objednat AI X-Ray" },
   "xray.modal.sub": { uk: "Залиште заявку – ми зв'яжемося з вами протягом 4 годин. €390 · 72 години · Гарантія повернення.", en: "Leave a request – we'll contact you within 4 hours. €390 · 72 hours · Money-back guarantee.", cs: "Zanechte žádost – ozveme se vám do 4 hodin. €390 · 72 hodin · Garance vrácení." },
 
+  "xray.report.b1p": { uk: "3–5 сторінок", en: "3–5 pages", cs: "3–5 stránek" },
+  "xray.report.b2p": { uk: "2–3 сторінки", en: "2–3 pages", cs: "2–3 stránky" },
+  "xray.report.b3p": { uk: "5–7 сторінок · ключовий блок", en: "5–7 pages · key block", cs: "5–7 stránek · klíčový blok" },
+  "xray.report.b4p": { uk: "3–4 сторінки", en: "3–4 pages", cs: "3–4 stránky" },
+  "xray.report.b5p": { uk: "2–3 сторінки", en: "2–3 pages", cs: "2–3 stránky" },
+  "xray.report.b6p": { uk: "включено у вартість", en: "included in price", cs: "zahrnuto v ceně" },
+
+  "xray.data.t1": { uk: "Кількість співробітників та ролі", en: "Number of employees and roles", cs: "Počet zaměstnanců a role" },
+  "xray.data.t2": { uk: "Основні процеси (топ-5)", en: "Main processes (top 5)", cs: "Hlavní procesy (top 5)" },
+  "xray.data.t3": { uk: "Використовувані інструменти", en: "Tools in use", cs: "Používané nástroje" },
+  "xray.data.t4": { uk: "Топ-3 болі та втрати", en: "Top-3 pains and losses", cs: "Top 3 bolesti a ztráty" },
+  "xray.data.t5": { uk: "Кількість клієнтів/лідів на міс", en: "Number of clients/leads per month", cs: "Počet klientů/leadů za měsíc" },
+  "xray.data.t6": { uk: "Середній чек", en: "Average check", cs: "Průměrná objednávka" },
+  "xray.data.t7": { uk: "Час на ручні завдання/тижд", en: "Time on manual tasks/week", cs: "Čas na ruční úkoly/týden" },
+  "xray.data.t8": { uk: "Сайт компанії", en: "Company website", cs: "Web firmy" },
+  "xray.data.t9": { uk: "Галузь та вертикаль", en: "Industry and vertical", cs: "Obor a vertikála" },
+  "xray.data.a1": { uk: "Сайт компанії (автопарсинг)", en: "Company website (auto-parsing)", cs: "Web firmy (auto-parsing)" },
+  "xray.data.a2": { uk: "Google Reviews / відгуки", en: "Google Reviews / reviews", cs: "Google Reviews / recenze" },
+  "xray.data.a3": { uk: "LinkedIn профіль", en: "LinkedIn profile", cs: "LinkedIn profil" },
+  "xray.data.a4": { uk: "Публічні дані конкурентів", en: "Public competitor data", cs: "Veřejná data konkurentů" },
+  "xray.data.a5": { uk: "Галузеві бенчмарки", en: "Industry benchmarks", cs: "Oborové benchmarky" },
+  "xray.data.a6": { uk: "Вакансії (показують болі)", en: "Job listings (show pains)", cs: "Nabídky práce (ukazují bolesti)" },
+
+  "xray.next.s1d": { uk: "Аналіз + план. Один раз.", en: "Analysis + plan. One time.", cs: "Analýza + plán. Jednorázově." },
+  "xray.next.s2d": { uk: "AI-агент #1. 14 днів.", en: "AI agent #1. 14 days.", cs: "AI agent #1. 14 dní." },
+  "xray.next.s3d": { uk: "Повний набір агентів + Control Panel.", en: "Full agent suite + Control Panel.", cs: "Kompletní sada agentů + Control Panel." },
+
+  "nav.home": { uk: "Головна", en: "Home", cs: "Hlavní" },
+
   // ── FOOTER ──
   "footer.products": { uk: "Продукти", en: "Products", cs: "Produkty" },
   "footer.company": { uk: "Компанія", en: "Company", cs: "Firma" },
